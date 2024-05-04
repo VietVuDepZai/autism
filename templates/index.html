@@ -1,0 +1,488 @@
+{% load static %}
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <title>Autism</title>
+  <link rel="icon" href="/static/images/heart.png">
+  <style>
+      html, body{
+    background-color: #EAE7DC;
+    margin: 0;
+    width: 100%;
+    font-family: 'Varela Round', sans-serif;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #EAE7DC;
+    z-index: 3;
+  }
+  
+  #header-img {
+    float: left;
+    float: top;
+    top: 0px;
+    left: 0px;
+    width: 9%;
+    height: auto;
+    max-width: 100%;
+    display: block
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #submit {
+    background-color: #2ECC40;
+    border-radius: 20px 20px;
+    font-size: 3.8vw;
+    color: white;
+    max-width: 100%;
+    margin: auto;
+    padding: 5px;
+    float: none;
+    margin: auto;
+    box-shadow: 7px 7px 4px grey;
+    width: 400px;
+    display: block;
+    font-family: 'Varela Round', sans-serif;
+  
+  }
+  
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #EAE7DC;
+  }
+  
+  li {
+      float: right;
+  }
+  
+  li a {
+      display: inline-block;
+        color: deeppink;
+  ;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+   
+  }
+  
+  li a:hover {
+      background-color: hotpink;
+    color: white;
+  }
+  
+  #email {
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 0px;
+    text-align: center;
+    display: block;
+  }
+  
+  .headline2 {
+    position: relative;
+    margin: auto;
+    text-shadow: 4px 6px 6px #dafff8;
+    padding-top: 0px;
+    color: green;
+    max-width: 998px;
+    padding-bottom: 0px;
+    font-size: 2vw;
+    text-align: center;
+    z-index: 1;
+  }
+  #form {
+    margin: auto;
+  }
+  .headline {
+    margin-top: 96px;
+    font-family: 'Varela Round', sans-serif;
+    text-shadow: 3px 2px lightgrey;
+    color: #0074D9;
+    padding-left:100px ;
+    padding-right:100px;
+    padding-bottom: 0px;
+    text-align: center;
+    letter-spacing: 2px;
+    max-width: 100%;
+    font-size: 2.4vw;
+  
+  }
+  .video{
+    display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+    position: sticky;
+    z-index: 5;
+    float: bottom;
+  }
+  
+  .about, h2 {
+    font-size: 3.5vw;
+    font-family: 'Varela Round', sans-serif;
+    text-indent: 50px;
+    letter-spacing: 1.8px;
+  }
+  
+  .about, .upcoming {
+    color: #FF4136;
+      text-align: center;
+    text-shadow: 2px 2px 3px;
+    
+  }
+  cite {
+    font-size: 2vw;
+    margin-left: 240px;
+  }
+  .info {
+    font-size: 1.8vw;
+    padding: 10px;
+    padding-bottom: 0px;
+  }
+  #aboutus {
+    padding: 5px;
+    text-align: justify;
+    border: 2px solid #0074D9;
+    margin: auto;
+    margin: 30px;
+    border-radius: 30px;
+    color: #0074D9;
+  }
+  
+  ul.tabs {
+    width: 80%;
+      min-width: 600px;
+              height: 72px;
+              margin: 0 auto;
+              list-style: none;
+              overflow: hidden;
+              padding: 0
+          }
+  
+          ul.tabs li {
+              float: left;
+              width:  33.33%;
+  
+          }
+  
+  
+  footer p {
+    margin: 5px 0;
+  }
+  
+  footer a {
+    color: #FF4136;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+          ul.tabs li a {
+              position: relative;
+              display: block;
+              height: 27px;
+              margin-top: 40px;
+              padding: 10px 0 90px 0;
+              font-family: 'Open Sans', sans-serif;
+              font-size: 14px;
+              text-align: center;
+              text-decoration: none;
+              color: #ffffff;
+              background: #1abc9c;
+              -webkit-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+              -moz-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+              box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+              border: 0 solid #000000;
+              -webkit-transition: padding 0.2s ease, margin 0.2s ease;
+              -moz-transition: padding 0.2s ease, margin 0.2s ease;
+              -o-transition: padding 0.2s ease, margin 0.2s ease;
+              -ms-transition: padding 0.2s ease, margin 0.2s ease;
+              transition: padding 0.2s ease, margin 0.2s ease
+          }
+  
+          .tabs li:first-child a {
+              z-index: 3;
+              -webkit-border-top-left-radius: 8px;
+              -moz-border-radius-topleft: 8px;
+              border-top-left-radius: 8px
+          }
+  
+  
+          .tabs li:last-child a {
+              -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+              -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+              box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+              -webkit-border-top-right-radius: 8px;
+              -moz-border-radius-topright: 8px;
+              border-top-right-radius: 8px
+          }
+  
+          ul.tabs li a:hover {
+              margin: 35px 0 0 0;
+              padding: 10px 0 90px 0
+          }
+  
+          ul.tabs li a.active {
+              margin: 30px 0 0 0;
+              padding: 10px 0 90px 0;
+              background: #2c3e50;
+              color: #D3FEF5;
+              /*color:#ff6831;*/
+              outline: none
+          }
+  
+          .group:before,
+          .group:after {
+              content: " ";
+              display: table
+          }
+  
+          .group:after {
+              clear: both
+          }
+  
+          #panels {
+            width: 80%;
+      min-width: 600px;
+              height: 321px;
+  
+              margin: 0 auto;
+              background: #2c3e50;
+              -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+              -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+              box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+              -webkit-border-bottom-right-radius: 8px;
+              -webkit-border-bottom-left-radius: 8px;
+              -moz-border-radius-bottomright: 8px;
+              -moz-border-radius-bottomleft: 8px;
+              border-bottom-right-radius: 8px;
+              border-bottom-left-radius: 8px
+          }
+  
+          #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: hotpink; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 50%; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    width: 50px;
+    height: 50px;
+  }
+  
+  #myBtn:hover {
+    background-color:palevioletred;; /* Add a dark-grey background on hover */
+  }
+  table, th, td {
+     border: 3px solid #FF4136;
+     border-collapse: collapse;
+     text-align: left;
+     margin: auto;
+    width: 55%;
+    padding: 10px;
+  }
+  th {
+    background-color: lightgrey;
+  }
+  
+  #video {
+    margin: auto;
+    max-width: 100%;
+  }
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: center;
+    }
+  
+  }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="flex-container"> 
+    <header id="header">
+  
+    <div class="container">
+      <nav id="nav-bar" style="    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0.1, 0.1);
+    ">
+    <a href="/">
+        <img style="    position: fixed;
+        width: 49px;" src="/static/images/heart.png" alt="">
+  </a>
+    <ul style="width: 564px; margin: auto;">
+      <li><a class="nav-link" href="/login">Đăng nhập </a></li>
+      <li><a class="nav-link" href="/signup">Đăng ký</a></li>
+       <li><a class="nav-link" href="#rethink">Tài liệu tham khảo</a></li>
+    <li><a class="nav-link" href="#events">Thông tin cơ bản</a></li>
+  </ul>
+       </nav>
+      </div></header></div>
+        
+    <div style="position: relative;width: 100%;/* height: 499px; */margin-top: -47px;">
+  
+      <!-- Blurred Background Image -->
+      <!-- <div style="
+                  background-position: top center;
+                  background-image: url(/static/images/removebg.png);
+                  filter: blur(8px);
+                  -webkit-filter: blur(10px);
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  z-index: 0;
+                  /* top: 0; */
+                  /* left: 0; */
+                  background-repeat: no-repeat;
+                  background-size: initial;
+                  "></div> -->
+    <br>
+      <!-- Content -->
+      <div class="headline">
+        <h2>Autism - bạn không cô đơn</h2>
+      </div>
+      <div class="headline2">
+        <h4 class="plus">Hãy đến với Autism, chúng tôi sẽ đồng hành cùng bạn. Nếu con bạn có cách triệu chứng liên quan đến tự kỷ, hãy click vào bảng kiểm M-CHAT bên dưới để kiểm tra:</h4>
+      </div>
+      <span id="about"><a style="text-decoration: none;" href="start-exam"></a></span>
+      <a style="z-index: 1;position: relative;text-decoration: none;" href="start-exam">
+        <br>
+        <button id="submit" style="font-size: 28px;">Bắt đầu kiểm tra</button>
+      </a>
+    </div>
+    
+  <br>
+  <section id="aboutus">
+    <div class="headline" style="margin: 10px"><h2 style="margin: 0"> Tại sao bệnh tự kỷ ngày càng trở nên đáng báo động với trẻ em hiện nay?</h2> </div>
+      <p class="info" style="color: green">
+        Tháng 1-2019, Tổng cục Thống kê công bố Việt Nam hiện có khoảng 6,2 triệu người khuyết tật từ 2 tuổi trở lên (chiếm khoảng 6,5% dân số). Trong đó có khoảng 1 triệu người tự kỷ, tỉ lệ trẻ em mắc chứng tự kỷ ước tính là 1% số trẻ em sinh ra. Tỉ lệ chẩn đoán trẻ mắc tự kỷ trong những năm gần đây có xu hướng tăng lên với tần suất gặp 1/100 trẻ, trong đó tự kỷ điển hình chiếm 16,8%. Trẻ trai bị nhiều hơn trẻ gái từ 4 đến 6 lần.
+      </p>
+      <span id="events"><span>
+      </span></span></section>
+  <hr>
+      <br>
+      <div class="headline" style="margin: 10px">  <h2>Vậy cùng Autism tìm hiểu các khái niệm, nguyên nhân và dấu hiệu của trẻ tự kỷ nhé:</h2>
+      </div>
+      <ul class="tabs group">
+        <li><a class="active" style="z-index: 0;" href="#/one">Khái niệm</a></li>
+        <li><a href="#/two">Nguyên nhân</a></li>
+        <li><a href="#/three">Dấu hiệu</a></li>
+  <!--                 <li><a href="#/for">Phần 4</a></li>
+        <li><a href="#/five">Phần 5</a></li>
+        <li><a href="#/six">Phần 6</a></li> -->
+    </ul>
+    <div id="panels" style="overflow:hidden">
+        <p id="one" style="margin: 20px;
+        color: white;">Bệnh tự kỉ, còn được gọi là rối loạn tự kỉ (autism spectrum disorder - ASD), là một rối loạn phát triển ảnh hưởng đến khả năng giao tiếp, tương tác xã hội, và hành vi ở các cá nhân. Người mắc bệnh tự kỉ thường có cách tiếp cận và tương tác xã hội đặc biệt, có thể bao gồm khó khăn trong việc đọc hiểu cảm xúc của người khác, thiếu kỹ năng giao tiếp không ngôn từ, và thường có sở thích hoặc hành vi lặp đi lặp lại. Mặc dù tất cả những người mắc bệnh tự kỉ đều chia sẻ những đặc điểm chung, nhưng mức độ và cách biểu hiện của bệnh có thể rất đa dạng, từ những trường hợp nhẹ nhàng đến những trường hợp nặng nề.</p>
+        <p id="two" style="display:none;margin: 20px;
+        color: white;">
+          Nguyên nhân chính xác của bệnh tự kỉ vẫn chưa được hiểu rõ hoàn toàn, nhưng các nhà nghiên cứu đã xác định được một số yếu tố có thể đóng vai trò trong việc phát triển rối loạn này. Dưới đây là một số yếu tố được đề xuất:
+  <br>       1. Yếu tố di truyền: Di truyền đóng vai trò quan trọng trong việc gây ra bệnh tự kỉ. Có những bằng chứng cho thấy người có người thân trong gia đình mắc bệnh tự kỉ có nguy cơ cao hơn mắc bệnh này so với những người không có tiền sử gia đình.
+  <br>       2. Yếu tố môi trường: Một số yếu tố môi trường trong quá trình thai kỳ và sớm nhỏ bé cũng có thể đóng vai trò. Các yếu tố này có thể bao gồm việc tiếp xúc với hóa chất độc hại, nhiễm trùng hoặc virus trong thai kỳ, hoặc các yếu tố ngoại cảnh khác có thể ảnh hưởng đến sự phát triển của não.
+  <br>     3. Yếu tố sinh học: Có những thay đổi sinh học trong cấu trúc và hoạt động của não được liên kết với bệnh tự kỉ. Các nghiên cứu hình ảnh não đã chỉ ra rằng người mắc bệnh tự kỉ có thể có các khác biệt trong cấu trúc và hoạt động của não so với những người không mắc bệnh.
+  <br>4. Yếu tố tâm lý xã hội: Một số nghiên cứu cũng đã chỉ ra rằng môi trường xã hội, như cách chăm sóc trẻ em, sự phát triển tương tác xã hội và giao tiếp có thể ảnh hưởng đến việc phát triển của bệnh tự kỉ.</p>
+  
+        <p id="three" style="display:none;margin: 20px;
+        color: white;">Dấu hiệu của bệnh tự kỉ có thể biến đổi từ nhẹ đến nặng, và chúng thường xuất hiện trong giai đoạn sớm của cuộc sống, thường là trước khi trẻ 3 tuổi. Dưới đây là một số dấu hiệu phổ biến của bệnh tự kỉ:
+  
+  <br>1. Khó khăn trong giao tiếp: Trẻ có thể không phản ứng khi được gọi tên, không chia sẻ niềm vui, sở thích hoặc cảm xúc với người khác, và có thể không có kỹ năng ngôn ngữ hoặc có ngôn ngữ phát triển chậm chạp.
+  <br>2. Khó khăn trong tương tác xã hội: Trẻ có thể không hiểu các quy tắc xã hội cơ bản như liên kết mắt, gật đầu, hoặc không nhận biết cảm xúc của người khác. Họ cũng có thể có khó khăn trong việc thiết lập và duy trì mối quan hệ bạn bè.
+  <br>3. Hành vi lặp đi lặp lại: Điều này có thể bao gồm việc lặp đi lặp lại các hành động như quay vòng, lắc đầu, hoặc tập trung mạnh mẽ vào một số sở thích đặc biệt.
+  <br>4. Cảm giác nhạy cảm với ánh sáng, âm thanh hoặc xúc giác: Một số trẻ tự kỉ có thể cảm thấy bất an hoặc không thoải mái khi tiếp xúc với ánh sáng mạnh, âm thanh lớn hoặc kích thích xúc giác mạnh mẽ.
+  <br>5. Độc lập và tập trung vào bản thân: Trẻ tự kỉ thường có xu hướng tập trung vào bản thân và hoạt động một cách độc lập mà không cần sự tham gia hoặc chia sẻ của người khác.
+  Bệnh tự kỉ không phải là nguy hiểm cho sức khỏe về mặt vật lý, nhưng nó có thể ảnh hưởng đến chất lượng cuộc sống và khả năng hoàn thiện các kỹ năng xã hội và học tập. Điều quan trọng là phát hiện và can thiệp sớm để cung cấp sự hỗ trợ và giáo dục phù hợp cho trẻ mắc bệnh tự kỉ.
+        </p>
+  
+                        <!-- 
+  
+        <p id="five">Các cách giúp con bạn đối phó<br>
+            Dưới đây là một số điều bạn có thể làm để hỗ trợ con mình nếu bạn nghĩ rằng chúng có thể bị trầm
+            cảm: <br>1. Tìm hiểu chuyện gì đang xảy ra<br>
+            2. Dành thời gian cho con <br>
+            3. Khuyến khích con có các thói quen tích cực <br>
+            4. Để con thể hiện cảm xúc của mình <br>
+            5. Cho con tránh xa những hành động gây stress  <br>
+            <br>
+        </p>
+        <p id="six"> Khi nào cần tìm kiếm sự giúp đỡ chuyên nghiệp
+  Vì trầm cảm chỉ có thể được chẩn đoán bởi một chuyên gia có trình độ, điều quan trọng là phải tìm kiếm sự trợ giúp từ nhà cung cấp dịch vụ chăm sóc sức khỏe của bạn, người có thể giới thiệu con bạn đến chuyên gia sức khỏe tâm thần hoặc bác sĩ tâm thần. Nếu chuyên gia sức khỏe tâm thần cho rằng con bạn sẽ được hưởng lợi từ việc điều trị, các lựa chọn có thể bao gồm một số hình thức trị liệu bằng trò chuyện - nơi chúng học cách quản lý suy nghĩ và cảm xúc của mình hoặc kết hợp liệu pháp và thuốc.
+  
+  Nếu con bạn có ý nghĩ tự làm hại bản thân hoặc đã tự làm hại bản thân, hãy tìm kiếm sự trợ giúp từ các dịch vụ cấp cứu hoặc chuyên gia chăm sóc sức khỏe. Đừng trì hoãn việc liên lạc nếu bạn lo lắng.<br> -->
+            <br>
+  
+        <p></p>
+        <p></p>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top" style="display: none;"><i class="fa-solid fa-arrow-up"></i></button>
+  
+        <hr>
+        <div class="headline" style="margin: 10px; padding: 0">  <h2 style="width: 100%">Đây là một bài thống kê về chứng tự kỷ tại Mỹ</h2>
+  </div>
+        <br>
+        <div style="max-width: 800px; min-width: 600px; margin:auto">
+        <video controls="controls" style="width:100%; height: auto" id="video2023016203411" poster="https://www.sgf.org.vn/uploads/news/2021_12/thong-ke-asd.jpg"><source src="https://www.sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke.mp3" type="video/mp4">Your browser doesn't support video.<br>
+          Please download the file: <a href="https://www.sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke.mp3">video/mp4</a></video>
+        
+      </div>
+      <br>
+      <footer>
+        <div style="background-color: #2c3e50; color: white; text-align: center; padding: 20px;">
+          <p>Bản quyền © 2024. Autism - bạn không cô đơn.</p>
+          <p>Designed by: <a href="https://3dviet.vercel.app/" target="_blank" style="color: #FF4136; text-decoration: none;">VietVu</a></p>
+        </div>
+      </footer>
+      
+  
+  
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+  
+  <script>
+      (function ($) { var tabs = $(".tabs li a"); tabs.click(function () { var panels = this.hash.replace('/', ''); tabs.removeClass("active"); $(this).addClass("active"); $("#panels").find('p').hide(); $(panels).fadeIn(200); }); })(jQuery); 
+  // Get the button:
+  let mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  </script>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+  
+  </body></html>
