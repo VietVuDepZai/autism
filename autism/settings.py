@@ -169,7 +169,7 @@ STATIC_URL = '/static/'
 # Media files URL
 
 # Dummy path for STATIC_ROOT
-STATIC_ROOT = BASE_DIR / 'staticfiles_build'
+STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
