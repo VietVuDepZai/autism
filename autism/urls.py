@@ -19,6 +19,8 @@ from django.urls import path
 from backend import views
 from django.conf.urls import  include
 from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -50,4 +52,15 @@ path('animals/',views.letterwriting),
 
     path('patientmain',views.patientmain,name="patientmain"),
     path('patient-doctor/<int:pk>',views.patient_view_doctor,name="patient-doctor"),
-]
+       path('calendar/', views.CalendarView.as_view(), name='calendar'),
+                  path('patient-calendar/', views.PatientCalendarView.as_view(), name='patient-calendar'),
+                  path('paunaccept-calendar/', views.PaUnAccept.as_view(), name='paunaccept-calendar'),
+                                    path('unaccept-calendar/', views.UnCalendarView.as_view(), name='unaccept-calendar'),
+
+
+    path('paevent/new/', views.paevent, name='paevent_new'),
+    path('paevent/edit/<event_id>/', views.paevent, name='paevent_edit'),
+  path('event/new/', views.event, name='event_new'),
+    path('event/edit/<event_id>/', views.event, name='event_edit'),
+
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
