@@ -61,13 +61,13 @@ def start_exam_view(request):
         result = models.Result()
         result.marks=total_marks
         if total_marks >= 3:
-            result.typeof = "Depression"
+            result.typeof = "Tự kỷ"
             result.save()
             return redirect('/')
         else:
-            result.typeof = "You are OK"
+            result.typeof = "Không bị tự kỷ"
             result.save()
-            return redirect('/thankyou')
+            return redirect('/')
 
     return render(request,'start_exam.html',{'questions':questions})
 
