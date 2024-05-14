@@ -115,7 +115,27 @@ def login(request):
 
     context = {}
     return render(request, 'login.html', context)
+def loginn(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password =request.POST.get('password')
+        print("HSuuu")
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            print("HSuuu")
+            auth_login(request, user)
+            print(is_doctor(user))
+            if is_doctor(user):
+                return redirect("/doctormain")
+            if is_patient(user):
+                return redirect("/patientmain")
+            else:
+                return redirect("/choosing")
+        
 
+    context = {}
+    return render(request, 'loginn.html', context)
 @csrf_exempt
 def choosing(request):
     if is_doctor(request.user):
@@ -144,7 +164,7 @@ def signup(request):
         form = forms.RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/choosing')
+            return HttpResponseRedirect('/loginn')
     return render(request, 'signup.html', {'form': form})
 
 def doctor_signup_view(request):
