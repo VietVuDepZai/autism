@@ -54,7 +54,7 @@ class Patient(models.Model):
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,default=None)
     profile_pic= models.ImageField(upload_to='profile_pic/',null=True,blank=True)
-    address = models.CharField(max_length=40)
+    address = models.CharField(max_length=80)
     latitude = models.DecimalField(max_digits=10, decimal_places=8, null=True, blank=True)
     longitude = models.DecimalField(max_digits=11, decimal_places=8, null=True, blank=True)
 

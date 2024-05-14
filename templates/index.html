@@ -6,332 +6,383 @@
   <title>Autism</title>
   <link rel="icon" href="/static/images/heart.png">
   <style>
-      html, body{
-    background-color: #EAE7DC;
-    margin: 0;
-    width: 100%;
-    font-family: 'Varela Round', sans-serif;
-  }
+    html,
+    body {
+      background-color: #eae7dc;
+      margin: 0;
+      width: 100%;
+      font-family: 'Varela Round', sans-serif;
+    }
   
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #EAE7DC;
-    z-index: 3;
-  }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #eae7dc;
+      z-index: 3;
+    }
   
-  #header-img {
-    float: left;
-    float: top;
-    top: 0px;
-    left: 0px;
-    width: 9%;
-    height: auto;
-    max-width: 100%;
-    display: block
-  }
+    #header-img {
+      float: left;
+      float: top;
+      top: 0px;
+      left: 0px;
+      width: 9%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+    }
   
-  .flex-container {
-    display: flex;
-    flex-direction: row;
-  }
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+    }
   
-  #submit {
-    background-color: #2ECC40;
-    border-radius: 20px 20px;
-    font-size: 3.8vw;
-    color: white;
-    max-width: 100%;
-    margin: auto;
-    padding: 5px;
-    float: none;
-    margin: auto;
-    box-shadow: 7px 7px 4px grey;
-    width: 400px;
-    display: block;
-    font-family: 'Varela Round', sans-serif;
+    #submit {
+      background-color: #2ecc40;
+      border-radius: 20px 20px;
+      font-size: 3.8vw;
+      color: white;
+      max-width: 100%;
+      margin: auto;
+      padding: 5px;
+      float: none;
+      margin: auto;
+      box-shadow: 7px 7px 4px grey;
+      width: 400px;
+      display: block;
+      font-family: 'Varela Round', sans-serif;
+    }
   
-  }
-  
-  ul {
+    ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: #EAE7DC;
-  }
+      background-color: #eae7dc;
+    }
   
-  li {
+    li {
       float: right;
-  }
+    }
   
-  li a {
-     
-    text-transform: uppercase;
-    font-size: 110%;
-    display: inline-block;
-    font-weight: 900;
-    color: #0074D9;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-   
-  }
+    nav ul li a {
+      text-transform: uppercase;
+      font-size: 110%;
+      display: inline-block;
+      font-weight: 900;
+      color: #0074d9;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
   
-  li a:hover {
-
-      background-color: #0074D9;
-    color: white;
-  }
+    .displaynone {
+      display: none;
+    }
   
-  #email {
-    margin: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-bottom: 0px;
-    text-align: center;
-    display: block;
-  }
+    li a:hover {
+      background-color: #0074d9;
+      color: white;
+    }
   
-  .headline2 {
-    position: relative;
-    margin: auto;
-    text-shadow: 4px 6px 6px #dafff8;
-    padding-top: 0px;
-    color: green;
-    max-width: 998px;
-    padding-bottom: 0px;
-    font-size: 2vw;
-    text-align: center;
-    z-index: 1;
-  }
-  #form {
-    margin: auto;
-  }
-  .headline {
-    margin-top: 96px;
-    font-family: 'Varela Round', sans-serif;
-    text-shadow: 3px 2px lightgrey;
-    color: #0074D9;
-    padding-left:100px ;
-    padding-right:100px;
-    padding-bottom: 0px;
-    text-align: center;
-    letter-spacing: 2px;
-    max-width: 100%;
-    font-size: 2.4vw;
+    #email {
+      margin: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-bottom: 0px;
+      text-align: center;
+      display: block;
+    }
   
-  }
-  .video{
-    display: block;
+    .headline2 {
+      position: relative;
+      margin: auto;
+      text-shadow: 4px 6px 6px #dafff8;
+      padding-top: 0px;
+      color: green;
+      max-width: 998px;
+      padding-bottom: 0px;
+      font-size: 2vw;
+      text-align: center;
+      z-index: 1;
+    }
+  
+    #form {
+      margin: auto;
+    }
+  
+    .headline {
+      margin-top: 96px;
+      font-family: 'Varela Round', sans-serif;
+      text-shadow: 3px 2px lightgrey;
+      color: #0074d9;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-bottom: 0px;
+      text-align: center;
+      letter-spacing: 2px;
+      max-width: 100%;
+      font-size: 2.4vw;
+    }
+  
+    .video {
+      display: block;
       margin-left: auto;
       margin-right: auto;
       width: 40%;
-    position: sticky;
-    z-index: 5;
-    float: bottom;
-  }
+      position: sticky;
+      z-index: 5;
+      float: bottom;
+    }
   
-  .about, h2 {
-    font-size: 3.5vw;
-    font-family: 'Varela Round', sans-serif;
-    text-indent: 50px;
-    letter-spacing: 1.8px;
-  }
+    .about,
+    h2 {
+      font-size: 3.5vw;
+      font-family: 'Varela Round', sans-serif;
+      text-indent: 50px;
+      letter-spacing: 1.8px;
+    }
   
-  .about, .upcoming {
-    color: #FF4136;
+    .about,
+    .upcoming {
+      color: #ff4136;
       text-align: center;
-    text-shadow: 2px 2px 3px;
-    
-  }
-  cite {
-    font-size: 2vw;
-    margin-left: 240px;
-  }
-  .info {
-    font-size: 1.8vw;
-    padding: 10px;
-    padding-bottom: 0px;
-  }
-  #aboutus {
-    padding: 5px;
-    text-align: justify;
-    border: 2px solid #0074D9;
-    margin: auto;
-    margin: 30px;
-    border-radius: 30px;
-    color: #0074D9;
-  }
+      text-shadow: 2px 2px 3px;
+    }
   
-  ul.tabs {
-    width: 80%;
+    cite {
+      font-size: 2vw;
+      margin-left: 240px;
+    }
+  
+    .info {
+      font-size: 1.8vw;
+      padding: 10px;
+      padding-bottom: 0px;
+    }
+  
+    #aboutus {
+      padding: 5px;
+      text-align: justify;
+      border: 2px solid #0074d9;
+      margin: auto;
+      margin: 30px;
+      border-radius: 30px;
+      color: #0074d9;
+    }
+  
+    ul.tabs {
+      width: 80%;
       min-width: 600px;
-              height: 72px;
-              margin: 0 auto;
-              list-style: none;
-              overflow: hidden;
-              padding: 0
-          }
+      height: 72px;
+      margin: 0 auto;
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+    }
   
-          ul.tabs li {
-              float: left;
-              width:  33.33%;
+    ul.tabs li {
+      float: left;
+      width: 33.33%;
+    }
   
-          }
+    footer p {
+      margin: 5px 0;
+    }
   
+    footer a {
+      color: #ff4136;
+    }
   
-  footer p {
-    margin: 5px 0;
-  }
+    footer a:hover {
+      text-decoration: underline;
+    }
   
-  footer a {
-    color: #FF4136;
-  }
+    ul.tabs li a {
+      position: relative;
+      display: block;
+      height: 27px;
+      margin-top: 40px;
+      padding: 10px 0 90px 0;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      background: #1abc9c;
+      -webkit-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      border: 0 solid #000000;
+      -webkit-transition: padding 0.2s ease, margin 0.2s ease;
+      -moz-transition: padding 0.2s ease, margin 0.2s ease;
+      -o-transition: padding 0.2s ease, margin 0.2s ease;
+      -ms-transition: padding 0.2s ease, margin 0.2s ease;
+      transition: padding 0.2s ease, margin 0.2s ease;
+    }
   
-  footer a:hover {
-    text-decoration: underline;
-  }
+    .tabs li:first-child a {
+      z-index: 3;
+      -webkit-border-top-left-radius: 8px;
+      -moz-border-radius-topleft: 8px;
+      border-top-left-radius: 8px;
+    }
   
-          ul.tabs li a {
-              position: relative;
-              display: block;
-              height: 27px;
-              margin-top: 40px;
-              padding: 10px 0 90px 0;
-              font-family: 'Open Sans', sans-serif;
-              font-size: 14px;
-              text-align: center;
-              text-decoration: none;
-              color: #ffffff;
-              background: #1abc9c;
-              -webkit-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
-              -moz-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
-              box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
-              border: 0 solid #000000;
-              -webkit-transition: padding 0.2s ease, margin 0.2s ease;
-              -moz-transition: padding 0.2s ease, margin 0.2s ease;
-              -o-transition: padding 0.2s ease, margin 0.2s ease;
-              -ms-transition: padding 0.2s ease, margin 0.2s ease;
-              transition: padding 0.2s ease, margin 0.2s ease
-          }
+    .tabs li:last-child a {
+      -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -webkit-border-top-right-radius: 8px;
+      -moz-border-radius-topright: 8px;
+      border-top-right-radius: 8px;
+    }
   
-          .tabs li:first-child a {
-              z-index: 3;
-              -webkit-border-top-left-radius: 8px;
-              -moz-border-radius-topleft: 8px;
-              border-top-left-radius: 8px
-          }
+    ul.tabs li a:hover {
+      margin: 35px 0 0 0;
+      padding: 10px 0 90px 0;
+    }
   
+    ul.tabs li a.active {
+      margin: 30px 0 0 0;
+      padding: 10px 0 90px 0;
+      background: #2c3e50;
+      color: #d3fef5;
+      outline: none;
+    }
   
-          .tabs li:last-child a {
-              -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
-              -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
-              box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
-              -webkit-border-top-right-radius: 8px;
-              -moz-border-radius-topright: 8px;
-              border-top-right-radius: 8px
-          }
+    .group:before,
+    .group:after {
+      content: " ";
+      display: table;
+    }
   
-          ul.tabs li a:hover {
-              margin: 35px 0 0 0;
-              padding: 10px 0 90px 0
-          }
+    .group:after {
+      clear: both;
+    }
   
-          ul.tabs li a.active {
-              margin: 30px 0 0 0;
-              padding: 10px 0 90px 0;
-              background: #2c3e50;
-              color: #D3FEF5;
-              /*color:#ff6831;*/
-              outline: none
-          }
-  
-          .group:before,
-          .group:after {
-              content: " ";
-              display: table
-          }
-  
-          .group:after {
-              clear: both
-          }
-  
-          #panels {
-            width: 80%;
+    #panels {
+      width: 80%;
       min-width: 600px;
-              height: 321px;
+      height: 321px;
+      margin: 0 auto;
+      background: #2c3e50;
+      -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -webkit-border-bottom-right-radius: 8px;
+      -webkit-border-bottom-left-radius: 8px;
+      -moz-border-radius-bottomright: 8px;
+      -moz-border-radius-bottomleft: 8px;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
   
-              margin: 0 auto;
-              background: #2c3e50;
-              -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
-              -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
-              box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
-              -webkit-border-bottom-right-radius: 8px;
-              -webkit-border-bottom-left-radius: 8px;
-              -moz-border-radius-bottomright: 8px;
-              -moz-border-radius-bottomleft: 8px;
-              border-bottom-right-radius: 8px;
-              border-bottom-left-radius: 8px
-          }
+    #myBtn {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Fixed/sticky position */
+      bottom: 20px;
+      /* Place the button at the bottom of the page */
+      right: 30px;
+      /* Place the button 30px from the right */
+      z-index: 99;
+      /* Make sure it does not overlap */
+      border: none;
+      /* Remove borders */
+      outline: none;
+      /* Remove outline */
+      background-color: hotpink;
+      /* Set a background color */
+      color: white;
+      /* Text color */
+      cursor: pointer;
+      /* Add a mouse pointer on hover */
+      padding: 15px;
+      /* Some padding */
+      border-radius: 50%;
+      /* Rounded corners */
+      font-size: 18px;
+      /* Increase font size */
+      width: 50px;
+      height: 50px;
+    }
   
-          #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: hotpink; /* Set a background color */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 50%; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-    width: 50px;
-    height: 50px;
-  }
-  
-  #myBtn:hover {
-    background-color:palevioletred;; /* Add a dark-grey background on hover */
-  }
-  table, th, td {
-     border: 3px solid #FF4136;
-     border-collapse: collapse;
-     text-align: left;
-     margin: auto;
-    width: 55%;
-    padding: 10px;
-  }
-  th {
-    background-color: lightgrey;
-  }
-  
-  #video {
-    margin: auto;
-    max-width: 100%;
-  }
-  @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
+    .sgppp h2 {
       text-align: center;
     }
   
-  }
-  @media screen and (max-width: 1030px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: center;
+    .sgppp img {
+      width: 100% !important;
     }
-    ul {
-      display:  none !important;
+  
+    .sgppp li {
+      float: none !important;
     }
-  }
+  
+    .sgppp strong {
+      background: pink;
+      font-weight: 500;
+    }
+  
+    .sgppp a {
+      color: black;
+      font-weight: 100;
+      text-decoration: none;
+    }
+  
+    .sgppp td a:hover {
+      color: black;
+      font-weight: 900;
+      text-decoration: none;
+    }
+  
+    #myBtn:hover {
+      background-color: palevioletred;
+      /* Add a dark-grey background on hover */
+    }
+  
+    table,
+    th,
+    td {
+      border: 3px solid #ff4136;
+      border-collapse: collapse;
+      text-align: left;
+      margin: auto;
+      width: 55%;
+      padding: 10px;
+    }
+  
+    th {
+      background-color: lightgrey;
+    }
+  
+    #video {
+      margin: auto;
+      max-width: 100%;
+    }
+  
+    /* Media Queries */
+  
+    @media screen and (max-width: 1040px) {
+      nav ul {
+        display: none;
+      }
+      li a {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+      #resmenu {
+        display: block !important;
+      }
+      #resmenu i {
+        display: block !important;
+      }
+    }
   </style>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
@@ -358,37 +409,90 @@
 
   </a>
 
-    <ul style="">
+    <ul class="">
 
       <li><a class="nav-link" href="/login">Đăng nhập </a></li>
       
       <li><a class="nav-link" href="/signup">Đăng ký</a></li>
-      <li><a class="nav-link" href="#events">Thông tin cơ bản</a></li>
+      <li><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
 
   </ul>
-  <i class="fa-solid fa-list" style="border-color: #EAE7DC;
-  background: #EAE7DC;"></i>
+  <button id="resmenu" class=""  onclick="toggleMenu()"   style="    border-color: #EAE7DC;
+  background: #EAE7DC;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  display: none;
+
+  margin: 21px;;"><i class="fa-solid fa-list" style="    border-color: #EAE7DC;
+    background: #EAE7DC;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    font-size: 30px;
+    margin: 21px;;"></i></button>
        </nav>
-      </div></header></div>
+      </div></header>
+      <style>
+        /* Your existing CSS styles */
+        #menu {
+          background-color: #eae7dc;
+          position: fixed;
+          top: 67px;
+          width: 100%;
+          z-index: 3;
+          box-shadow:1px 2px rgba(0, 0, 0.1, 0.1)
+        }
+      
+        #menu ol {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #eae7dc;
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+        }
+      
+        #menu ol li {
+          float: none;
+          margin: 0 10px;
+        }
+      
+        #menu ol li a {
+          text-transform: uppercase;
+          font-size: 110%;
+          font-weight: 900;
+          color: #0074d9;
+          text-align: center;
+          text-decoration: none;
+          padding: 14px 16px;
+          display: inline-block;
+        }
+      
+        #menu ol li a:hover {
+          background-color: #0074d9;
+          color: white;
+        }
+      </style>
+      
+      <div id="menu" class="displaynone">
+        <ol>
+          <li style="float: none;"><a class="nav-link" href="/login">Đăng nhập </a></li>
+          <li style="float: none;"><a class="nav-link" href="/signup">Đăng ký</a></li>
+          <li style="float: none;"><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
+        </ol>
+      </div>
+      </div>
         
-    <div style="position: relative;width: 100%;/* height: 499px; */margin-top: -47px;">
-  
-      <!-- Blurred Background Image -->
-      <!-- <div style="
-                  background-position: top center;
-                  background-image: url(/static/images/removebg.png);
-                  filter: blur(8px);
-                  -webkit-filter: blur(10px);
-                  width: 100%;
-                  height: 100%;
-                  position: absolute;
-                  z-index: 0;
-                  /* top: 0; */
-                  /* left: 0; */
-                  background-repeat: no-repeat;
-                  background-size: initial;
-                  "></div> -->
-    <br>
+    <div style="position: relative;width: 100%;/* height: 499px">
+
       <!-- Content -->
       <div class="headline">
         <h2>Autism - bạn không cô đơn</h2>
@@ -403,79 +507,264 @@
       </a>
     </div>
     
-  <br>
-  <section id="aboutus">
-    <div class="headline" style="margin: 10px"><h2 style="margin: 0"> Tại sao bệnh tự kỷ ngày càng trở nên đáng báo động với trẻ em hiện nay?</h2> </div>
-      <p class="info" style="color: green">
-        Tháng 1-2019, Tổng cục Thống kê công bố Việt Nam hiện có khoảng 6,2 triệu người khuyết tật từ 2 tuổi trở lên (chiếm khoảng 6,5% dân số). Trong đó có khoảng 1 triệu người tự kỷ, tỉ lệ trẻ em mắc chứng tự kỷ ước tính là 1% số trẻ em sinh ra. Tỉ lệ chẩn đoán trẻ mắc tự kỷ trong những năm gần đây có xu hướng tăng lên với tần suất gặp 1/100 trẻ, trong đó tự kỷ điển hình chiếm 16,8%. Trẻ trai bị nhiều hơn trẻ gái từ 4 đến 6 lần.
-      </p>
-      <span id="events"><span>
-      </span></span></section>
-  <hr>
-      <br>
-      <div class="headline" style="margin: 10px">  <h2>Vậy cùng Autism tìm hiểu các khái niệm, nguyên nhân và dấu hiệu của trẻ tự kỷ nhé:</h2>
-      </div>
-      <ul class="tabs group">
-        <li><a class="active" style="z-index: 0;" href="#/one">Khái niệm</a></li>
-        <li><a href="#/two">Nguyên nhân</a></li>
-        <li><a href="#/three">Dấu hiệu</a></li>
-  <!--                 <li><a href="#/for">Phần 4</a></li>
-        <li><a href="#/five">Phần 5</a></li>
-        <li><a href="#/six">Phần 6</a></li> -->
-    </ul>
-    <div id="panels" style="overflow:hidden">
-        <p id="one" style="margin: 20px;
-        color: white;">Bệnh tự kỉ, còn được gọi là rối loạn tự kỉ (autism spectrum disorder - ASD), là một rối loạn phát triển ảnh hưởng đến khả năng giao tiếp, tương tác xã hội, và hành vi ở các cá nhân. Người mắc bệnh tự kỉ thường có cách tiếp cận và tương tác xã hội đặc biệt, có thể bao gồm khó khăn trong việc đọc hiểu cảm xúc của người khác, thiếu kỹ năng giao tiếp không ngôn từ, và thường có sở thích hoặc hành vi lặp đi lặp lại. Mặc dù tất cả những người mắc bệnh tự kỉ đều chia sẻ những đặc điểm chung, nhưng mức độ và cách biểu hiện của bệnh có thể rất đa dạng, từ những trường hợp nhẹ nhàng đến những trường hợp nặng nề.</p>
-        <p id="two" style="display:none;margin: 20px;
-        color: white;">
-          Nguyên nhân chính xác của bệnh tự kỉ vẫn chưa được hiểu rõ hoàn toàn, nhưng các nhà nghiên cứu đã xác định được một số yếu tố có thể đóng vai trò trong việc phát triển rối loạn này. Dưới đây là một số yếu tố được đề xuất:
-  <br>       1. Yếu tố di truyền: Di truyền đóng vai trò quan trọng trong việc gây ra bệnh tự kỉ. Có những bằng chứng cho thấy người có người thân trong gia đình mắc bệnh tự kỉ có nguy cơ cao hơn mắc bệnh này so với những người không có tiền sử gia đình.
-  <br>       2. Yếu tố môi trường: Một số yếu tố môi trường trong quá trình thai kỳ và sớm nhỏ bé cũng có thể đóng vai trò. Các yếu tố này có thể bao gồm việc tiếp xúc với hóa chất độc hại, nhiễm trùng hoặc virus trong thai kỳ, hoặc các yếu tố ngoại cảnh khác có thể ảnh hưởng đến sự phát triển của não.
-  <br>     3. Yếu tố sinh học: Có những thay đổi sinh học trong cấu trúc và hoạt động của não được liên kết với bệnh tự kỉ. Các nghiên cứu hình ảnh não đã chỉ ra rằng người mắc bệnh tự kỉ có thể có các khác biệt trong cấu trúc và hoạt động của não so với những người không mắc bệnh.
-  <br>4. Yếu tố tâm lý xã hội: Một số nghiên cứu cũng đã chỉ ra rằng môi trường xã hội, như cách chăm sóc trẻ em, sự phát triển tương tác xã hội và giao tiếp có thể ảnh hưởng đến việc phát triển của bệnh tự kỉ.</p>
+<div style=" margin: 30px;" class="sgppp">
+  <h1 id="aboutd" style=" text-align: center;">HIỂU TỰ KỶ QUA C&Aacute;C SỐ LIỆU THỐNG K&Ecirc;</h1>
+
+
+<p style=" text-align: center;">Lưu &yacute;: những dữ liệu về rối loạn phổ tự kỷ (ASD) trong b&agrave;i viết n&agrave;y được thống k&ecirc; ở Mỹ, nguồn tin: Autism Speaks.</p>
+<div style="max-width: 800px; min-width: 600px; margin:auto">
+  <video controls="controls" style="width:100%; height: auto" id="video2023016203411" poster="https://www.sgf.org.vn/uploads/news/2021_12/thong-ke-asd.jpg"><source src="https://www.sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke.mp3" type="video/mp4">Your browser doesn't support video.<br>
+    Tải video: <a href="https://www.sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke.mp3">video/mp4</a></video>
   
-        <p id="three" style="display:none;margin: 20px;
-        color: white;">Dấu hiệu của bệnh tự kỉ có thể biến đổi từ nhẹ đến nặng, và chúng thường xuất hiện trong giai đoạn sớm của cuộc sống, thường là trước khi trẻ 3 tuổi. Dưới đây là một số dấu hiệu phổ biến của bệnh tự kỉ:
-  
-  <br>1. Khó khăn trong giao tiếp: Trẻ có thể không phản ứng khi được gọi tên, không chia sẻ niềm vui, sở thích hoặc cảm xúc với người khác, và có thể không có kỹ năng ngôn ngữ hoặc có ngôn ngữ phát triển chậm chạp.
-  <br>2. Khó khăn trong tương tác xã hội: Trẻ có thể không hiểu các quy tắc xã hội cơ bản như liên kết mắt, gật đầu, hoặc không nhận biết cảm xúc của người khác. Họ cũng có thể có khó khăn trong việc thiết lập và duy trì mối quan hệ bạn bè.
-  <br>3. Hành vi lặp đi lặp lại: Điều này có thể bao gồm việc lặp đi lặp lại các hành động như quay vòng, lắc đầu, hoặc tập trung mạnh mẽ vào một số sở thích đặc biệt.
-  <br>4. Cảm giác nhạy cảm với ánh sáng, âm thanh hoặc xúc giác: Một số trẻ tự kỉ có thể cảm thấy bất an hoặc không thoải mái khi tiếp xúc với ánh sáng mạnh, âm thanh lớn hoặc kích thích xúc giác mạnh mẽ.
-  <br>5. Độc lập và tập trung vào bản thân: Trẻ tự kỉ thường có xu hướng tập trung vào bản thân và hoạt động một cách độc lập mà không cần sự tham gia hoặc chia sẻ của người khác.
-  Bệnh tự kỉ không phải là nguy hiểm cho sức khỏe về mặt vật lý, nhưng nó có thể ảnh hưởng đến chất lượng cuộc sống và khả năng hoàn thiện các kỹ năng xã hội và học tập. Điều quan trọng là phát hiện và can thiệp sớm để cung cấp sự hỗ trợ và giáo dục phù hợp cho trẻ mắc bệnh tự kỉ.
-        </p>
-  
-                        <!-- 
-  
-        <p id="five">Các cách giúp con bạn đối phó<br>
-            Dưới đây là một số điều bạn có thể làm để hỗ trợ con mình nếu bạn nghĩ rằng chúng có thể bị trầm
-            cảm: <br>1. Tìm hiểu chuyện gì đang xảy ra<br>
-            2. Dành thời gian cho con <br>
-            3. Khuyến khích con có các thói quen tích cực <br>
-            4. Để con thể hiện cảm xúc của mình <br>
-            5. Cho con tránh xa những hành động gây stress  <br>
-            <br>
-        </p>
-        <p id="six"> Khi nào cần tìm kiếm sự giúp đỡ chuyên nghiệp
-  Vì trầm cảm chỉ có thể được chẩn đoán bởi một chuyên gia có trình độ, điều quan trọng là phải tìm kiếm sự trợ giúp từ nhà cung cấp dịch vụ chăm sóc sức khỏe của bạn, người có thể giới thiệu con bạn đến chuyên gia sức khỏe tâm thần hoặc bác sĩ tâm thần. Nếu chuyên gia sức khỏe tâm thần cho rằng con bạn sẽ được hưởng lợi từ việc điều trị, các lựa chọn có thể bao gồm một số hình thức trị liệu bằng trò chuyện - nơi chúng học cách quản lý suy nghĩ và cảm xúc của mình hoặc kết hợp liệu pháp và thuốc.
-  
-  Nếu con bạn có ý nghĩ tự làm hại bản thân hoặc đã tự làm hại bản thân, hãy tìm kiếm sự trợ giúp từ các dịch vụ cấp cứu hoặc chuyên gia chăm sóc sức khỏe. Đừng trì hoãn việc liên lạc nếu bạn lo lắng.<br> -->
-            <br>
-  
-        <p></p>
-        <p></p>
-    </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top" style="display: none;"><i class="fa-solid fa-arrow-up"></i></button>
-  
-        <hr>
-        <div class="headline" style="margin: 10px; padding: 0">  <h2 style="width: 100%">Đây là một bài thống kê về chứng tự kỷ tại Mỹ</h2>
-  </div>
-        <br>
-        <div style="max-width: 800px; min-width: 600px; margin:auto">
-        <video controls="controls" style="width:100%; height: auto" id="video2023016203411" poster="https://www.sgf.org.vn/uploads/news/2021_12/thong-ke-asd.jpg"><source src="https://www.sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke.mp3" type="video/mp4">Your browser doesn't support video.<br>
-          Please download the file: <a href="https://www.sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke.mp3">video/mp4</a></video>
-        
-      </div>
+</div>
+
+
+<table border="3" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td style="padding: 30px;">
+			<h2 style="    margin: 0;
+      text-align: left;
+      margin-left: -57px;">MỤC LỤC</h2>
+			&nbsp;
+
+			<p><a href="#percent">Tỷ lệ mắc chứng tự kỷ</a></p>
+
+			<hr />
+			<p><a href="#Yếu tố làm tăng nguy cơ mắc chứng tự kỷ">Yếu tố l&agrave;m tăng nguy cơ mắc chứng tự kỷ</a></p>
+
+			<hr />
+			<p><a href="#Vai trò của can thiệp sớm và các liệu pháp điều trị">Vai tr&ograve; của can thiệp sớm v&agrave; c&aacute;c liệu ph&aacute;p điều trị</a></p>
+
+			<hr />
+			<p><a href="#Những thách thức liên quan">Những th&aacute;ch thức li&ecirc;n quan</a></p>
+
+			<hr />
+			<p><a href="#Tình trạng sức khỏe tâm thần & y tế liên quan">T&igrave;nh trạng sức khỏe t&acirc;m thần &amp; y tế li&ecirc;n quan</a></p>
+
+			<hr />
+			<p><a href="#Người chăm sóc & gia đình của trẻ tự kỷ">Người chăm s&oacute;c &amp; gia đ&igrave;nh của trẻ tự kỷ</a></p>
+
+			<hr />
+			<p><a href="#Tự kỷ ở tuổi trưởng thành">Tự kỷ ở tuổi trưởng th&agrave;nh</a></p>
+
+			<hr />
+			<p><a href="#Chi phí chăm sóc người tự kỷ">Chi ph&iacute; chăm s&oacute;c người tự kỷ</a></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2><a id="percent" name="Tỷ lệ mắc chứng tự kỷ">TỶ LỆ MẮC CHỨNG TỰ KỶ</a></h2>
+
+<hr />
+<p>►&nbsp;B&aacute;o c&aacute;o của CDC Hoa Kỳ c&ocirc;ng bố năm 2021, theo dữ liệu năm 2018, tỷ lệ mắc chứng rối loạn phổ tự kỷ ở Mỹ l&agrave;&nbsp;<strong>1/44</strong>&nbsp;(cứ 44 trẻ c&oacute; 1 trẻ ASD, dữ liệu năm 2016 c&ocirc;ng bố năm 2020 l&agrave; 1/54), trong đ&oacute;:</p>
+
+<ol>
+	<li style="float:none">Tỷ lệ mắc ASD của b&eacute;&nbsp;<strong>trai&nbsp;</strong>l&agrave;&nbsp;<strong>1/27</strong></li>
+	<li style="float:none">Tỷ lệ mắc ASD của b&eacute;&nbsp;<strong>g&aacute;i&nbsp;</strong>l&agrave;&nbsp;<strong>1/116</strong></li>
+</ol>
+
+<hr />
+<p>►&nbsp;C&aacute;c&nbsp;<strong>b&eacute; trai&nbsp;</strong>c&oacute; nguy cơ được chẩn đo&aacute;n mắc chứng tự kỷ&nbsp;<strong>cao &gt;4 lần&nbsp;</strong>so với c&aacute;c&nbsp;<strong>b&eacute; g&aacute;i.</strong></p>
+
+<hr />
+<p>►&nbsp;Hầu hết trẻ em vẫn được chẩn đo&aacute;n sau 4 tuổi, mặc d&ugrave; bệnh tự kỷ c&oacute; thể được&nbsp;<strong>chẩn đo&aacute;n</strong>&nbsp;ch&iacute;nh x&aacute;c ngay từ khi&nbsp;<strong>2 tuổi</strong>.</p>
+
+<hr />
+<p>►&nbsp;<strong>31%</strong>&nbsp;trẻ em mắc chứng ASD bị&nbsp;<strong>khuyết tật tr&iacute; tuệ</strong>&nbsp;(chỉ số th&ocirc;ng minh IQ &lt;70), 25% ở mức giới hạn (IQ 71&ndash;85) v&agrave; 44% c&oacute; điểm IQ ở mức trung b&igrave;nh đến tr&ecirc;n trung b&igrave;nh (tức l&agrave; IQ&gt; 85)</p>
+
+<hr />
+<p>►&nbsp;Tự kỷ ảnh hưởng đến tất cả c&aacute;c nh&oacute;m d&acirc;n tộc v&agrave; kinh tế x&atilde; hội.</p>
+
+<hr />
+<p>►&nbsp;C&aacute;c nh&oacute;m thiểu số c&oacute; xu hướng được chẩn đo&aacute;n muộn hơn v&agrave; &iacute;t thường xuy&ecirc;n hơn.</p>
+
+<hr />
+<p>►&nbsp;Can thiệp sớm mang lại cơ hội tốt nhất để hỗ trợ sự ph&aacute;t triển t&iacute;ch cực&nbsp;cho trẻ bị rối loạn phổ tự kỷ</p>
+
+<hr />
+<p>►&nbsp;Kh&ocirc;ng c&oacute; ph&aacute;t hiện y tế n&agrave;o cho chứng tự kỷ.</p>
+
+<h2 style="text-align: center;"><a id="Yếu tố làm tăng nguy cơ mắc chứng tự kỷ" name="Yếu tố làm tăng nguy cơ mắc chứng tự kỷ">YẾU TỐ L&Agrave;M TĂNG NGUY CƠ MẮC BỆNH TỰ KỶ</a></h2>
+
+<p><img style="width: 100%;"alt="HIỂU TỰ KỶ QUA CÁC SỐ LIỆU THỐNG KÊ" src="https://sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke_.jpg" style="height:326px; width:894px" /></p>
+
+<p><br />
+►&nbsp;C&aacute;c nghi&ecirc;n cứu chỉ ra rằng di truyền c&oacute; li&ecirc;n quan đến phần lớn c&aacute;c trường hợp rối loạn phổ tự kỷ.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Trẻ em sinh ra từ&nbsp;<strong>cha mẹ lớn tuổi</strong>&nbsp;c&oacute; nguy cơ mắc bệnh tự kỷ&nbsp;<strong>cao hơn</strong>.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;C&aacute;c bậc cha mẹ c&oacute;&nbsp;<strong>con đầu</strong>&nbsp;l&ograve;ng mắc ASD th&igrave; tỷ lệ sinh&nbsp;<strong>con thứ hai</strong>&nbsp;bị ASD l&agrave; từ&nbsp;<strong>2-18%</strong>.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;C&aacute;c nghi&ecirc;n cứu đ&atilde; chỉ ra rằng trong số c&aacute;c cặp song sinh giống hệt nhau, nếu một đứa trẻ mắc chứng tự kỷ, th&igrave; đứa trẻ kia sẽ bị ảnh hưởng khoảng 36-95% thời gian.&nbsp;Ở những cặp song sinh kh&ocirc;ng giống hệt nhau, nếu một đứa trẻ mắc chứng tự kỷ, th&igrave; đứa trẻ kia sẽ bị ảnh hưởng khoảng 31% thời gian.&nbsp;&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Trong hai thập kỷ qua, nhiều nghi&ecirc;n cứu đ&atilde; đặt ra c&acirc;u hỏi liệu c&oacute; mối li&ecirc;n hệ n&agrave;o giữa việc ti&ecirc;m ph&ograve;ng ở trẻ em v&agrave; chứng tự kỷ hay kh&ocirc;ng?&nbsp;Kết quả của nghi&ecirc;n cứu n&agrave;y rất r&otilde; r&agrave;ng:&nbsp;<strong>Vắc xin kh&ocirc;ng g&acirc;y ra chứng tự kỷ.</strong></p>
+
+<table border="0" cellpadding="1" cellspacing="1">
+	<tbody>
+		<tr>
+			<td>
+			<p><em><u><strong>LƯU &Yacute;:</strong></u></em></p>
+
+			<p><em>Yếu tố gen, m&ocirc;i trường&nbsp;c&oacute; thể l&agrave;m tăng nguy cơ trẻ ph&aacute;t triển chứng tự kỷ. Tuy nhi&ecirc;n, lưu &yacute; quan trọng ở đ&acirc;y l&agrave;&nbsp;<strong>nguy cơ gia tăng kh&ocirc;ng phải l&agrave; nguy&ecirc;n nh&acirc;n.&nbsp;</strong>V&iacute; dụ, một số thay đổi gen li&ecirc;n quan đến chứng tự kỷ cũng c&oacute; thể được t&igrave;m thấy ở những người kh&ocirc;ng mắc chứng tự kỷ. Tương tự, kh&ocirc;ng phải tất cả mọi người tiếp x&uacute;c với yếu tố m&ocirc;i trường c&oacute; nguy cơ đều sẽ ph&aacute;t triển chứng tự kỷ.</em></p>
+
+			<p><em>Tham khảo th&ecirc;m b&agrave;i viết:&nbsp;<strong><a href="https://sgf.org.vn/vi/news/Hieu-ve-tre-khuyet-tat/nguyen-nhan-gay-ra-chung-tu-ky-71.html">Nguy&ecirc;n nh&acirc;n g&acirc;y ra chứng tự kỷ</a></strong></em></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2 style="text-align: center;"><a id="Vai trò của can thiệp sớm và các liệu pháp điều trị" name="Vai trò của can thiệp sớm và các liệu pháp điều trị">VAI TR&Ograve; CỦA CAN THIỆP SỚM&nbsp;V&Agrave; C&Aacute;C LIỆU PH&Aacute;P ĐIỀU TRỊ</a></h2>
+
+<p><img style="width: 100%;"alt="HIỂU TỰ KỶ QUA CÁC SỐ LIỆU THỐNG KÊ 2" src="https://sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke-2_1.jpg" style="height:326px; width:894px" /></p>
+
+<p><br />
+►&nbsp;<strong>Can thiệp sớm</strong>&nbsp;c&oacute; thể&nbsp;<strong>cải thiện</strong>&nbsp;kỹ năng học tập, giao tiếp v&agrave; x&atilde; hội, cũng như sự ph&aacute;t triển cơ bản của n&atilde;o bộ.&nbsp;&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>Liệu ph&aacute;p ph&acirc;n t&iacute;ch h&agrave;nh vi ứng dụng (ABA</strong>&nbsp;- Applied Behavior Analysis) v&agrave; c&aacute;c liệu ph&aacute;p dựa tr&ecirc;n c&aacute;c nguy&ecirc;n tắc can thiệp h&agrave;nh vi được nghi&ecirc;n cứu v&agrave; sử dụng&nbsp;<strong>phổ biến nhất</strong>&nbsp;cho chứng tự kỷ.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Nhiều trẻ em mắc chứng tự kỷ c&oacute; những&nbsp;<strong>cải thiện&nbsp;</strong>t&iacute;ch cực khi sử dụng c&aacute;c biện ph&aacute;p can thiệp kh&aacute;c như&nbsp;<strong>liệu ph&aacute;p ng&ocirc;n ngữ v&agrave; vận động</strong>.&nbsp;</p>
+
+<p>►&nbsp;Trong mỗi&nbsp;<strong>5 trẻ</strong>&nbsp;bị&nbsp;<strong>suy tho&aacute;i ph&aacute;t triển</strong>&nbsp;hoặc mất c&aacute;c kỹ năng như ng&ocirc;n ngữ v&agrave; sở th&iacute;ch x&atilde; hội th&igrave; tỷ lệ c&oacute; khoảng&nbsp;<strong>1 trẻ</strong>&nbsp;được chẩn đo&aacute;n mắc chứng&nbsp;<strong>tự kỷ</strong>&nbsp;v&agrave; thường xảy ra ở độ tuổi từ 1 đến 3.&nbsp;</p>
+
+<h2 style="text-align: center;"><a id="Những thách thức liên quan" name="Những thách thức liên quan">NHỮNG TH&Aacute;CH THỨC LI&Ecirc;N QUAN</a>&nbsp;</h2>
+
+<p><img  style="width: 100%;"alt="HIỂU TỰ KỶ QUA CÁC SỐ LIỆU THỐNG KÊ 5" src="https://sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke-5.jpg" style="height:326px; width:894px" /></p>
+
+<p><br />
+►&nbsp;Khoảng&nbsp;<strong>40%</strong>&nbsp;người mắc ASD&nbsp;<strong>kh&ocirc;ng n&oacute;i được.</strong></p>
+
+<hr />
+<p>►&nbsp;<strong>31%</strong>&nbsp;trẻ em mắc chứng ASD bị khuyết tật tr&iacute; tuệ (chỉ số th&ocirc;ng minh IQ&nbsp;&lt;70), 25% ở mức giới hạn (IQ 71&ndash;85) với những th&aacute;ch thức đ&aacute;ng kể trong&nbsp;<strong>chức năng h&agrave;ng ng&agrave;y</strong>.</p>
+
+<hr />
+<p>►&nbsp;<strong>~50%</strong>&nbsp;người mắc chứng tự kỷ đi&nbsp;<strong>lang thang</strong>.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>~2/3 trẻ</strong>&nbsp;tự kỷ từ 6 - 15 tuổi từng&nbsp;<strong>bị bắt nạt.</strong>&nbsp;</p>
+
+<hr />
+<p>►<strong>&nbsp;~28% trẻ 8 tuổi</strong>&nbsp;mắc ASD c&oacute; h&agrave;nh vi&nbsp;<strong>tự g&acirc;y thương t&iacute;ch</strong>&nbsp;cho bản th&acirc;n.&nbsp;Đập đầu, cắn tay v&agrave; c&agrave;o xước da l&agrave; những trường hợp phổ biến nhất.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>Đuối nước</strong>&nbsp;vẫn l&agrave;&nbsp;<strong>nguy&ecirc;n nh&acirc;n tử vong h&agrave;ng đầu</strong>&nbsp;đối với trẻ em mắc chứng tự kỷ v&agrave; chiếm khoảng 90% c&aacute;c trường hợp tử vong li&ecirc;n quan đến việc lang thang hoặc bắt c&oacute;c ở những người từ 14 tuổi trở xuống.&nbsp;</p>
+
+<h2><a id="Tình trạng sức khỏe tâm thần &amp; y tế liên quan " name="Tình trạng sức khỏe tâm thần &amp; y tế liên quan ">T&Igrave;NH TRẠNG SỨC KHỎE T&Acirc;M THẦN &amp; Y TẾ LI&Ecirc;N QUAN&nbsp;</a></h2>
+
+<p><img alt="HIỂU TỰ KỶ QUA CÁC SỐ LIỆU THỐNG KÊ 4" src="https://sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke-4.jpg" style="height:326px; width:894px" /></p>
+
+<p><br />
+►&nbsp;Rối loạn phổ tự kỷ ASD c&oacute; thể ảnh hưởng đến to&agrave;n bộ cơ thể.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>30-61%</strong>&nbsp;trẻ bị&nbsp;<strong>rối loạn tăng động giảm ch&uacute; &yacute; (ADHD)</strong>&nbsp;bị mắc chứng tự kỷ.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>&gt;50%</strong>&nbsp;trẻ em mắc chứng tự kỷ c&oacute; một hoặc nhiều&nbsp;<strong>vấn đề&nbsp;</strong>về<strong>&nbsp;giấc ngủ</strong>&nbsp;m&atilde;n t&iacute;nh.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>11-40%</strong>&nbsp;trẻ v&agrave; thanh thiếu ni&ecirc;n bị&nbsp;<strong>Rối loạn lo &acirc;u</strong>&nbsp;mắc chứng tự kỷ.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>7%&nbsp;</strong>trẻ em v&agrave;&nbsp;<strong>26%&nbsp;</strong>người lớn bị&nbsp;<strong>trầm cảm</strong>&nbsp;mắc chứng tự kỷ.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Trẻ tự kỷ c&oacute; nguy cơ bị một hoặc nhiều&nbsp;<strong>rối loạn ti&ecirc;u h&oacute;a m&atilde;n t&iacute;nh cao hơn ~8 lần</strong>&nbsp;so với những trẻ kh&aacute;c.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;C&oacute; tới&nbsp;<strong>1/3</strong>&nbsp;người tự kỷ mắc chứng&nbsp;<strong>động kinh</strong>&nbsp;(rối loạn co giật).&nbsp;</p>
+
+<hr />
+<p>►&nbsp;C&aacute;c nghi&ecirc;n cứu cho thấy: ảnh hưởng đến từ&nbsp;<strong>4-35%&nbsp;</strong>người lớn bị&nbsp;<strong>t&acirc;m thần ph&acirc;n liệt</strong>&nbsp;mắc chứng tự kỷ.&nbsp;1,1% d&acirc;n số bị t&acirc;m thần ph&acirc;n liệt.</p>
+
+<hr />
+<p>►&nbsp;C&aacute;c vấn đề sức khỏe li&ecirc;n quan đến chứng tự kỷ k&eacute;o d&agrave;i trong suốt cuộc đời - từ trẻ nhỏ đến người gi&agrave;.&nbsp;Gần<strong>&nbsp;1/3 (~32%) trẻ em</strong>&nbsp;từ 2 đến 5 tuổi mắc chứng tự kỷ bị&nbsp;<strong>thừa c&acirc;n</strong>&nbsp;v&agrave;&nbsp;<strong>16%</strong>&nbsp;bị&nbsp;<strong>b&eacute;o ph&igrave;</strong>.&nbsp;Dưới 1/4 (23%) trẻ từ 2 đến 5 tuổi trong d&acirc;n số n&oacute;i chung bị thừa c&acirc;n v&agrave; chỉ 10% bị b&eacute;o ph&igrave; về mặt y tế.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;<strong>Risperidone</strong>&nbsp;v&agrave;&nbsp;<strong>Aripiprazole</strong>, những loại thuốc duy nhất được&nbsp;<strong>FDA chấp thuận</strong>&nbsp;cho chứng k&iacute;ch động v&agrave; c&aacute;u kỉnh li&ecirc;n quan đến chứng tự kỷ.&nbsp;</p>
+
+<h2><a id="Người chăm sóc &amp; gia đình của trẻ tự kỷ" name="Người chăm sóc &amp; gia đình của trẻ tự kỷ">NGƯỜI CHĂM S&Oacute;C &amp; GIA Đ&Igrave;NH CỦA TRẺ TỰ KỶ</a></h2>
+
+<p><img alt="HIỂU TỰ KỶ QUA CÁC SỐ LIỆU THỐNG KÊ 6" src="https://sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke-6.jpg" style="height:326px; width:894px" /></p>
+
+<p><br />
+►&nbsp;Chi ph&iacute; chăm s&oacute;c trẻ tự kỷ</p>
+
+<ol>
+	<li>Trung b&igrave;nh, chi ph&iacute; cho bệnh tự kỷ ước t&iacute;nh khoảng&nbsp;<strong>60.000USD/năm</strong>&nbsp;trong suốt thời thơ ấu, với phần lớn chi ph&iacute; cho c&aacute;c dịch vụ đặc biệt v&agrave; tiền lương bị mất li&ecirc;n quan đến nhu cầu gia tăng đối với một hoặc cả hai cha mẹ.&nbsp;</li>
+	<li>Chi ph&iacute; cũng tăng l&ecirc;n c&ugrave;ng với sự xuất hiện của chứng thiểu năng tr&iacute; tuệ.&nbsp;</li>
+</ol>
+
+<hr />
+<p>►&nbsp;Những b&agrave; mẹ c&oacute; con mắc ASD - những người c&oacute; xu hướng đ&oacute;ng vai tr&ograve; chăm s&oacute;c cho trẻ, &iacute;t c&oacute; khả năng l&agrave;m việc ngo&agrave;i x&atilde; hội.&nbsp;Trung b&igrave;nh, họ l&agrave;m việc &iacute;t giờ hơn mỗi tuần v&agrave; kiếm được:</p>
+
+<ol>
+	<li><strong>&iacute;t hơn 56%</strong>&nbsp;so với những b&agrave; mẹ c&oacute; con&nbsp;<strong>b&igrave;nh thường</strong></li>
+	<li><strong>&iacute;t hơn 35%</strong>&nbsp;so với những b&agrave; mẹ c&oacute; con bị&nbsp;<strong>khuyết tật</strong>&nbsp;hoặc&nbsp;<strong>rối loạn kh&aacute;c</strong>.&nbsp;&nbsp;</li>
+</ol>
+
+<h2><a id="Tự kỷ ở tuổi trưởng thành" name="Tự kỷ ở tuổi trưởng thành">TỰ KỶ Ở TUỔI TRƯỞNG TH&Agrave;NH</a></h2>
+
+<p><img alt="HIỂU TỰ KỶ QUA CÁC SỐ LIỆU THỐNG KÊ 3" src="https://sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke-3.jpg" style="height:326px; width:894px" /></p>
+
+<p><br />
+►&nbsp;Trong thập kỷ tới, ước t&iacute;nh c&oacute; khoảng 707.000 đến 1.116.000 thanh thiếu ni&ecirc;n (<strong>70.700</strong>&nbsp;đến&nbsp;<strong>111.600</strong>&nbsp;thanh thiếu ni&ecirc;n mỗi năm ở&nbsp;<strong>Mỹ</strong>) sẽ bước v&agrave;o tuổi trưởng th&agrave;nh v&agrave; sử dụng c&aacute;c dịch vụ tự kỷ ngo&agrave;i trường học.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Thanh thiếu ni&ecirc;n mắc chứng tự kỷ nhận được c&aacute;c dịch vụ chuyển tiếp chăm s&oacute;c sức khỏe thường xuy&ecirc;n bằng một nửa so với những trẻ c&oacute; nhu cầu chăm s&oacute;c sức khỏe đặc biệt kh&aacute;c.&nbsp;Những người trẻ c&oacute; chứng tự kỷ c&ugrave;ng với c&aacute;c vấn đề y tế li&ecirc;n quan thậm ch&iacute; &iacute;t c&oacute; khả năng nhận được hỗ trợ chuyển tiếp hơn.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Nhiều thanh ni&ecirc;n mắc chứng tự kỷ kh&ocirc;ng nhận được bất kỳ dịch vụ chăm s&oacute;c sức khỏe n&agrave;o trong nhiều năm, sau khi họ kh&ocirc;ng gặp b&aacute;c sĩ nhi khoa.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Hơn&nbsp;<strong>50%</strong>&nbsp;thanh ni&ecirc;n mắc chứng tự kỷ vẫn&nbsp;<strong>thất nghiệp</strong>&nbsp;v&agrave; kh&ocirc;ng được theo học ở bậc đại học trong hai năm sau trung học.&nbsp;Đ&acirc;y l&agrave; tỷ lệ thấp hơn so với tỷ lệ thanh ni&ecirc;n thuộc c&aacute;c loại khuyết tật kh&aacute;c, bao gồm khuyết tật khả năng học tập, khuyết tật tr&iacute; tuệ hoặc khiếm khuyết ng&ocirc;n ngữ n&oacute;i.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Trong số gần 18.000 người mắc chứng tự kỷ đ&atilde; sử dụng c&aacute;c chương tr&igrave;nh hướng nghiệp&nbsp;do nh&agrave; nước t&agrave;i trợ v&agrave;o năm 2014, chỉ 60% rời khỏi chương tr&igrave;nh c&oacute; việc l&agrave;m.&nbsp;Trong số n&agrave;y, 80% l&agrave;m việc b&aacute;n thời gian với mức&nbsp;<strong>lương</strong>&nbsp;trung b&igrave;nh&nbsp;<strong>160USD/ tuần</strong>, đưa họ xuống&nbsp;<strong>dưới mức ngh&egrave;o đ&oacute;i.</strong>&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Gần một nửa số người tự kỷ 25 tuổi chưa bao giờ l&agrave;m c&ocirc;ng việc được trả lương.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Nghi&ecirc;n cứu chứng minh rằng c&aacute;c hoạt động c&ocirc;ng việc khuyến kh&iacute;ch sự độc lập, l&agrave;m thuy&ecirc;n giảm c&aacute;c triệu chứng tự kỷ v&agrave; tăng kỹ năng sống h&agrave;ng ng&agrave;y.&nbsp;</p>
+
+<h2><a id="Chi phí chăm sóc người tự kỷ" name="Chi phí chăm sóc người tự kỷ">CHI PH&Iacute; CHĂM S&Oacute;C NGƯỜI TỰ KỶ</a></h2>
+
+<p><img alt="HIỂU TỰ KỶ QUA CÁC SỐ LIỆU THỐNG KÊ 7" src="https://sgf.org.vn/uploads/news/2021_12/hieu-tu-ky-qua-cac-so-lieu-thong-ke-7.jpg" style="height:326px; width:894px" /></p>
+
+<p><br />
+►&nbsp;Chi ph&iacute; chăm s&oacute;c cho người Mỹ mắc chứng tự kỷ:</p>
+
+<ol>
+	<li><strong>268 tỷ USD</strong>&nbsp;v&agrave;o năm&nbsp;<strong>2015</strong></li>
+	<li>sẽ tăng l&ecirc;n&nbsp;<strong>461 tỷ USD</strong>&nbsp;v&agrave;o năm&nbsp;<strong>2025</strong>&nbsp;nếu kh&ocirc;ng c&oacute; những can thiệp v&agrave; hỗ trợ hiệu quả hơn trong suốt cuộc đời.&nbsp;</li>
+</ol>
+
+<hr />
+<p>►&nbsp;Phần lớn chi ph&iacute; của bệnh tự kỷ ở Mỹ chủ yếu cho&nbsp;<strong>người lớn tự kỷ:</strong>&nbsp;ước t&iacute;nh khoảng&nbsp;<strong>175</strong>&nbsp;đến<strong>&nbsp;196 tỷ USD/ năm</strong>, so với 61 đến 66 tỷ USD/ năm&nbsp;cho trẻ em.&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Trung b&igrave;nh,&nbsp;<strong>chi ph&iacute; y tế</strong>&nbsp;cho trẻ em v&agrave; thanh thiếu ni&ecirc;n mắc&nbsp;<strong>ASD</strong>&nbsp;<strong>&gt;4,1 - 6,2 lần</strong>&nbsp;so với những người&nbsp;<strong>b&igrave;nh thường</strong>.</p>
+
+<hr />
+<p>►&nbsp;Th&ocirc;ng qua ABLE - Achieving a Better Life Experience (Tạm dịch: V&igrave; một cuộc sống Tốt đẹp hơn) năm 2014,&nbsp;cho ph&eacute;p c&aacute;c tiểu bang th&agrave;nh lập c&aacute;c t&agrave;i khoản tiết kiệm được ưu đ&atilde;i về thuế d&agrave;nh cho người khuyết tật, bao gồm cả chứng tự kỷ.&nbsp;&nbsp;</p>
+
+<hr />
+<p>►&nbsp;Việc th&ocirc;ng qua luật bảo hiểm bệnh tự kỷ ở tất cả 50 tiểu bang đang cung cấp quyền tiếp cận với c&aacute;c liệu ph&aacute;p v&agrave; điều trị y tế.&nbsp;</p>
+
+<p>B&agrave;i viết được chuyển ngữ từ&nbsp;<a href="https://www.autismspeaks.org/autism-statistics-asd" rel="nofollow" target="_blank">Autism Speaks</a></p>
+
+<p style="    float: right;
+margin: -5px;">Nguồn tin:&nbsp;sgf.org.vn</p>
+
+</div>
       <br>
       <footer>
         <div style="background-color: #2c3e50; color: white; text-align: center; padding: 20px;">
@@ -485,7 +774,7 @@
       </footer>
       
   
-  
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
     
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
   
@@ -496,12 +785,14 @@
   
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
-  
+  var header = document.getElementById('header')
   function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 920 || document.documentElement.scrollTop > 920) {
       mybutton.style.display = "block";
+      header.style.display = "none"
     } else {
       mybutton.style.display = "none";
+      header.style.display = "block"
     }
   }
   
@@ -509,6 +800,14 @@
   function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.classList.contains("displaynone")) {
+      menu.classList.remove("displaynone");
+    } else {
+      menu.classList.add("displaynone");
+    }
   }
   </script>
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
