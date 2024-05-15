@@ -3,6 +3,8 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta charset="utf-8">
     <link href="{% static 'css/camera.css' %}" rel="stylesheet">
@@ -95,8 +97,9 @@ button:focus {
 <body>
     <!-- Remove 'active' class, this is just to show in Codepen thumbnail -->
     <br><br><br>
-    <!--content start-->
-    <div class="quiz-container" id="quiz">
+    <div class="quiz-container" id="quiz" style="position: relative;">
+    
+      <a href="/" style="position: absolute; color: black; top: 20px; left: 20px;text-decoration: none;"> <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ</a>
         <form id="form" class="form" autocomplete="off" onsubmit="return saveAns()">
             <div style="padding: 30px">
                 <h2 class="quiz-header" style="padding: 20px;">Bài test kiểm tra tự kỷ M-CHAT (Phụ huynh trả lời)</h2>

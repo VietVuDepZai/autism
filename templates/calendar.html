@@ -1,4 +1,4 @@
-{% extends 'patient/patientbase.html' %}
+{% extends 'doctor/doctorbase.html' %}
 {% block content %}
 <link href="
 https://cdn.jsdelivr.net/npm/intro.js@7.2.0/minified/introjs.min.css
@@ -104,11 +104,11 @@ a {
 <h1 class="title">Lịch hẹn</h1>
 
 <div class="clearfix">
-    <a  class="btn btn-info left" href="{% url 'patient-calendar' %}?{{ prev_month }}"> Tháng trước  </a>
-    <a class="btn btn-info right" href="{% url 'patient-calendar' %}?{{ next_month }}"> Tháng sau</a>
+	<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}"> Tháng trước  </a>
+	<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}"> Tháng sau</a>
 
-    <a data-intro='Click vào đây bạn sẽ hẹn lịch được với bác sĩ'  style="margin-right:3px"class="btn btn-info right" href="{% url 'paevent_new' %}"> Lịch hẹn mới </a>
-            <a data-intro='Đây là các lịch bạn muốn hẹn với bác sĩ nhưng chưa được chấp nhận'  style="margin-left:3px"class="btn btn-info left" href="{% url 'paunaccept-calendar' %}"> Lịch hẹn chưa xác nhận </a>
+	<a style="margin-right:3px"class="btn btn-info right" href="{% url 'event_new' %}"> Lịch hẹn mới </a>
+			<a style="margin-left:3px"class="btn btn-info left" href="{% url 'unaccept-calendar' %}"> Lịch hẹn gửi đến </a>
 
 </div>
 {{ calendar }}
