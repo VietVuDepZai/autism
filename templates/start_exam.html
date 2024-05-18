@@ -1,162 +1,668 @@
-<!DOCTYPE html>
 {% load static %}
-<html lang="en" dir="ltr">
-
-<head>
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <title>Autism</title>
+  <link rel="icon" href="/static/images/heart.png">
+  <style>
+    html,
+    body {
+      background-color: #eae7dc;
+      margin: 0;
+      width: 100%;
+      font-family: 'Varela Round', sans-serif;
+    }
+  
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #eae7dc;
+      z-index: 3;
+    }
+  
+    #header-img {
+      float: left;
+      float: top;
+      top: 0px;
+      left: 0px;
+      width: 9%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+    }
+  
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    #submit {
+      background-color: #2ecc40;
+      border-radius: 20px 20px;
+      font-size: 3.8vw;
+      color: white;
+      max-width: 100%;
+      margin: auto;
+      padding: 5px;
+      float: none;
+      margin: auto;
+      box-shadow: 7px 7px 4px grey;
+      width: 400px;
+      display: block;
+      font-family: 'Varela Round', sans-serif;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #eae7dc;
+    }
+  
+    li {
+      float: right;
+    }
+  
+    nav ul li a {
+      text-transform: uppercase;
+      font-size: 110%;
+      display: inline-block;
+      font-weight: 900;
+      color: #0074d9;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  
+    .displaynone {
+      display: none;
+    }
+  
+    li a:hover {
+      background-color: #0074d9;
+      color: white;
+    }
+  
+    #email {
+      margin: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-bottom: 0px;
+      text-align: center;
+      display: block;
+    }
+  
+    .headline2 {
+      position: relative;
+      margin: auto;
+      text-shadow: 4px 6px 6px #dafff8;
+      padding-top: 0px;
+      color: green;
+      max-width: 998px;
+      padding-bottom: 0px;
+      font-size: 2vw;
+      text-align: center;
+      z-index: 1;
+    }
+  
+    #form {
+      margin: auto;
+    }
+  
+    .headline {
+      margin-top: 96px;
+      font-family: 'Varela Round', sans-serif;
+      text-shadow: 3px 2px lightgrey;
+      color: #0074d9;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-bottom: 0px;
+      text-align: center;
+      letter-spacing: 2px;
+      max-width: 100%;
+      font-size: 2.4vw;
+    }
+  
+    .video {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+      position: sticky;
+      z-index: 5;
+      float: bottom;
+    }
+  
+    .about,
+    h2 {
+      font-size: 3.5vw;
+      font-family: 'Varela Round', sans-serif;
+      text-indent: 50px;
+      letter-spacing: 1.8px;
+    }
+  
+    .about,
+    .upcoming {
+      color: #ff4136;
+      text-align: center;
+      text-shadow: 2px 2px 3px;
+    }
+  
+    cite {
+      font-size: 2vw;
+      margin-left: 240px;
+    }
+  
+    .info {
+      font-size: 1.8vw;
+      padding: 10px;
+      padding-bottom: 0px;
+    }
+  
+    #aboutus {
+      padding: 5px;
+      text-align: justify;
+      border: 2px solid #0074d9;
+      margin: auto;
+      margin: 30px;
+      border-radius: 30px;
+      color: #0074d9;
+    }
+  
+    ul.tabs {
+      width: 80%;
+      min-width: 600px;
+      height: 72px;
+      margin: 0 auto;
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+    }
+  
+    ul.tabs li {
+      float: left;
+      width: 33.33%;
+    }
+  
+    footer p {
+      margin: 5px 0;
+    }
+  
+    footer a {
+      color: #ff4136;
+    }
+  
+    footer a:hover {
+      text-decoration: underline;
+    }
+  
+    ul.tabs li a {
+      position: relative;
+      display: block;
+      height: 27px;
+      margin-top: 40px;
+      padding: 10px 0 90px 0;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      background: #1abc9c;
+      -webkit-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      border: 0 solid #000000;
+      -webkit-transition: padding 0.2s ease, margin 0.2s ease;
+      -moz-transition: padding 0.2s ease, margin 0.2s ease;
+      -o-transition: padding 0.2s ease, margin 0.2s ease;
+      -ms-transition: padding 0.2s ease, margin 0.2s ease;
+      transition: padding 0.2s ease, margin 0.2s ease;
+    }
+  
+    .tabs li:first-child a {
+      z-index: 3;
+      -webkit-border-top-left-radius: 8px;
+      -moz-border-radius-topleft: 8px;
+      border-top-left-radius: 8px;
+    }
+  
+    .tabs li:last-child a {
+      -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -webkit-border-top-right-radius: 8px;
+      -moz-border-radius-topright: 8px;
+      border-top-right-radius: 8px;
+    }
+  
+    ul.tabs li a:hover {
+      margin: 35px 0 0 0;
+      padding: 10px 0 90px 0;
+    }
+  
+    ul.tabs li a.active {
+      margin: 30px 0 0 0;
+      padding: 10px 0 90px 0;
+      background: #2c3e50;
+      color: #d3fef5;
+      outline: none;
+    }
+  
+    .group:before,
+    .group:after {
+      content: " ";
+      display: table;
+    }
+  
+    .group:after {
+      clear: both;
+    }
+  
+    #panels {
+      width: 80%;
+      min-width: 600px;
+      height: 321px;
+      margin: 0 auto;
+      background: #2c3e50;
+      -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -webkit-border-bottom-right-radius: 8px;
+      -webkit-border-bottom-left-radius: 8px;
+      -moz-border-radius-bottomright: 8px;
+      -moz-border-radius-bottomleft: 8px;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+  
+    #myBtn {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Fixed/sticky position */
+      bottom: 20px;
+      /* Place the button at the bottom of the page */
+      right: 30px;
+      /* Place the button 30px from the right */
+      z-index: 99;
+      /* Make sure it does not overlap */
+      border: none;
+      /* Remove borders */
+      outline: none;
+      /* Remove outline */
+      background-color: hotpink;
+      /* Set a background color */
+      color: white;
+      /* Text color */
+      cursor: pointer;
+      /* Add a mouse pointer on hover */
+      padding: 15px;
+      /* Some padding */
+      border-radius: 50%;
+      /* Rounded corners */
+      font-size: 18px;
+      /* Increase font size */
+      width: 50px;
+      height: 50px;
+    }
+  
+    .sgppp h2 {
+      text-align: center;
+    }
+  
+    .sgppp img {
+      width: 100% !important;
+    }
+  
+    .sgppp li {
+      float: none !important;
+    }
+  
+    .sgppp strong {
+      background: pink;
+      font-weight: 500;
+    }
+  
+    .sgppp a {
+      color: black;
+      font-weight: 100;
+      text-decoration: none;
+    }
+  
+    .sgppp td a:hover {
+      color: black;
+      font-weight: 900;
+      text-decoration: none;
+    }
+  
+    #myBtn:hover {
+      background-color: palevioletred;
+      /* Add a dark-grey background on hover */
+    }
+  
+    table,
+    th,
+    td {
+      border: 3px solid #ff4136;
+      border-collapse: collapse;
+      text-align: left;
+      margin: auto;
+      width: 90%;
+      padding: 10px;
+    }
+  
+    th {
+      background-color: lightgrey;
+    }
+  
+    #video {
+      margin: auto;
+      max-width: 100%;
+    }
+  
+    /* Media Queries */
+  
+    @media screen and (max-width: 1040px) {
+      nav ul {
+        display: none;
+      }
+      li a {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+      #resmenu {
+        display: block !important;
+      }
+      #resmenu i {
+        display: block !important;
+      }
+    }
+  </style>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <meta charset="utf-8">
-    <link href="{% static 'css/camera.css' %}" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous">
-
-        <title>Autism</title>
-        <link rel="icon" href="/static/images/heart.png">
-    <!--META TAGS-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="flex-container"> 
+    <header id="header">
+  
+    <div class="container">
+      <nav id="nav-bar" style="  height: 69px;
+      display: flex;
+      align-items: center;  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0.1, 0.1); justify-content: center;
+    ">
+    <a href="/" >
+        <img style="height: 69px;
+        position: fixed;
+        top: 0;
+        left: 0;" src="/static/images/heart.png" alt="">
+          <span style="    position: fixed;
+          top: 24px;
+          left: 80px;
+          color: #ff0080;">Đồng hành cùng trẻ tự kỷ</span>
 
-    <!--FONTAWESOME-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--GOOGLE FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+  </a>
 
-    <!--EXTERNAL CSS-->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</head>
-<style>
-* {
-  box-sizing: border-box;
+    <ul class="">
+
+      <li><a class="nav-link" href="/login">Đăng nhập </a></li>
+      
+      <li><a class="nav-link" href="/signup">Đăng ký</a></li>
+      <li><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
+
+  </ul>
+  <button id="resmenu" class=""  onclick="toggleMenu()"   style="    border-color: #EAE7DC;
+  background: #EAE7DC;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  display: none;
+
+  margin: 21px;;"><i class="fa-solid fa-list" style="    border-color: #EAE7DC;
+    background: #EAE7DC;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    font-size: 30px;
+    margin: 21px;;"></i></button>
+       </nav>
+      </div></header>
+      <style>
+        /* Your existing CSS styles */
+        #menu {
+          background-color: #eae7dc;
+          position: fixed;
+          top: 67px;
+          width: 100%;
+          z-index: 3;
+          box-shadow:1px 2px rgba(0, 0, 0.1, 0.1)
+        }
+      
+        #menu ol {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #eae7dc;
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+        }
+      
+        #menu ol li {
+          float: none;
+          margin: 0 10px;
+        }
+      
+        #menu ol li a {
+          text-transform: uppercase;
+          font-size: 110%;
+          font-weight: 900;
+          color: #0074d9;
+          text-align: center;
+          text-decoration: none;
+          padding: 14px 16px;
+          display: inline-block;
+        }
+      
+        #menu ol li a:hover {
+          background-color: #0074d9;
+          color: white;
+        }
+        .quiz-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 10px 20px;
+  font-family: 'Varela Round', sans-serif;
 }
-html, body {
-    background-color: #EAE7DC;
-    margin: 0;
-    width: 100%;
-    font-family: 'Varela Round', sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-}
-.quiz-container {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-  width: 600px;
-  max-width: 95vw;
-}
+
 .quiz-header {
-  padding: 4rem;
-}
-h2 {
-  padding: 1rem;
   text-align: center;
-  margin: 0;
+  color: #0074d9;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+h3 {
+  color: #333;
+  margin-bottom: 10px;
 }
-ul li {
-  font-size: 1.2rem;
-  margin: 1rem 0;
+
+
+
+.form-check-input {
+  margin-right: 10px;
 }
-ul li label {
-  cursor: pointer;
+
+.form-check-label {
+  font-size: 1rem;
 }
-button {
-    background-color: hotpink;  color: #fff;
+
+button[type="submit"] {
+  background-color: #2ecc40;
   border: none;
-  display: block;
-  width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 1.1rem;
-  font-family: inherit;
-  padding: 1.3rem;
-  border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-}
-button:hover {
-  opacity: 0.9;
-}
-button:focus {
-  outline: none;
-  opacity: 0.9;
+  display: block;
+  margin: 30px auto 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
 }
 
-</style>
+button[type="submit"]:hover {
+  background-color: #28a745;
+}
 
-
-<body>
-    <!-- Remove 'active' class, this is just to show in Codepen thumbnail -->
-    <br><br><br>
-    <div class="quiz-container" id="quiz" style="position: relative;">
+      </style>
+      
+      <div id="menu" class="displaynone">
+        <ol>
+          <li style="float: none;"><a class="nav-link" href="/login">Đăng nhập </a></li>
+          <li style="float: none;"><a class="nav-link" href="/signup">Đăng ký</a></li>
+          <li style="float: none;"><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
+        </ol>
+      </div>
+      </div>
+        
+<br><br>
+      <div class="quiz-container" id="quiz">
     
-      <a href="/" style="position: absolute; color: black; top: 20px; left: 20px;text-decoration: none;"> <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ</a>
-        <form id="form" class="form" autocomplete="off" onsubmit="return saveAns()">
-            <div style="padding: 30px">
-                <h2 class="quiz-header" style="padding: 20px;">Bài test kiểm tra tự kỷ M-CHAT (Phụ huynh trả lời)</h2>
-                <h4 style="text-align: center;">Hãy trả lời có hoặc không về câu hỏi mô tả gần giống nhất tình trạng của con trong 1 tuần trở lại đây, kể cả hôm nay</h4>
+          <form id="form" class="form" autocomplete="off" onsubmit="return saveAns()">
+              <div>
+                  <h2 class="quiz-header">Bài test kiểm tra tự kỷ M-CHAT <br> (Phụ huynh trả lời)</h2>
+                  <h3 style="text-align: center;">Hãy trả lời có hoặc không về câu hỏi mô tả gần giống nhất tình trạng của con trong 1 tuần trở lại đây, kể cả hôm nay</h3>
+  
+                  {% for q in questions %}
+                  <h3 style="font-size: 1.25rem;">{{ forloop.counter }}. {{q.question}}</h3>
+  
+                  <div class="form-check mx-4">
+                      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.yes}}" value="Yes" >
+                      <label class="form-check-label" for="{{q.yes}}">{{q.yes}}</label>
+                  </div>
+  
+                  <div class="form-check mx-4">
+                      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.no}}" value="No" >
+                      <label class="form-check-label" for="{{q.no}}">{{q.no}}</label>
+                  </div>
+  
+                  {% endfor %}
+              </div>
+              <button type="submit">Xác nhận</button>
+          </form>
+      </div>
+      <br>
+      <footer>
+        <div style="background-color: #2c3e50; color: white; text-align: center; padding: 20px;">
+          <p>Bản quyền © 2024. Autism - bạn không cô đơn.</p>
+          <p>Designed by: <a href="https://3dviet.vercel.app/" target="_blank" style="color: #FF4136; text-decoration: none;">VietVu</a></p>
+        </div>
+      </footer>
+      
+  
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-                {% for q in questions %}
-                <h3 style="font-size: 1.25rem;">{{ forloop.counter }}. {{q.question}}</h3>
-
-                <div class="form-check mx-4">
-                    <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.yes}}" value="Yes" >
-                    <label class="form-check-label" for="{{q.yes}}">{{q.yes}}</label>
-                </div>
-
-                <div class="form-check mx-4">
-                    <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.no}}" value="No" >
-                    <label class="form-check-label" for="{{q.no}}">{{q.no}}</label>
-                </div>
-
-                {% endfor %}
-            </div>
-            <button type="submit">Xác nhận</button>
-        </form>
-    </div>
-    <br><br>
-</body>
-
-</html>
-
-<script>
-  function saveAns() {
-      var ele = document.getElementsByTagName('input');
-      var answered = true;
-      for (i = 0; i < ele.length; i++) {
-          if (ele[i].type == "radio" && !ele[i].checked) {
-              answered = false;
+  
+  </body></html>
+  
+<script>function saveAns() {
+  var form = document.getElementById('form');
+  var formElements = form.elements;
+  var answered = true;
+  var totalQuestions = {{ questions|length }};
+  
+  for (var i = 1; i <= totalQuestions; i++) {
+      var questionAnswered = false;
+      var radios = document.getElementsByName(i.toString());
+      for (var j = 0; j < radios.length; j++) {
+          if (radios[j].checked) {
+              questionAnswered = true;
               break;
           }
       }
-      if (!answered) {
-          alert("Vui lòng trả lời tất cả các câu hỏi.");
-          return false;
-      } else {
-          // Set cookies for answered questions
-          for (i = 0; i < ele.length; i++) {
-              if (ele[i].type == "radio" && ele[i].checked) {
-                  setCookie(ele[i].name, ele[i].value, 3);
-              }
-          }
-          return true;
+      if (!questionAnswered) {
+          answered = false;
+          break;
       }
   }
   
-  function setCookie(cname, cvalue, exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-      var expires = "expires=" + d.toUTCString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  if (!answered) {
+      alert("Vui lòng trả lời tất cả các câu hỏi.");
+      return false;
+  } else {
+      // Set cookies for answered questions
+      for (var i = 1; i <= totalQuestions; i++) {
+          var radios = document.getElementsByName(i.toString());
+          for (var j = 0; j < radios.length; j++) {
+              if (radios[j].checked) {
+                  setCookie(radios[j].name, radios[j].value, 3);
+              }
+          }
+      }
+      return true;
   }
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 </script>
 
+<script>
+  function togglePassword() {
+    var passwordField = document.getElementById("id_password");
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+    } else {
+      passwordField.type = "password";
+    }
+  }
+  let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+var header = document.getElementById('header')
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+    header.style.display = "none"
+  } else {
+    mybutton.style.display = "none";
+    header.style.display = "block"
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.classList.contains("displaynone")) {
+    menu.classList.remove("displaynone");
+  } else {
+    menu.classList.add("displaynone");
+  }
+}
+</script>

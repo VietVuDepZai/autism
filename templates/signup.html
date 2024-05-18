@@ -1,431 +1,777 @@
-{% load socialaccount %}
 {% load static %}
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <title>Autism</title>
+  <link rel="icon" href="/static/images/heart.png">
+  <style>
+    html,
+    body {
+      background-color: #eae7dc;
+      margin: 0;
+      width: 100%;
+      font-family: 'Varela Round', sans-serif;
+    }
+  
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #eae7dc;
+      z-index: 3;
+    }
+  
+    #header-img {
+      float: left;
+      float: top;
+      top: 0px;
+      left: 0px;
+      width: 9%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+    }
+  
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    #submit {
+      background-color: #2ecc40;
+      border-radius: 20px 20px;
+      font-size: 3.8vw;
+      color: white;
+      max-width: 100%;
+      margin: auto;
+      padding: 5px;
+      float: none;
+      margin: auto;
+      box-shadow: 7px 7px 4px grey;
+      width: 400px;
+      display: block;
+      font-family: 'Varela Round', sans-serif;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #eae7dc;
+    }
+  
+    li {
+      float: right;
+    }
+  
+    nav ul li a {
+      text-transform: uppercase;
+      font-size: 110%;
+      display: inline-block;
+      font-weight: 900;
+      color: #0074d9;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  
+    .displaynone {
+      display: none;
+    }
+  
+    li a:hover {
+      background-color: #0074d9;
+      color: white;
+    }
+  
+    #email {
+      margin: auto;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-bottom: 0px;
+      text-align: center;
+      display: block;
+    }
+  
+    .headline2 {
+      position: relative;
+      margin: auto;
+      text-shadow: 4px 6px 6px #dafff8;
+      padding-top: 0px;
+      color: green;
+      max-width: 998px;
+      padding-bottom: 0px;
+      font-size: 2vw;
+      text-align: center;
+      z-index: 1;
+    }
+  
+    #form {
+      margin: auto;
+    }
+  
+    .headline {
+      margin-top: 96px;
+      font-family: 'Varela Round', sans-serif;
+      text-shadow: 3px 2px lightgrey;
+      color: #0074d9;
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-bottom: 0px;
+      text-align: center;
+      letter-spacing: 2px;
+      max-width: 100%;
+      font-size: 2.4vw;
+    }
+  
+    .video {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 40%;
+      position: sticky;
+      z-index: 5;
+      float: bottom;
+    }
+  
+    .about,
+    h2 {
+      font-size: 3.5vw;
+      font-family: 'Varela Round', sans-serif;
+      text-indent: 50px;
+      letter-spacing: 1.8px;
+    }
+  
+    .about,
+    .upcoming {
+      color: #ff4136;
+      text-align: center;
+      text-shadow: 2px 2px 3px;
+    }
+  
+    cite {
+      font-size: 2vw;
+      margin-left: 240px;
+    }
+  
+    .info {
+      font-size: 1.8vw;
+      padding: 10px;
+      padding-bottom: 0px;
+    }
+  
+    #aboutus {
+      padding: 5px;
+      text-align: justify;
+      border: 2px solid #0074d9;
+      margin: auto;
+      margin: 30px;
+      border-radius: 30px;
+      color: #0074d9;
+    }
+  
+    ul.tabs {
+      width: 80%;
+      min-width: 600px;
+      height: 72px;
+      margin: 0 auto;
+      list-style: none;
+      overflow: hidden;
+      padding: 0;
+    }
+  
+    ul.tabs li {
+      float: left;
+      width: 33.33%;
+    }
+  
+    footer p {
+      margin: 5px 0;
+    }
+  
+    footer a {
+      color: #ff4136;
+    }
+  
+    footer a:hover {
+      text-decoration: underline;
+    }
+  
+    ul.tabs li a {
+      position: relative;
+      display: block;
+      height: 27px;
+      margin-top: 40px;
+      padding: 10px 0 90px 0;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+      background: #1abc9c;
+      -webkit-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      -moz-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+      border: 0 solid #000000;
+      -webkit-transition: padding 0.2s ease, margin 0.2s ease;
+      -moz-transition: padding 0.2s ease, margin 0.2s ease;
+      -o-transition: padding 0.2s ease, margin 0.2s ease;
+      -ms-transition: padding 0.2s ease, margin 0.2s ease;
+      transition: padding 0.2s ease, margin 0.2s ease;
+    }
+  
+    .tabs li:first-child a {
+      z-index: 3;
+      -webkit-border-top-left-radius: 8px;
+      -moz-border-radius-topleft: 8px;
+      border-top-left-radius: 8px;
+    }
+  
+    .tabs li:last-child a {
+      -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -webkit-border-top-right-radius: 8px;
+      -moz-border-radius-topright: 8px;
+      border-top-right-radius: 8px;
+    }
+  
+    ul.tabs li a:hover {
+      margin: 35px 0 0 0;
+      padding: 10px 0 90px 0;
+    }
+  
+    ul.tabs li a.active {
+      margin: 30px 0 0 0;
+      padding: 10px 0 90px 0;
+      background: #2c3e50;
+      color: #d3fef5;
+      outline: none;
+    }
+  
+    .group:before,
+    .group:after {
+      content: " ";
+      display: table;
+    }
+  
+    .group:after {
+      clear: both;
+    }
+  
+    #panels {
+      width: 80%;
+      min-width: 600px;
+      height: 321px;
+      margin: 0 auto;
+      background: #2c3e50;
+      -webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+      -webkit-border-bottom-right-radius: 8px;
+      -webkit-border-bottom-left-radius: 8px;
+      -moz-border-radius-bottomright: 8px;
+      -moz-border-radius-bottomleft: 8px;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+  
+    #myBtn {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Fixed/sticky position */
+      bottom: 20px;
+      /* Place the button at the bottom of the page */
+      right: 30px;
+      /* Place the button 30px from the right */
+      z-index: 99;
+      /* Make sure it does not overlap */
+      border: none;
+      /* Remove borders */
+      outline: none;
+      /* Remove outline */
+      background-color: hotpink;
+      /* Set a background color */
+      color: white;
+      /* Text color */
+      cursor: pointer;
+      /* Add a mouse pointer on hover */
+      padding: 15px;
+      /* Some padding */
+      border-radius: 50%;
+      /* Rounded corners */
+      font-size: 18px;
+      /* Increase font size */
+      width: 50px;
+      height: 50px;
+    }
+  
+    .sgppp h2 {
+      text-align: center;
+    }
+  
+    .sgppp img {
+      width: 100% !important;
+    }
+  
+    .sgppp li {
+      float: none !important;
+    }
+  
+    .sgppp strong {
+      background: pink;
+      font-weight: 500;
+    }
+  
+    .sgppp a {
+      color: black;
+      font-weight: 100;
+      text-decoration: none;
+    }
+  
+    .sgppp td a:hover {
+      color: black;
+      font-weight: 900;
+      text-decoration: none;
+    }
+  
+    #myBtn:hover {
+      background-color: palevioletred;
+      /* Add a dark-grey background on hover */
+    }
+  
+    table,
+    th,
+    td {
+      border: 3px solid #ff4136;
+      border-collapse: collapse;
+      text-align: left;
+      margin: auto;
+      width: 90%;
+      padding: 10px;
+    }
+  
+    th {
+      background-color: lightgrey;
+    }
+  
+    #video {
+      margin: auto;
+      max-width: 100%;
+    }
+  
+    /* Media Queries */
+  
+    @media screen and (max-width: 1040px) {
+      nav ul {
+        display: none;
+      }
+      li a {
+        float: none;
+        display: block;
+        text-align: center;
+      }
+      #resmenu {
+        display: block !important;
+      }
+      #resmenu i {
+        display: block !important;
+      }
+    }
+  </style>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="flex-container"> 
+    <header id="header">
+  
+    <div class="container">
+      <nav id="nav-bar" style="  height: 69px;
+      display: flex;
+      align-items: center;  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0.1, 0.1); justify-content: center;
+    ">
+    <a href="/" >
+        <img style="height: 69px;
+        position: fixed;
+        top: 0;
+        left: 0;" src="/static/images/heart.png" alt="">
+          <span style="    position: fixed;
+          top: 24px;
+          left: 80px;
+          color: #ff0080;">Đồng hành cùng trẻ tự kỷ</span>
 
-<html lang="en">
-  <head>
-    <title>Autism</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  </a>
 
-    <link rel="icon"
-        href="{% static 'images/heart.png' %}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" integrity="sha512-DD6Lm09YDHzhW3K4eLJ9Y7sFrBwtCF+KuSWOLYFqKsZ6RX4ifCu9vWqM4R+Uy++aBWe6wD4csgQRzGKp5vP6tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <style>    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400&display=swap');
+    <ul class="">
 
+      <li><a class="nav-link" href="/login">Đăng nhập </a></li>
+      
+      <li><a class="nav-link" href="/signup">Đăng ký</a></li>
+      <li><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
 
-:root {
-  --text-dark: hsl(240, 54%, 15%);
-  --text-light: hsl(242, 18%, 64%);
-  --primary: hsl(315, 98%, 60%);
-  --primary-lighter: hsl(240, 33%, 86%);
-  --primary-gradient:linear-gradient(to right, red, blue,green,purple,darkorange) }
-
-
-li::marker {
-  color: white;
-}
-li {
-  color: red;
-}
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.field-icon {
-  float: right;
-  margin-left: -25px;
-  margin-top: -85px;
-  position: relative;
-  z-index: 2;
-  padding-right: 25px
-}
-.field-icon1 {
-  float: right;
-  margin-left: -25px;
-  margin-top: -25px;
-  position: relative;
-  z-index: 2;
-  padding-right: 25px
-}
-a,
-button {
-  all: unset;
+  </ul>
+  <button id="resmenu" class=""  onclick="toggleMenu()"   style="    border-color: #EAE7DC;
+  background: #EAE7DC;
+  position: fixed;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
+  top: 0;
+  right: 0;
+  font-size: 30px;
+  display: none;
+
+  margin: 21px;;"><i class="fa-solid fa-list" style="    border-color: #EAE7DC;
+    background: #EAE7DC;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    font-size: 30px;
+    margin: 21px;;"></i></button>
+       </nav>
+      </div></header>
+      <style>
+        /* Your existing CSS styles */
+        #menu {
+          background-color: #eae7dc;
+          position: fixed;
+          top: 67px;
+          width: 100%;
+          z-index: 3;
+          box-shadow:1px 2px rgba(0, 0, 0.1, 0.1)
+        }
+      
+        #menu ol {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #eae7dc;
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+        }
+      
+        #menu ol li {
+          float: none;
+          margin: 0 10px;
+        }
+      
+        #menu ol li a {
+          text-transform: uppercase;
+          font-size: 110%;
+          font-weight: 900;
+          color: #0074d9;
+          text-align: center;
+          text-decoration: none;
+          padding: 14px 16px;
+          display: inline-block;
+        }
+      
+        #menu ol li a:hover {
+          background-color: #0074d9;
+          color: white;
+        }
+        
+        
+        section.container {
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 100px auto;
+  font-family: 'Varela Round', sans-serif;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-body {
-    font-family: 'Be Vietnam Pro';  min-height: 100vh;
-  background-color: #f5f9ff;
-  display: flex;
-  justify-content: center;
-}
-
-.container {
-  max-width: 1070px;
-  width: 100%;
-  display: flex;
-  margin-inline: 1rem;
-}
-
-.image-section {
-  width: 50%;
-  position: relative;
-}
-.image-wrapper {
-  width: 100%;
-  height: 100%;
-}
-.image-wrapper img {
-  object-fit: cover;
-}
-
-.content-container {
-  background-color: hsla(0, 0%, 100%, 0.3);
-  backdrop-filter: blur(30px);
-  padding: 2rem;
-  width: 80%;
-  color: var(--text-dark);
-  border-radius: 4px;
-  border: 1px solid hsl(0 100% 100% / 0.3);
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.content-container h1 {
-  font-weight: 600;
+.section-heading {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.content-container span {
-  background: var(--primary-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0074d9;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
 }
 
-@media screen and (max-width: 60rem) {
-  .container {
-    width: 100%;
-    margin: 0;
-  }
-  .content-container {
-    width: 100%;
-  }
+.section-paragraph {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 .form-section {
-  width: 50%;
-  background-color: white;
-  padding: 2.5rem 1rem;
-  display: flex;
-  align-items: center;
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
 }
 
 .form-wrapper {
-  width: 75%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.form-wrapper > h2 {
-  margin-bottom: 0.1rem;
-}
-.form-wrapper > p {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-light);
-  margin-bottom: 2rem;
+.form-wrapper h2 {
+  font-size: 2rem;
+  color: #0074d9;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1rem;
+.form-wrapper p {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
-.form-group {
+.form p {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  margin-bottom: 20px;
 }
-.form-group label {
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: #16164d;
+
+.form label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
 }
- input {
-    width: 100%;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  padding: 0.5rem;
-  border: 2px solid var(--primary-lighter);
-  border-radius: 0.3rem;
+
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"] {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
 }
- input:focus {
-  border: 2px solid #16164d;
+
+.form input[type="text"]:focus,
+.form input[type="password"]:focus,
+.form input[type="email"]:focus {
+  border-color: #0074d9;
 }
 
 .remember-forgot {
   display: flex;
   justify-content: space-between;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #0074d9;
+  margin-bottom: 20px;
 }
 
-.remember-me {
-  display: grid;
-  grid-template-columns: 1rem auto;
-  gap: 0.6rem;
-}
-
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  appearance: none;
-  display: grid;
-  place-content: center;
-}
-
-.remember-me input {
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.3rem;
-  border: 1px solid var(--text-light);
-  border-radius: 2px;
-}
-
-input[type="checkbox"]::before {
-  content: "";
-  width: 0.65em;
-  height: 0.65em;
-  background-color: white;
-  transform: scale(0);
-  transform-origin: bottom left;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-}
-
-input[type="checkbox"]:checked::before {
-  transform: scale(1);
-}
-.remember-me input:checked {
-  background: var(--primary-gradient);
-}
-
-.remember-me label {
-  color: var(--text-dark);
-  user-select: none;
-}
 .remember-forgot a {
-  color: var(--primary);
+  color: #0074d9;
+  text-decoration: none;
 }
+
 .remember-forgot a:hover {
   text-decoration: underline;
-  text-decoration-color: var(--primary);
 }
-
-.login-btn,
-.google-signin {
-  width: 100%;
+.form-section label {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-
-  font-weight: 500;
-  padding: 0.5rem 0;
-  border-radius: 0.5rem;
 }
-
 .login-btn {
+  width: 100%;
+  background-color: #2ecc40;
+  border: none;
+  border-radius: 5px;
   color: white;
-  background: var(--primary-gradient);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
 }
+
 .login-btn:hover {
-  opacity: 0.9;
+  background-color: #28a745;
 }
 
 .or-divider {
-  width: 100%;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-block: 1.5rem;
   text-align: center;
-  position: relative;
+  margin: 20px 0;
+  color: #999;
+  font-size: 0.9rem;
 }
-.or-divider::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 1px;
-  width: 45%;
-  background-color: var(--text-light);
-}
-.or-divider::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  height: 1px;
-  width: 45%;
-  background-color: var(--text-light);
-}
+ /* Checkbox styling */
+ #show_password {
+    margin-right: 10px;
+  }
 
+  #show_password + label {
+    display: inline-block;
+    cursor: pointer;
+  }
 .google-signin {
-  border: 2px solid var(--primary-lighter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 3px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
+
 .google-signin svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }
 
-@media screen and (max-width: 50rem) {
-  .container {
-    max-width: 80%;
-    flex-direction: column;
-    margin-inline: 0;
-  }
+.google-signin:hover {
+  background-color: #f1f1f1;
+}
+/* Styles for errorlist as toast notification */
+ul.errorlist {
+  list-style: none;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f44336; /* Red background for errors */
+  color: white; /* White text for better readability */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 1s ease-in-out forwards;
+}
 
-  .image-section,
-  .form-section {
-    width: 100%;
+/* Animation for fade in only and stay displayed */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: -10px;
   }
-
-  .image-section {
-    height: 25vh;
-  }
-  .content-container {
-    inset: 0;
-    transform: translate(0, 0);
-    padding: 1rem 1.6rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .content-container h1 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .content-container p {
-    font-size: 0.75rem;
-  }
-  .form-section {
-    flex: 1;
-    padding: 1rem 1rem;
-  }
-  .logo-container {
-    margin-bottom: 1rem;
-  }
-  .form-wrapper > h2 {
-    font-size: 1.25rem;
-  }
-  .form-wrapper > p {
-    margin-bottom: 1rem;
-  }
-  .form-wrapper button {
-    font-size: 0.875rem;
-  }
-  .or-divider {
-    font-weight: 500;
-    margin-block: 0.6rem;
+  100% {
+    opacity: 1;
+    top: 0;
   }
 }
 
-@media screen and (max-width: 36.25rem) {
-  .container {
-    max-width: 100%;
-  }
-  .form-wrapper {
-    width: 100%;
-  }
+ul.errorlist li {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  float: none;
 }
-.helptext {display: none;}</style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  </head>
-  <body>
-    <section class="container" style="position: relative;">
-      <a href="/" style="z-index: 3;position: absolute; color: black; top: 20px; left: 20px;text-decoration: none;"> <i class="fa-solid fa-arrow-left"></i> Quay lại trang chủ</a>
-
-        <div class="image-section">
-          <div class="image-wrapper" style="background:   linear-gradient(to right, pink, hotpink);">
-            </div>
-    
-            <div class="content-container">
-      <h1 class="section-heading">Đồng hành cùng trẻ tự kỷ -  <span><a href="/">Autism</a></span></h1>
-              <p class="section-paragraph">Autism là một nền tảng hỗ trợ tâm lý cho trẻ tự kỷ, giúp kết nối bác sĩ và bệnh nhân.</p>
-            </div>
-          </div>
-    
-      <div class="form-section">
-        <div class="form-wrapper">
-        
-
-          <h2>Chào mừng bạn! 👋🏻</h2>
-          <p>Vui lòng tạo tài khoản để đặt lịch hẹn với bác sĩ</p>
-
-    <form method="POST" onclick="saveAns()" autocomplete="off" enctype="multipart/form-data" class="form" id="form-1">
-                  {% csrf_token %}
-
-            {{form.as_p}}
+      </style>
       
-
-                   <div class="remember-forgot">
-              
-            <a href="/login">Đã có tài khoản, Đăng nhập?</a>
-
-            <a href="#">Quên mặt khẩu?</a>
-          </div>
-                      <button type="submit"class="login-btn">Đăng ký</button>
-          <div class="or-divider">Hoặc</div>
-
-          <a  href="/accounts/google/login/?next=/" class="google-signin" style="display:flex; color: black; text-decoration: none">
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="96px" height="96px"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
-            <span> Đăng ký với Google</span>
-          </a>
-          </form>
-          <br>
-
-   
-
-
-
-        </div>
+      <div id="menu" class="displaynone">
+        <ol>
+          <li style="float: none;"><a class="nav-link" href="/login">Đăng nhập </a></li>
+          <li style="float: none;"><a class="nav-link" href="/signup">Đăng ký</a></li>
+          <li style="float: none;"><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
+        </ol>
       </div>
-    </section>
-  </body>
-</html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script>    
+      </div>
+      <section class="container" style="position: relative;">
+  
       
-    function setCookie(cname, cvalue, exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays*24*60*60*1000));
-      var expires = "expires="+ d.toUTCString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-  function saveAns(){  
-        var ele = document.getElementsByTagName('input'); 
-        for(i = 0; i < ele.length; i++) { 
-                  setCookie(ele[i].name,ele[i].value,3)
-            } 
-        } 
+        <div class="form-section">
+          <div class="form-wrapper">
           
+  
+            <h2>Chào mừng bạn! 👋🏻</h2>
+            <p>Vui lòng tạo tài khoản để đặt lịch hẹn với bác sĩ</p>
+  
+      <form method="POST" onclick="saveAns()" autocomplete="off" enctype="multipart/form-data" class="form" id="form-1">
+                    {% csrf_token %}
+                    <div id="error-container"></div>
 
+              {{form.as_p}}
+        
+  
+                     <div class="remember-forgot">
+                
+              <a href="/login">Đã có tài khoản, Đăng nhập?</a>
+  
+            </div>
+                        <button type="submit"class="login-btn">Đăng ký</button>
+            <div class="or-divider">Hoặc</div>
+  
+            <a  href="/accounts/google/login/?next=/" class="google-signin" style="display:flex; color: black; text-decoration: none">
+              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="96px" height="96px"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+              <span> Đăng ký với Google</span>
+            </a>
+            </form>
+            <br>
+  
+     
+  
+  
+  
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div style="background-color: #2c3e50; color: white; text-align: center; padding: 20px;">
+          <p>Bản quyền © 2024. Autism - bạn không cô đơn.</p>
+          <p>Designed by: <a href="https://3dviet.vercel.app/" target="_blank" style="color: #FF4136; text-decoration: none;">VietVu</a></p>
+        </div>
+      </footer>
+      
+  
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  
+  </body></html>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var errorContainer = document.getElementById("error-container");
+  var errorLists = document.querySelectorAll("ul.errorlist");
+  
+  errorLists.forEach(function(errorList) {
+    errorContainer.appendChild(errorList);
+  });
+});
+
+    function togglePassword() {
+      var passwordField = document.getElementById("id_password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
+      }
+    }
+    let mybutton = document.getElementById("myBtn");
+  
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  var header = document.getElementById('header')
+  function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      mybutton.style.display = "block";
+      header.style.display = "none"
+    } else {
+      mybutton.style.display = "none";
+      header.style.display = "block"
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.classList.contains("displaynone")) {
+      menu.classList.remove("displaynone");
+    } else {
+      menu.classList.add("displaynone");
+    }
+  }
   </script>
