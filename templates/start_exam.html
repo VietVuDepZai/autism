@@ -580,7 +580,8 @@ button[type="submit"]:hover {
 
   
   </body></html>
-  
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>function saveAns() {
   var form = document.getElementById('form');
   var formElements = form.elements;
@@ -603,7 +604,9 @@ button[type="submit"]:hover {
   }
   
   if (!answered) {
-      alert("Vui lòng trả lời tất cả các câu hỏi.");
+    swal(
+      "Vui lòng trả lời tất cả các câu hỏi."
+    );
       return false;
   } else {
       // Set cookies for answered questions
