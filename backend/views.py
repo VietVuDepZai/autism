@@ -63,11 +63,11 @@ def start_exam_view(request):
         if total_marks >= 3:
             result.typeof = "Tự kỷ"
             result.save()
-            return redirect('/')
+            return redirect('/thankyou')
         else:
             result.typeof = "Không bị tự kỷ"
             result.save()
-            return redirect('/')
+            return redirect('/fine')
 
     return render(request,'start_exam.html',{'questions':questions})
 
@@ -86,6 +86,10 @@ def marks(request):
     questions=models.Question.objects.all()
     result=models.Result.objects.all().last()
     return render(request,'score.html',{'questions':questions,'result':result})
+def fine(request):
+    questions=models.Question.objects.all()
+    result=models.Result.objects.all().last()
+    return render(request,'fine.html',{'questions':questions,'result':result})
 def question(request):
     data = list(models.Question.objects.values())
     return JsonResponse(data, safe=False)

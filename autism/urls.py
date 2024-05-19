@@ -31,6 +31,7 @@ urlpatterns = [
         path('login/',views.login,name="login"),
         path('signup',views.signup,name="signup"),
     path("accounts/", include("allauth.urls")), #most important
+    path('fine/', views.fine,name='fine'),
 
     path('thankyou/', views.marks,name='thankyou'),
     path('start-exam/', views.start_exam_view,name='start-exam'),
