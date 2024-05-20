@@ -48,7 +48,7 @@
                         </td>
                         <td>
 
-                            <a id="status" class="text-heading font-semibold">
+                            <a class="status text-heading font-semibold">
                                 {{t.status}}
                             </a>
                         </td>
@@ -71,13 +71,17 @@
     </div>
 </div>
 <script>
-    function status() {
-        var status = document.getElementById("status")
-        if (status.innerHTML == "True") {
-            status.innerHTML = "Đã xác nhận"
+     function status() {
+        var status = document.getElementsByClassName("status")
+        for (let index = 0; index < status.length; index++) {
+            if (status[index].innerHTML == "True") {
+            status[index].innerHTML = "Đã xác nhận"
         } else {
-            status.innerHTML = "Chưa xác nhận"
+            status[index].innerHTML = "Chưa xác nhận"
         }
+            
+        }
+        
     }
     setTimeout(function () { status() }, 1);
 
