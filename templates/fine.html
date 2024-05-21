@@ -14,6 +14,7 @@
       width: 100%;
       font-family: 'Varela Round', sans-serif;
       display: flex;
+      flex-wrap: wrap;
       align-content: center;
     }
   
@@ -367,7 +368,24 @@
     }
   
     /* Media Queries */
-  
+    .containerhulb {
+          margin-top: 815px !important;
+          margin-bottom: 20px !important;
+            font-family: 'Varela Round', sans-serif;
+    background-color: #f5f5f5;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+        }
     @media screen and (max-width: 1040px) {
       nav ul {
         display: none;
@@ -384,26 +402,29 @@
         display: block !important;
       }
     }
+    @media screen and (max-width: 825px) {
+     .cardtotal{
+      flex-wrap: wrap !important;
+     }
+     .containerhulb{
+      margin-top: 1150px !important;
+
+     }
+     .w-50 {
+      width: 100% !important;
+     }
+    }
+    @media screen and (max-width: 637px) {
+      .containerhulb{
+      margin-top: 1250px !important;
+
+     }
+    }
   </style>
      <style>
 
 
-        .containerhulb {
-            font-family: 'Varela Round', sans-serif;
-    background-color: #f5f5f5;
-    margin: auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
-    max-width: 600px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 40px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-        }
+       
 
         .containerhulb h1 {
             font-size: 36px;
@@ -445,9 +466,7 @@
 
         }
         footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+
     width: 100%;
     overflow: hidden;
 }
@@ -459,127 +478,338 @@
   </head>
   <body>
     <div class="flex-container"> 
-    <header id="header">
+      <header id="header">
+    
+      <div class="container">
+        <nav id="nav-bar" style="  height: 69px;
+        display: flex;
+        align-items: center;  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0.1, 0.1); justify-content: center;
+      ">
+      <a href="/" >
+          <img style="height: 69px;
+          position: fixed;
+          top: 0;
+          left: 0;" src="/static/images/heart.png" alt="">
+            <span style="    position: fixed;
+            top: 24px;
+            left: 80px;
+            color: #ff0080;">Đồng hành cùng trẻ tự kỷ</span>
   
-    <div class="container">
-      <nav id="nav-bar" style="  height: 69px;
-      display: flex;
-      align-items: center;  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0.1, 0.1); justify-content: center;
-    ">
-    <a href="/" >
-        <img style="height: 69px;
-        position: fixed;
-        top: 0;
-        left: 0;" src="/static/images/heart.png" alt="">
-          <span style="    position: fixed;
-          top: 24px;
-          left: 80px;
-          color: #ff0080;">Đồng hành cùng trẻ tự kỷ</span>
-
-  </a>
-
-    <ul class="">
-
-      <li><a class="nav-link" href="/login">Đăng nhập </a></li>
-      
-      <li><a class="nav-link" href="/signup">Đăng ký</a></li>
-      <li><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
-
-  </ul>
-  <button id="resmenu" class=""  onclick="toggleMenu()"   style="    border-color: #EAE7DC;
-  background: #EAE7DC;
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  top: 0;
-  right: 0;
-  font-size: 30px;
-  display: none;
-
-  margin: 21px;;"><i class="fa-solid fa-list" style="    border-color: #EAE7DC;
+    </a>
+  
+      <ul class="">
+        <li><a class="nav-link" href="/game">Trò chơi</a></li>
+  
+        <li><a class="nav-link" href="/login">Đăng nhập </a></li>
+        
+        <li><a class="nav-link" href="/signup">Đăng ký</a></li>
+        <li><a class="nav-link" href="/">Trang chủ</a></li>
+  
+    </ul>
+    <button id="resmenu" class=""  onclick="toggleMenu()"   style="    border-color: #EAE7DC;
     background: #EAE7DC;
     position: fixed;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
     top: 0;
     right: 0;
-    display: none;
     font-size: 30px;
-    margin: 21px;;"></i></button>
-       </nav>
-      </div></header>
-      <style>
-        /* Your existing CSS styles */
-        #menu {
-          background-color: #eae7dc;
-          position: fixed;
-          top: 67px;
-          width: 100%;
-          z-index: 3;
-          box-shadow:1px 2px rgba(0, 0, 0.1, 0.1)
-        }
-      
-        #menu ol {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          background-color: #eae7dc;
-          display: flex;
-          justify-content: center;
-          padding-top: 10px;
-        }
-      
-        #menu ol li {
-          float: none;
-          margin: 0 10px;
-        }
-      
-        #menu ol li a {
-          text-transform: uppercase;
-          font-size: 110%;
-          font-weight: 900;
-          color: #0074d9;
-          text-align: center;
-          text-decoration: none;
-          padding: 14px 16px;
-          display: inline-block;
-        }
-      
-        #menu ol li a:hover {
-          background-color: #0074d9;
-          color: white;
-        }
-      </style>
-      
-      <div id="menu" class="displaynone">
-        <ol>
-          <li style="float: none;"><a class="nav-link" href="/login">Đăng nhập </a></li>
-          <li style="float: none;"><a class="nav-link" href="/signup">Đăng ký</a></li>
-          <li style="float: none;"><a class="nav-link" href="#aboutd">Thông tin cơ bản</a></li>
-        </ol>
-      </div>
-      </div>
+    display: none;
+  
+    margin: 21px;;"><i class="fa-solid fa-list" style="    border-color: #EAE7DC;
+      background: #EAE7DC;
+      position: fixed;
+      top: 0;
+      right: 0;
+      display: none;
+      font-size: 30px;
+      margin: 21px;;"></i></button>
+         </nav>
+        </div></header>
+        <style>
+          /* Your existing CSS styles */
+          #menu {
+            background-color: #eae7dc;
+            position: fixed;
+            top: 67px;
+            width: 100%;
+            z-index: 3;
+            box-shadow:1px 2px rgba(0, 0, 0.1, 0.1)
+          }
+        
+          #menu ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #eae7dc;
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+          }
+        
+          #menu ol li {
+            float: none;
+            margin: 0 10px;
+          }
+        
+          #menu ol li a {
+            text-transform: uppercase;
+            font-size: 110%;
+            font-weight: 900;
+            color: #0074d9;
+            text-align: center;
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+          }
+        
+          #menu ol li a:hover {
+            background-color: #0074d9;
+            color: white;
+          }
+        </style>
+        
+        <div id="menu" class="displaynone">
+          <ol>
+            <li style="float: none;"><a class="nav-link" href="/game">Trò chơi</a></li>
+  
+            <li style="float: none;"><a class="nav-link" href="/login">Đăng nhập </a></li>
+            <li style="float: none;"><a class="nav-link" href="/signup">Đăng ký</a></li>
+            <li style="float: none;"><a class="nav-link" href="/">Trang chủ</a></li>
+          </ol>
+        </div>
+        </div>
 
       <div class="containerhulb">
-        <h1>🎉 Chúc mừng 🎉</h1>
-        <p class="warning">Con bạn không có dấu hiệu tự kỷ, nếu bạn có thắc mắc vui lòng liên hệ bác sĩ để được tư vấn chi tiết hơn.</p>
-        <a href="/signup" class="btn-contact">Liên hệ bác sĩ ngay</a>
+        <h1 style="width: 100%; margin: 0">BÁO CÁO KẾT QUẢ ĐÁNH GIÁ
+        </h1>
+        <style>
+          .cardtotal {
+            width: 100%; display: flex;
+            margin-top: 10px;
+          }
+          .card1 {
+            width: 100%;    background: #67ac2f;
+            border: 1px solid #67ac2f;
+            display: flex;
+            border-radius: 20px; min-height:225px;
+            justify-content: space-around;
+            color:white !important;
+
+          }
+          .card2 {
+                        display: flex;
+                        justify-content: space-around;
+
+            width: 100%;    background: white;
+            border: 1px solid #67ac2f;
+            align-items: center;
+            border-radius: 20px; min-height:225px;
+          }
+          .light h3 {
+            font-weight: 100;
+          }
+          .w-50 {
+            width: 50%;
+          }i{ margin-right: 5px;}
+        </style>
+        <a href="/signup" class="btn-contact" style="display: flex; align-items: center; justify-content: space-between;"><i class="fa-solid fa-envelope" style="margin-right: 5px;"></i>  Gửi email</a>
+     
+       <div class="cardtotal">
+<div class="w-50">
+  <h3>1. Thông tin chung</h3>
+            <div class="card1">
+<div class="light"><h3>Tên trẻ</h3><h3>Giới tính</h3><h3>Ngày sinh</h3><h3>Tuổi thực</h3><h3>Thời gian đánh giá</h3></div>
+<div class="ng"><h3>Vũ Trí Việt</h3><h3>Nam</h3><h3>09-09-2023</h3><h3>8 tháng</h3><h3> 21-05-2024</h3></div>            
+</div>
+</div>
+<div class="w-50">
+<h3>2. Giải thích về bảng điểm M-CHAT
+</h3>
+            <div class="card2">
+              <div class="light"><h3><i class="fa-regular fa-circle"></i>Điểm của bạn</h3><h3><i style="color:#67ac2f"class="fa-solid fa-square"></i>Vùng an toàn.
+              </h3></div>
+              <div class="light"><h3><i class="fa-solid fa-square" style="color: rgb(246, 222, 38);"></i>Vùng cảnh báo.
+              </h3><h3><i class="fa-solid fa-square" style="color: red;"></i>Vùng nguy cơ cao.
+              </h3></div>             
+            </div>
+            </div>  
+          </div>
+          <span>- M-Chat là công cụ sàng lọc nguy cơ rối loạn phổ tự kỷ cho trẻ dưới 36 tháng tuổi.
+
+          </span>
+        <div class="cardtotal" style="flex-wrap: wrap;">
+<style>
+  #resultAnalysis {
+    width: 100%;
+}
+
+.resultAnalysisRow {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.header {
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+}
+
+.resultAnalysisCol1Header,
+.resultAnalysisCol1 {
+  flex: 1;
+}
+
+.resultAnalysisCol2Header,
+.resultAnalysisCol2 {
+  flex: 3;
+  display: flex;
+  align-items: center;
+}
+
+.textAlignLeft {
+  text-align: left;
+}
+
+.textBoldHeader {
+  font-weight: bold;
+}
+
+.resultCol {
+  text-align: center;
+}
+
+.resultAnalysisBar {
+  height: 20px;
+}
+
+.barBlue {
+  background-color: #ba1b1d;
+}
+
+.barYellow {
+  background-color: rgb(246, 222, 38);
+}
+
+.barGreen {
+  background-color: rgb(103, 172, 47);
+}
+
+.resultAnalysisCircle {
+  width: 16px;
+    height: 16px;
+    border: 1px solid black;
+    background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.maxPoint {
+  margin-left: 7.5px;
+  white-space: nowrap;
+}
+
+</style>
+<h3>3. Điểm của trẻ sau khi làm bài sàng lọc
+</h3>
+
+<div id="resultAnalysis" style="
+    width: 100%;
+    background: #67ac2f;
+    border: 1px solid #67ac2f;
+    border-radius: 12px;
+">
+  <div class="resultAnalysisRow header" style="
+    padding: 10px 20px;
+    /* border-radius: 10px; */
+">
+    <div class="resultAnalysisCol1Header textAlignLeft">
+      <span class="textBoldHeader">Lĩnh vực</span>
+    </div>
+    <div class="resultAnalysisCol1Header resultCol">
+      <span class="textBoldHeader">Điểm</span>
+    </div>
+    <div class="resultAnalysisCol2Header"></div>
+  </div>
+  <div class="resultAnalysisRow" style="
+    padding: 10px 20px;
+    background: white;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+">
+    <div class="resultAnalysisCol1 textAlignLeft">
+      <span class="textBold">M-Chat</span>
+    </div>
+    <div class="resultAnalysisCol1 resultCol" style="
+    flex: 0.97;
+">
+      <span class="textBold" id="hu">{{result.marks}}</span>
+    </div>
+    <div class="resultAnalysisCol2" style="width: 100%;/* overflow: hidden; */">
+      <div class="resultAnalysisBar barBlue" style="width: 47.7%;position: absolute;"></div>
+      <div class="resultAnalysisBar barYellow" style="width:14.5173913%;position: absolute;"></div>
+      <div class="resultAnalysisBar barGreen" style="width: 4.14782609%;position: absolute;"></div>
+      <div class="resultAnalysisCircle" id="point" style="position: absolute;margin-left:calc({{result.marks}}*2.07391304% - 7.5px)"></div>
+      <div class="maxPoint" style="margin-left: calc(100% + 23.5px);">23</div>
+    </div>
+  </div>
+</div>
+
+ </div>
+          <div class="cardtotal">
+            <h3 id="textansfd">
+              4. Diễn giải kết quả
+              <div>
+                {{result.typeof|safe}}
+
+              </div>
+            </h3>
+            
+          </div>
+          <div class="cardtotal" style="flex-wrap: wrap;">
+            <h3>5. Giải thích chi tiết kết quả và giải pháp</h3>
+            <div class="video-container" style="
+            width: 100%;
+            min-height: 315px;
+        ">
+
+            <iframe style="width: 100%; height: 100%;"  src="https://www.youtube.com/embed/czbB8AQsBzU?si=q_Z0z1tWfNEXCpyj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          </div>
+                      </div>
     </div>
 
       <br>
       <footer>
         <div style="background-color: #2c3e50; color: white; text-align: center; padding: 20px;">
-          <p>Bản quyền © 2024. Autism - bạn không cô đơn.</p>
+          <p>Bản quyền © 2024. Autism - đồng hành cùng trẻ tự kỷ.</p>
           <p>Designed by: <a href="https://3dviet.vercel.app/" target="_blank" style="color: #FF4136; text-decoration: none;">VietVu</a></p>
         </div>
       </footer>
-      
+      <style>
+        
+        #bot {
+          
+        position: fixed;
+        bottom: 20px;
+        right: 23px;
+        z-index: 99;
+        width: 66px;
+        height: 66px;
+        }
+          </style>
+          <a href="" onclick="topFunction()" id="bot" title="Go to top"><img style="width: 100%; height: 100%;" src="/static/images/chatlo.png" alt=""></a>
+    
   
       <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
     
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
   
   <script>
+    var score = {{result.marks}}
+var textansfd = document.getElementById('textansfd')
   // Get the button:
   let mybutton = document.getElementById("myBtn");
   

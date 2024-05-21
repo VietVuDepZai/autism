@@ -26,7 +26,8 @@ def text_to_html_paragraphs(text):
 
     # Wrap each line in a <p> tag and join them
     return ''.join(f'{line.strip()}\n<br>' for line in lines)
-
+def chat(request):           
+    return render(request,"chat.html",{'doctor':models.Doctor.objects.all()})
 # kết nối ChatGPT
 def chatgpt(request):
     text = request.GET.get('prompt')
@@ -59,15 +60,21 @@ def start_exam_view(request):
             if selected_ans == actual_answer:
                 total_marks = total_marks + questions[i].marks
         result = models.Result()
+        if total_marks <= 2:
+            result.typeof = """     <div style='font-weight: 100 ;    font-size: 17px;
+                '>● Lĩnh vực <span class='antd-pro-pages-checking-index-textBoldExplain'>M-Chat</span> điểm của trẻ đang nằm là <span class='antd-pro-pages-checking-index-textBoldExplain'>vùng an toàn</span>. <br>&emsp; ⇒ <span style='font-style: italic;'> Kết qủa này thể hiện trẻ không có vấn đề về <span>M-Chat</span>. Các biểu hiện là bình thường như mọi trẻ em khác cùng trang lứa. </span></div>
+    """
+        if total_marks > 2 and total_marks <= 7:
+            result.typeof = """     <div style='font-weight: 100 ;    font-size: 17px;
+                '>● Lĩnh vực <span class='antd-pro-pages-checking-index-textBoldExplain'>M-Chat</span> điểm của trẻ đang nằm là <span class='antd-pro-pages-checking-index-textBoldExplain'>vùng cảnh báo</span>. <br>&emsp; ⇒ <span style='font-style: italic;'>  Kết quả này thể hiện trẻ có nguy cơ cảnh báo cao gặp các vấn đề tâm lý về <span>M-Chat</span> ,cần hỗ trợ tâm lý và theo dõi, đánh giá lại sau 3 tháng. </span></div>
+    """ 
+        if total_marks > 7:
+            result.typeof = """     <div style='font-weight: 100 ;    font-size: 17px;
+                '>● Lĩnh vực <span class='antd-pro-pages-checking-index-textBoldExplain'>M-Chat</span> điểm của trẻ đang nằm là <span class='antd-pro-pages-checking-index-textBoldExplain'>vùng nguy cơ cao</span>. <br>&emsp; ⇒ <span style='font-style: italic;'>  Kết quả này thể hiện trẻ đang gặp vấn đề về <span>M-Chat</span> cần liên hệ với các bác sĩ, chuyên gia tâm lý để có đánh giá chuyên sâu và trị liệu tâm lý tích cực sớm nhất. </span></div>
+    """ 
         result.marks=total_marks
-        if total_marks >= 3:
-            result.typeof = "Tự kỷ"
-            result.save()
-            return redirect('/thankyou')
-        else:
-            result.typeof = "Không bị tự kỷ"
-            result.save()
-            return redirect('/fine')
+        result.save()
+        return redirect('/fine')
 
     return render(request,'start_exam.html',{'questions':questions})
 

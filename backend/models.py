@@ -17,7 +17,7 @@ class Question(models.Model):
 class Result(models.Model):
     marks = models.PositiveIntegerField()
     date = models.DateTimeField(auto_now=True)
-    typeof=models.CharField(max_length=200, null=True, blank=True)
+    typeof=models.CharField(max_length=1900, null=True, blank=True)
 class Event(models.Model):
     status = models.BooleanField(default=False)
     title = models.CharField(max_length=200)
@@ -50,7 +50,9 @@ class Patient(models.Model):
     # def save(self, *args, **kwargs):
     #     super(Patient, self).save(*args, **kwargs)
     #<iframe allowtransparency=“true” width=“485” height=“402” src="{{}}embed“ frameborder=”0" allowfullscreen></iframe>
-
+# class TestGayss(models.Model):
+#     mobile = models.CharField(max_length=20,default=None,blank=False)
+#     username = models.CharField
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,default=None)
     profile_pic= models.ImageField(upload_to='profile_pic/',null=True,blank=True)

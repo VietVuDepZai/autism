@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-ic_5cb#=2jh13-gfemt3!xk292$8l8#4z+1jn=4315lybz@gyy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.2', 'localhost', '127.0.0.1', '.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['192.168.1.147', 'localhost', '127.0.0.1', '.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -39,11 +39,14 @@ INSTALLED_APPS = [
     'backend',
     'allauth',
     'allauth.account',
+            'corsheaders',
+
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'widget_tweaks',
             'cloudinary',
     'cloudinary_storage',
+
 ]
 
 SOCIALACCOUNT_LOGIN_ON_GET=True
@@ -74,9 +77,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware'
-]
+    'allauth.account.middleware.AccountMiddleware',
+            'corsheaders.middleware.CorsMiddleware',
 
+]
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+# Additional security settings
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 ROOT_URLCONF = 'autism.urls'
 
 TEMPLATES = [

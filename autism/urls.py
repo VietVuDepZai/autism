@@ -27,6 +27,7 @@ urlpatterns = [
     path('', views.home),            path('choosing', views.choosing, name="choosing"),
    path('logout/',auth_views.LogoutView.as_view(),name='logout'),
         path('loginn/',views.loginn,name="loginn"),
+        path('chat/',views.chat,name="chat"),
 
         path('login/',views.login,name="login"),
         path('signup',views.signup,name="signup"),
