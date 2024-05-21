@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'backend',
     'allauth',
     'allauth.account',
-            'corsheaders',
 
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
@@ -81,12 +80,6 @@ MIDDLEWARE = [
             'corsheaders.middleware.CorsMiddleware',
 
 ]
-CORS_ALLOW_ALL_ORIGINS = True
-
-
-# Additional security settings
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
 ROOT_URLCONF = 'autism.urls'
 
 TEMPLATES = [
