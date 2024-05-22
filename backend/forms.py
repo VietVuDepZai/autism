@@ -58,7 +58,23 @@ class coordinateForm(forms.ModelForm):
     # class Media:
     #     js = ('/media/tinymce/jscripts/tiny_mce/tiny_mce.js',
     #             '',)
+from django.contrib.admin.widgets import AdminDateWidget
 
+class TesstGayss(forms.ModelForm):
+    class Meta:
+        model=models.TestGayss
+        fields='__all__'
+        widgets = {
+            'date': DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
+            }
+
+        def __init__(self, *args, **kwargs):
+            super(EventForm, self).__init__(*args, **kwargs)
+            # input_formats parses HTML5 datetime-local input to datetime field
+            self.fields['date'].input_formats = ('%Y-%m-%d')
+    # class Media:
+    #     js = ('/media/tinymce/jscripts/tiny_mce/tiny_mce.js',
+    #             '',)
 class patientForm(forms.ModelForm):
     class Meta:
         model=models.Patient

@@ -1,9 +1,12 @@
 {% load static %}
+
 <!DOCTYPE html><html lang="vi"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-  <title>Autism</title>
+  <title>Đăng ký | Autism - đồng hành cùng trẻ tự kỷ</title>
+
+  
   <link rel="icon" href="/static/images/heart.png">
   <style>
     html,
@@ -283,8 +286,7 @@
       /* Hidden by default */
       position: fixed;
       /* Fixed/sticky position */
-      bottom: 20px;
-      /* Place the button at the bottom of the page */
+      bottom: 89px;      /* Place the button at the bottom of the page */
       right: 30px;
       /* Place the button 30px from the right */
       z-index: 99;
@@ -409,6 +411,7 @@
 
   </a>
 
+  
   <ul class="">
     <li><a class="nav-link" href="/game">Trò chơi</a></li>
 
@@ -476,44 +479,131 @@
           padding: 14px 16px;
           display: inline-block;
         }
+      select{
+        font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+      }
+      input {
+        
+        font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+      }
       
         #menu ol li a:hover {
           background-color: #0074d9;
           color: white;
         }
-        .quiz-container {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+        
+        section.container {
+  border-radius: 10px;
   max-width: 800px;
-  margin: 60px auto;
-  padding: 10px 20px;
+  margin-bottom: 20px;
+
+  margin:  auto;
   font-family: 'Varela Round', sans-serif;
 }
 
-.quiz-header {
-  text-align: center;
+.section-heading {
+  font-size: 2.5rem;
   color: #0074d9;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.section-paragraph {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.form-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-wrapper h2 {
   font-size: 2rem;
+  color: #0074d9;
+  text-align: center;
   margin-bottom: 20px;
 }
 
-h3 {
-  color: #333;
-  margin-bottom: 10px;
-}
-
-
-
-.form-check-input {
-  margin-right: 10px;
-}
-
-.form-check-label {
+.form-wrapper p {
   font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
-button[type="submit"] {
+.form p {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"] {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.form input[type="text"]:focus,
+.form input[type="password"]:focus,
+.form input[type="email"]:focus {
+  border-color: #0074d9;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #0074d9;
+  margin-bottom: 20px;
+}
+
+.remember-forgot a {
+  color: #0074d9;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+.form-section label {
+  display: flex;
+}
+.login-btn {
+  width: 100%;
   background-color: #2ecc40;
   border: none;
   border-radius: 5px;
@@ -522,13 +612,79 @@ button[type="submit"] {
   padding: 10px 20px;
   cursor: pointer;
   display: block;
-  margin: 30px auto 0;
+  margin: 0 auto 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+.login-btn:hover {
   background-color: #28a745;
+}
+
+.or-divider {
+  text-align: center;
+  margin: 20px 0;
+  color: #999;
+  font-size: 0.9rem;
+}
+ /* Checkbox styling */
+ #show_password {
+    margin-right: 10px;
+  }
+
+  #show_password + label {
+    display: inline-block;
+    cursor: pointer;
+  }
+.google-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 3px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.google-signin svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.google-signin:hover {
+  background-color: #f1f1f1;
+}
+/* Styles for errorlist as toast notification */
+ul.errorlist {
+  list-style: none;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f44336; /* Red background for errors */
+  color: white; /* White text for better readability */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Animation for fade in only and stay displayed */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: -10px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+ul.errorlist li {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  float: none;
 }
 
       </style>
@@ -543,132 +699,128 @@ button[type="submit"]:hover {
         </ol>
       </div>
       </div>
-        
-<br><br>
-      <div class="quiz-container" id="quiz">
-    
-          <form id="form" class="form" autocomplete="off" onsubmit="return saveAns()" method="POST">
-              <div>
-                  <h2 class="quiz-header">Bài test kiểm tra tự kỷ M-CHAT <br> (Phụ huynh trả lời)</h2>
-                  <h3 style="text-align: center;">Hãy trả lời có hoặc không về câu hỏi mô tả gần giống nhất tình trạng của con trong 1 tuần trở lại đây, kể cả hôm nay</h3>
-  
-                  {% for q in questions %}
-                  <h3 style="font-size: 1.25rem;">{{ forloop.counter }}. {{q.question}}</h3>
-  
-                  <div class="form-check mx-4">
-                      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.yes}}" value="Yes" >
-                      <label class="form-check-label" for="{{q.yes}}">{{q.yes}}</label>
-                  </div>
-  
-                  <div class="form-check mx-4">
-                      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" id="{{q.no}}" value="No" >
-                      <label class="form-check-label" for="{{q.no}}">{{q.no}}</label>
-                  </div>
-  
-                  {% endfor %}
-              </div>
-              <button type="submit">Xác nhận</button>
-          </form>
+      <div style="position: relative;width: 100%;/* height: 499px">
+
+        <!-- Content -->
+        <div class="headline">
+          <h2>Autism - đồng hành cùng trẻ tự kỷ</h2>
+        </div>
+      
+     
       </div>
-      <br>
+      <section class="container" style="position: relative;">
+  <style>
+    p {
+        margin: 0px !important;
+        text-align: left !important;
+    }
+  </style>
+      
+        <div class="form-section">
+          <div class="form-wrapper">
+          <h2>Đây là bài kiểm tra M-CHAT</h2>
+            <p>● Bộ công cụ sàng lọc rối loạn phổ tự kỷ dành cho trẻ dưới 36 tháng tuổi</p>
+            <p>● Chúng tôi cam kết các thông tin của quý anh chị và trẻ được bảo mật</p>
+            <p>● Chỉ phục vụ duy nhất mục đích sàng lọc, đánh giá phát triển của trẻ mà không sử dụng cho bất cứ mục đích nào khác.</p>
+  <br>
+      <form method="POST" onclick="saveAns()" autocomplete="off" enctype="multipart/form-data" class="form" id="form-1">
+                    {% csrf_token %}
+                    <div id="error-container"></div>
+
+              {{form.as_p}}
+        
+  
+                     <div class="remember-forgot">
+                
+              <a href="/login">Đã có tài khoản, Đăng nhập?</a>
+  
+            </div>
+                        <button type="submit"class="login-btn">Đăng ký</button>
+            <div class="or-divider">Hoặc</div>
+  
+            <a  href="/accounts/google/login/?next=/" class="google-signin" style="display:flex; color: black; text-decoration: none">
+              <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="96px" height="96px"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+              <span> Đăng ký với Google</span>
+            </a>
+            </form>
+            <br>
+  
+     
+  
+  
+  
+          </div>
+        </div>
+      </section>
       <footer>
         <div style="background-color: #2c3e50; color: white; text-align: center; padding: 20px;">
-          <p>Bản quyền © 2024. Autism - bạn không cô đơn.</p>
+          <p>Bản quyền © 2024. Autism - đồng hành cùng trẻ tự kỷ.</p>
           <p>Designed by: <a href="https://3dviet.vercel.app/" target="_blank" style="color: #FF4136; text-decoration: none;">VietVu</a></p>
         </div>
       </footer>
-      
-  
+      <style>
+        
+        #bot {
+          
+        position: fixed;
+        bottom: 20px;
+        right: 23px;
+        z-index: 99;
+        width: 66px;
+        height: 66px;
+        }
+          </style>
+          <a href="" onclick="topFunction()" id="bot" title="Go to top"><img style="width: 100%; height: 100%;" src="/static/images/chatlo.png" alt=""></a>
+    
       <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
   
   </body></html>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<script>function saveAns() {
-  var form = document.getElementById('form');
-  var formElements = form.elements;
-  var answered = true;
-  var totalQuestions = {{ questions|length }};
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var errorContainer = document.getElementById("error-container");
+  var errorLists = document.querySelectorAll("ul.errorlist");
   
-  for (var i = 1; i <= totalQuestions; i++) {
-      var questionAnswered = false;
-      var radios = document.getElementsByName(i.toString());
-      for (var j = 0; j < radios.length; j++) {
-          if (radios[j].checked) {
-              questionAnswered = true;
-              break;
-          }
+  errorLists.forEach(function(errorList) {
+    errorContainer.appendChild(errorList);
+  });
+});
+
+    function togglePassword() {
+      var passwordField = document.getElementById("id_password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+      } else {
+        passwordField.type = "password";
       }
-      if (!questionAnswered) {
-          answered = false;
-          break;
-      }
-  }
+    }
+    let mybutton = document.getElementById("myBtn");
   
-  if (!answered) {
-    swal(
-      "Vui lòng trả lời tất cả các câu hỏi."
-    );
-      return false;
-  } else {
-      // Set cookies for answered questions
-      for (var i = 1; i <= totalQuestions; i++) {
-          var radios = document.getElementsByName(i.toString());
-          for (var j = 0; j < radios.length; j++) {
-              if (radios[j].checked) {
-                  setCookie(radios[j].name, radios[j].value, 3);
-              }
-          }
-      }
-      return true;
-  }
-}
-
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-</script>
-
-<script>
-  function togglePassword() {
-    var passwordField = document.getElementById("id_password");
-    if (passwordField.type === "password") {
-      passwordField.type = "text";
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  var header = document.getElementById('header')
+  function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      mybutton.style.display = "block";
+      header.style.display = "none"
     } else {
-      passwordField.type = "password";
+      mybutton.style.display = "none";
+      header.style.display = "block"
     }
   }
-  let mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-var header = document.getElementById('header')
-function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    mybutton.style.display = "block";
-    header.style.display = "none"
-  } else {
-    mybutton.style.display = "none";
-    header.style.display = "block"
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-function toggleMenu() {
-  var menu = document.getElementById("menu");
-  if (menu.classList.contains("displaynone")) {
-    menu.classList.remove("displaynone");
-  } else {
-    menu.classList.add("displaynone");
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.classList.contains("displaynone")) {
+      menu.classList.remove("displaynone");
+    } else {
+      menu.classList.add("displaynone");
+    }
   }
-}
-</script>
+  </script>

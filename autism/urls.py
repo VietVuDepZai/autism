@@ -44,6 +44,8 @@ path('patientchat',views.patientchat,name="patientchat"),
         path('game/', views.game),
                 path('alphabet/', views.alphabet),
                 path('memory/', views.memorygame),
+                                path('testuser/', views.gayssignup),
+
 path('animals/',views.letterwriting),
 
 

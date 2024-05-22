@@ -13,8 +13,16 @@ class Question(models.Model):
     answer=models.CharField(max_length=200,choices=cat)
     def __str__(self):
         return self.question 
-    
+class TestGayss(models.Model):
+    mobile = models.CharField(max_length=20,default=None,blank=False)
+    username = models.CharField(max_length=120,default=None,blank=False)
+    cat1=(('Nam','Nam'),('Nữ','Nữ'))
+    who= models.CharField(max_length=200,choices=cat1, default=None)
+    cat=(('Nam','Nam'),('Nữ','Nữ'))
+    gender= models.CharField(max_length=200,choices=cat)
+    date = models.DateField()
 class Result(models.Model):
+    tester = models.ForeignKey(TestGayss,on_delete=models.CASCADE, default=None,null=True, blank=True)
     marks = models.PositiveIntegerField()
     date = models.DateTimeField(auto_now=True)
     typeof=models.CharField(max_length=1900, null=True, blank=True)
@@ -50,9 +58,7 @@ class Patient(models.Model):
     # def save(self, *args, **kwargs):
     #     super(Patient, self).save(*args, **kwargs)
     #<iframe allowtransparency=“true” width=“485” height=“402” src="{{}}embed“ frameborder=”0" allowfullscreen></iframe>
-# class TestGayss(models.Model):
-#     mobile = models.CharField(max_length=20,default=None,blank=False)
-#     username = models.CharField
+
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,default=None)
     profile_pic= models.ImageField(upload_to='profile_pic/',null=True,blank=True)

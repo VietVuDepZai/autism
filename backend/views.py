@@ -177,6 +177,15 @@ def signup(request):
             form.save()
             return HttpResponseRedirect('/loginn')
     return render(request, 'signup.html', {'form': form})
+def gayssignup(request):
+    form = forms.TesstGayss()
+    if request.method == 'POST':
+        form = forms.TesstGayss(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/start-exam')
+    return render(request, 'signuptesst.html', {'form': form})
+
 
 def doctor_signup_view(request):
     doctorForm=forms.doctorForm()
