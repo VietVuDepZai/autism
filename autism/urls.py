@@ -35,7 +35,7 @@ urlpatterns = [
     path('fine/', views.fine,name='fine'),
 
     path('thankyou/', views.marks,name='thankyou'),
-    path('start-exam/', views.start_exam_view,name='start-exam'),
+    path('start-exam/<fakeuser>/<mobi>', views.start_exam_view,name='start-exam'),
     path('question/', views.question,name='question'),
       path('doctor-signup', views.doctor_signup_view, name="doctor-signup"),
           path('save_coordinate/', views.save_coordinate,name='save_coordinate'),

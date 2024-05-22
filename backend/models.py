@@ -16,7 +16,7 @@ class Question(models.Model):
 class TestGayss(models.Model):
     mobile = models.CharField(max_length=20,default=None,blank=False)
     username = models.CharField(max_length=120,default=None,blank=False)
-    cat1=(('Nam','Nam'),('Nữ','Nữ'))
+    cat1=(('Phụ huynh','Phụ huynh'),('Giáo viên','Giáo viên'))
     who= models.CharField(max_length=200,choices=cat1, default=None)
     cat=(('Nam','Nam'),('Nữ','Nữ'))
     gender= models.CharField(max_length=200,choices=cat)

@@ -45,8 +45,10 @@ def chatgpt(request):
 # Create your views here.
 
 @csrf_exempt
-def start_exam_view(request):
+def start_exam_view(request,fakeuser,mobi):
     questions=models.Question.objects.all()
+    fakeuser = models.TestGayss.objects.filter(mobile=mobi,date=fakeuser)
+    result = models.Result()
     if request.method=='POST':
         total_marks=0
         questions=models.Question.objects.all()
@@ -59,7 +61,7 @@ def start_exam_view(request):
             actual_answer = questions[i].answer
             if selected_ans == actual_answer:
                 total_marks = total_marks + questions[i].marks
-        result = models.Result()
+        
         if total_marks <= 2:
             result.typeof = """     <div style='font-weight: 100 ;    font-size: 17px;
                 '>● Lĩnh vực <span class='antd-pro-pages-checking-index-textBoldExplain'>M-Chat</span> điểm của trẻ đang nằm là <span class='antd-pro-pages-checking-index-textBoldExplain'>vùng an toàn</span>. <br>&emsp; ⇒ <span style='font-style: italic;'> Kết qủa này thể hiện trẻ không có vấn đề về <span>M-Chat</span>. Các biểu hiện là bình thường như mọi trẻ em khác cùng trang lứa. </span></div>
@@ -73,6 +75,7 @@ def start_exam_view(request):
                 '>● Lĩnh vực <span class='antd-pro-pages-checking-index-textBoldExplain'>M-Chat</span> điểm của trẻ đang nằm là <span class='antd-pro-pages-checking-index-textBoldExplain'>vùng nguy cơ cao</span>. <br>&emsp; ⇒ <span style='font-style: italic;'>  Kết quả này thể hiện trẻ đang gặp vấn đề về <span>M-Chat</span> cần liên hệ với các bác sĩ, chuyên gia tâm lý để có đánh giá chuyên sâu và trị liệu tâm lý tích cực sớm nhất. </span></div>
     """ 
         result.marks=total_marks
+        result.tester = fakeuser[0]
         result.save()
         return redirect('/fine')
 
@@ -181,9 +184,12 @@ def gayssignup(request):
     form = forms.TesstGayss()
     if request.method == 'POST':
         form = forms.TesstGayss(request.POST)
+        print(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/start-exam')
+            date = request.POST.get("date")
+            mobile = request.POST.get("mobile")
+            return HttpResponseRedirect(f'/start-exam/{date}/{mobile}')
     return render(request, 'signuptesst.html', {'form': form})
 
 

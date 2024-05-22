@@ -590,7 +590,7 @@
             width: 100%; display: flex;
             margin-top: 10px;
           }
-          .card1 {
+          .card1 {align-items: center;
             width: 100%;    background: #67ac2f;
             border: 1px solid #67ac2f;
             display: flex;
@@ -621,8 +621,8 @@
 <div class="w-50">
   <h3>1. Thông tin chung</h3>
             <div class="card1">
-<div class="light"><h3>Tên trẻ</h3><h3>Giới tính</h3><h3>Ngày sinh</h3><h3>Tuổi thực</h3><h3>Thời gian đánh giá</h3></div>
-<div class="ng"><h3>Vũ Trí Việt</h3><h3>Nam</h3><h3>09-09-2023</h3><h3>8 tháng</h3><h3> 21-05-2024</h3></div>            
+<div class="light"><h3>Tên trẻ</h3><h3>Giới tính</h3><h3>Ngày sinh</h3></div>
+<div class="ng"><h3>{{result.tester.username}}</h3><h3>{{result.tester.gender}}</h3><h3 id="datereal">{{result.tester.date}}</h3></div>            
 </div>
 </div>
 <div class="w-50">
@@ -808,6 +808,25 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
   
   <script>
+    function convertDateFormatToYYYYMMDD(dateString) {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+console.log(convertDateFormatToYYYYMMDD("May 14, 2024"));
+    function convertDateFormat(dateString) {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.toLocaleString('vi-VN', { month: 'long' });
+  const year = date.getFullYear();
+  return `${day} ${month}, ${year}`;
+}
+var datereal = document.getElementById('datereal')
+dateold = datereal.innerText
+datereal.innerText = convertDateFormat(dateold); // Output: 14 tháng 5, 2024
     var score = {{result.marks}}
 var textansfd = document.getElementById('textansfd')
   // Get the button:
