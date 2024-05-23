@@ -899,7 +899,37 @@ nav  li {
       float: none;
       margin: 0 10px;
     }
-  
+    .typing-indicator {
+    display: none;
+    align-items: center;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background-color: #aaa;
+    border-radius: 50%;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+}
     #menu ol li a {
       text-transform: uppercase;
       font-size: 80%;
@@ -978,7 +1008,7 @@ nav  li {
     overflow: hidden;
     background-color: #eae7dc;
 ">
-      <li><a class="nav-link" href="/game">Trò chơi</a></li>
+      <li><a class="nav-link" href="/games">Trò chơi</a></li>
 
       <li><a class="nav-link" href="/login">Đăng nhập </a></li>
       
@@ -991,7 +1021,7 @@ nav  li {
   
   <div id="menu" class="displaynone">
     <ol>
-      <li style="float: none;"><a class="nav-link" href="/game">Trò chơi</a></li>
+      <li style="float: none;"><a class="nav-link" href="/games">Trò chơi</a></li>
 
       <li style="float: none;"><a class="nav-link" href="/login">Đăng nhập </a></li>
       <li style="float: none;"><a class="nav-link" href="/signup">Đăng ký</a></li>
@@ -1104,9 +1134,9 @@ nav  li {
 
                                 <div class="modal-body">
                                     <div class="msg-body">
-                                        <div style="display: flex;    align-items: center;"><div ><img alt="icon" loading="lazy" width="130" height="130" decoding="async" data-nimg="1" sizes="(max-width: 768px) 232px, 232px" srcset="https://cdn.bookingcare.vn/fo/w48/2024/04/25/142829-ai-assistant.png 16w, https://cdn.bookingcare.vn/fo/w48/2024/04/25/142829-ai-assistant.png 32w, https://cdn.bookingcare.vn/fo/w48/2024/04/25/142829-ai-assistant.png 48w, https://cdn.bookingcare.vn/fo/w64/2024/04/25/142829-ai-assistant.png 64w, https://cdn.bookingcare.vn/fo/w96/2024/04/25/142829-ai-assistant.png 96w, https://cdn.bookingcare.vn/fo/w128/2024/04/25/142829-ai-assistant.png 128w, https://cdn.bookingcare.vn/fo/w256/2024/04/25/142829-ai-assistant.png 256w, https://cdn.bookingcare.vn/fo/w384/2024/04/25/142829-ai-assistant.png 384w, https://cdn.bookingcare.vn/fo/w640/2024/04/25/142829-ai-assistant.png 640w, https://cdn.bookingcare.vn/fo/w750/2024/04/25/142829-ai-assistant.png 750w, https://cdn.bookingcare.vn/fo/w828/2024/04/25/142829-ai-assistant.png 828w, https://cdn.bookingcare.vn/fo/w1080/2024/04/25/142829-ai-assistant.png 1080w, https://cdn.bookingcare.vn/fo/w1200/2024/04/25/142829-ai-assistant.png 1200w, https://cdn.bookingcare.vn/fo/w1920/2024/04/25/142829-ai-assistant.png 1920w, https://cdn.bookingcare.vn/fo/2024/04/25/142829-ai-assistant.png 2048w, https://cdn.bookingcare.vn/fo/2024/04/25/142829-ai-assistant.png 3840w" src="https://cdn.bookingcare.vn/fo/2024/04/25/142829-ai-assistant.png" style="color: transparent; object-fit: cover;"></div><div class="css-175oi2r m-auto mb-2 mt-2 flex-1 flex-col justify-center px-4"><div class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a mx-auto self-start bg-gradient-to-r from-[#49BCE2] to-[#FFC10E] bg-clip-text text-center font-sans text-28 font-bold text-transparent lg:mx-0 lg:flex lg:text-[48px]">Trợ lý AI Autism</div><div class="css-146c3p1 mx-auto text-clip text-16 font-semibold text-[rgba(133,138,139,1)] min-[410px]:text-20 lg:mx-0 lg:text-28">Xin chào!
+                                        <div style="display: flex;    align-items: center;"><div ><img alt="icon" loading="lazy" width="130" height="130" decoding="async" data-nimg="1" sizes="(max-width: 768px) 232px, 232px" src="/static/images/chatlo.png" style="color: transparent; object-fit: cover;"></div><div class="css-175oi2r m-auto mb-2 mt-2 flex-1 flex-col justify-center px-4"><div class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a mx-auto self-start bg-gradient-to-r from-[#49BCE2] to-[#FFC10E] bg-clip-text text-center font-sans text-28 font-bold text-transparent lg:mx-0 lg:flex lg:text-[48px]">Trợ lý AI Autism</div><div class="css-146c3p1 mx-auto text-clip text-16 font-semibold text-[rgba(133,138,139,1)] min-[410px]:text-20 lg:mx-0 lg:text-28">Xin chào!
 Trợ lý AI Autism sẵn sàng hỗ trợ bạn.
-Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</div><button onclick="handleBoxans(0)" ><div  style="border:none !important">
+Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử:</div><button onclick="handleBoxans(0)" ><div  style="border:none !important">
     <div class="textmess">Bệnh viện nào khám và điều trị tự kỷ tốt nhất tại VN</div>
 </div></button><button onclick="handleBoxans(1)"   type="button" style="transition-duration: 0s;">
 <div style="border:none">
@@ -1120,7 +1150,10 @@ Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</d
                                                 
                                             </div>
                                         </ul>
-                                    </div>
+                                        <div class="typing-indicator" id="typingIndicator">
+                                           <img src="/static/images/chatlo.png" width="40" height="40" alt=""> <span></span><span></span><span></span>
+                                        </div>
+                                     </div>
                                 </div>
 
                                 <div class="send-box">
@@ -1153,7 +1186,7 @@ Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</d
 <script src="https://cdn.jsdelivr.net/npm/translate-js@1.3.0/src/translate.min.js"></script>
 
 <script>
-    
+var typingIndicator = document.getElementById('typingIndicator')
   function toggleMenu() {
     var menu = document.getElementById("menu");
     if (menu.classList.contains("displaynone")) {
@@ -1221,7 +1254,9 @@ Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</d
     }
     
    const commonReplies = [
-        
+        { input: 'Bệnh viện nào khám và điều trị tự kỷ tốt nhất tại VN', reply: true },
+        { input: 'Phương pháp luyện tập tại nhà cho trẻ tự kỷ', reply: true },
+        { input: 'Tôi muốn tìm bác sĩ chữa bệnh tự kỷ giỏi', reply: true },
            // Add more common replies as needed
     ];
 
@@ -1251,6 +1286,7 @@ Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</d
             var reply = findReply(message)
             addUserMessage(message);
             userInput.value = '';
+            typingIndicator.style.display = "flex"
             messages.scrollTop = messages.scrollHeight;
             if (reply ==  false) { 
                 $.ajax({
@@ -1259,6 +1295,7 @@ Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</d
                     dataType: 'json', // added data type
                     success: function(res) {
                         console.log(res);
+                        typingIndicator.style.display = "none"
                         addBotMessage(res.message, false);
                         messages.scrollTop = messages.scrollHeight;
 
@@ -1282,6 +1319,7 @@ Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</d
         const message = document.getElementsByClassName('textmess')[index].innerText
         if (message !== '') {
             addUserMessage(message);
+            typingIndicator.style.display = "flex"
             messages.scrollTop = messages.scrollHeight;
             var reply = findReply(message)
 
@@ -1294,6 +1332,7 @@ Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử</d
                         if (reply) {
                             res.message += '<a href="#"style="text-decoration:none;display:block;transition-duration: 0s;border-radius: 38px;color:white;border: 0.5px solid hotpink;box-shadow: 0 4px 4px 0px rgba(0, 0, 0, .25) !important;background: hotpink;padding: 10px 20px;margin-bottom: 10px;"> Liên hệ bác sĩ để được tư vấn chi tiết hơn </a>'
                         }
+                        typingIndicator.style.display = "none"
                         addBotMessage(res.message, false);
                         messages.scrollTop = messages.scrollHeight;
 

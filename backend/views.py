@@ -80,6 +80,8 @@ def start_exam_view(request,fakeuser,mobi):
         return redirect('/fine')
 
     return render(request,'start_exam.html',{'questions':questions})
+def games(request):
+    return render(request,'games.html')
 
 def patientchat(request):           
     return render(request,"patient/patientchat.html",{'doctor':models.Doctor.objects.all()})
@@ -129,6 +131,28 @@ def login(request):
 
     context = {}
     return render(request, 'login.html', context)
+
+def logingame(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password =request.POST.get('password')
+        print("HSuuu")
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            print("HSuuu")
+            auth_login(request, user)
+            print(is_doctor(user))
+            if is_doctor(user):
+                return redirect("/doctormain")
+            if is_patient(user):
+                return redirect("/game")
+            else:
+                return redirect("/choosing")
+        
+
+    context = {}
+    return render(request, 'logingame.html', context)
 def loginn(request):
     if request.method == 'POST':
         username = request.POST.get('username')

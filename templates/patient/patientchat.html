@@ -208,12 +208,6 @@ Reset CSS
 message-area
 ******************************** */
 
-    .message-area {
-        height: 100vh;
-        overflow: hidden;
-        padding: 30px 0;
-        background: #f5f5f5;
-    }
 
     .chat-area {
         position: relative;
@@ -535,7 +529,51 @@ message-area
         padding: 0 5px;
         margin-bottom: 0;
     }
+    .modal-body button:hover {
+    background: hotpink !important;
+    color: white;
+    border-color: hotpink !important;
+}
+.modal-body button {transition-duration: 0s;
+border-radius: 38px;
+border: 0.5px solid black;
+box-shadow: 0 4px 4px 0px rgba(0, 0, 0, .25) !important;
+background: white;
+padding: 10px 20px;
 
+margin-bottom: 10px;
+}
+.typing-indicator {
+    display: none;
+    align-items: center;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background-color: #aaa;
+    border-radius: 50%;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+}
     .divider:after {
         display: block;
         content: '';
@@ -789,280 +827,326 @@ message-area
     crossorigin="anonymous"></script>
 
 <!-- char-area -->
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="chat-area">
-                <!-- chatlist -->
-                <div class="chatlist">
-                    <div class="modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="chat-header">
-                                <div class="msg-search">
-                                    <input style="width:100%" type="text" class="form-control" id="inlineFormInputGroup"
-                                        placeholder="Tìm kiếm nhiệm vụ" aria-label="search">
-                                    <span class="chat-iconic"><img style="  transform: rotate(180deg);
-" class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="image title"></span>
-                                </div>
+<section class="message-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Navigation Bar -->
+      
+                <!-- End of Navigation Bar -->
 
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="Open-tab" data-bs-toggle="tab"
-                                            data-bs-target="#Open" type="button" role="tab" aria-controls="Open"
-                                            aria-selected="true">Liên hệ</button>
-                                    </li>
-                                    <!--                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="Closed-tab" data-bs-toggle="tab"
-                                                data-bs-target="#Closed" type="button" role="tab" aria-controls="Closed"
-                                                aria-selected="false">Nhiệm vụ đã hoàn thành</button>
-                                        </li> -->
-                                </ul>
-                            </div>
-
-                            <div class="modal-body">
-                                <!-- chat-list -->
-                                <div class="chat-lists">
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="Open" role="tabpanel"
-                                            aria-labelledby="Open-tab">
-                                            <!-- chat-list -->
-                                            <div class="chat-list">
-                                                <a href="/" class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <img style="background: #fafafa;
-                                                            box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5);
-                                                            margin: auto;
-                                                            padding: 10px;
-                                                            border-radius: 50%;
-                                                            margin: auto;" width="50" height="50"
-                                                            src="{% static 'images/heart.png' %}" alt="LEVIOOSA">
-                                                    </div>
-                                                    <div style="margin-left:  0.5em" class="flex-grow-1 ">
-                                                        <h3>Autism Bot</h3>
-                                                        <p>AI hỗ trợ</p>
-                                                    </div>
-                                                </a>
-                                                {% for t in doctor %}
-                                                 <a href="tel:{{t.mobile}}"
-                                                    class="d-flex align-items-center">
-                                                    <div class="flex-shrink-0">
-                                                        <img style="background: #fafafa;
-                                box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5);
-                                margin: auto;
-                                border-radius: 50%;
-                        
-                                margin: auto;" width="50" height="50" src="https://res.cloudinary.com/dyiesiahu/image/upload/v1/{{ t.profile_pic }}" alt="LEVIOOSA">
-                                                    </div>
-                                                    <div style="margin-left:  0.5em" class="flex-grow-1 ">
-                                                        <h3>{{t.user}}</h3>
-                                                        <p>Bác sĩ, chuyên viên tư vấn</p>
-                                                    </div>
-                                                </a>
-                                                {% endfor %}
-
-                                            </div>
-                                            <!-- chat-list -->
-                                        </div>
-
+                <div class="chat-area">
+                    <!-- chatlist -->
+                    <div class="chatlist">
+                        <div class="modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="chat-header">
+                                    <div class="msg-search">
+                                        <input style="width:100%" type="text" class="form-control" id="inlineFormInputGroup"
+                                            placeholder="Tìm kiếm nhiệm vụ" aria-label="search">
+                                        <span class="chat-iconic"><img style="  transform: rotate(180deg);"
+                                                class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg"
+                                                alt="image title"></span>
                                     </div>
 
-                                </div>
-                                <!-- chat-list -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- chatlist -->
-                <!-- chatbox -->
-                <div class="chatbox showbox">
-                    <div class="modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="msg-head">
-                                <div class="row">
-                                    <div class="col-8">
-                                        <div class="d-flex align-items-center">
-                                            <span class="chat-icon"><img class="img-fluid"
-                                                    src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg"
-                                                    alt="image title"></span>
-                                            <div class="flex-shrink-0">
-                                                <img style="background: #fafafa;
-    box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5);
-    margin: auto;   
-    padding: 10px;
-    border-radius: 50%;
-    height: 50px;
-    margin: auto;" width="50" height="50" src="{% static 'images/heart.png' %}" alt="LEVIOOSA">
-                                            </div>
-                                            <div style="margin-left:  0.5em" class="flex-grow-1 ">
-                                                <h3>Autism Bot</h3>
-                                                <p>Chuyên viên tư vấn</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <a style="padding:0.85rem 0.5rem;float:right;  width:100px;  cursor:pointer;text-align: right;"
-                                            class="dropdown-item"><i class="fa fa-user"></i> {{request.user}}</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="modal-body">
-                                <div class="msg-body">
-                                    <ul id="chatLog" style="  overflow-y: auto;
-">
-                                        <div class="chat-message ">
-                                            <p class="sender"> Xin chào bạn, hiện tại bạn cảm thấy thế nào? </p>
-                                            <span class="time">10:06 am</span>
-                                        </div>
-
-
-
-
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="Open-tab" data-bs-toggle="tab"
+                                                data-bs-target="#Open" type="button" role="tab" aria-controls="Open"
+                                                aria-selected="true">Liên hệ</button>
+                                        </li>
+                                        <!-- <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="Closed-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#Closed" type="button" role="tab" aria-controls="Closed"
+                                                    aria-selected="false">Nhiệm vụ đã hoàn thành</button>
+                                            </li> -->
                                     </ul>
                                 </div>
-                            </div>
 
-                            <div class="send-box">
-                                <div>
-                                    <input id="userInput" type="text" class="form-control" aria-label="message…"
-                                        placeholder="Aa..." value="">
-
-                                    <button  style="background-color: hotpink;" id="sendBtn" type="button"><i class="fa fa-paper-plane"
-                                            aria-hidden="true"></i>
-                                        Gửi tin nhắn</button>
+                                <div class="modal-body">
+                                    <!-- chat-list -->
+                                    <div class="chat-lists">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="Open" role="tabpanel"
+                                                aria-labelledby="Open-tab">
+                                                <!-- chat-list -->
+                                                <div class="chat-list">
+                                                    <a href="/" class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0">
+                                                            <img style="background: #fafafa; box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5); margin: auto; padding: 10px; border-radius: 50%; margin: auto;"
+                                                                width="50" height="50" src="{% static 'images/heart.png' %}" alt="LEVIOOSA">
+                                                        </div>
+                                                        <div style="margin-left:  0.5em" class="flex-grow-1 ">
+                                                            <h3>Autism Bot</h3>
+                                                            <p>AI hỗ trợ</p>
+                                                        </div>
+                                                    </a>
+                                                    {% for t in doctor %}
+                                                     <a href="tel:{{t.mobile}}"
+                                                        class="d-flex align-items-center">
+                                                        <div class="flex-shrink-0">
+                                                            <img style="background: #fafafa; box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5); margin: auto; border-radius: 50%; margin: auto;"
+                                                                width="50" height="50" src="https://res.cloudinary.com/dyiesiahu/image/upload/v1/{{ t.profile_pic }}" alt="LEVIOOSA">
+                                                        </div>
+                                                        <div style="margin-left:  0.5em" class="flex-grow-1 ">
+                                                            <h3>{{t.user}}</h3>
+                                                            <p>Bác sĩ, chuyên viên tư vấn</p>
+                                                        </div>
+                                                    </a>
+                                                    {% endfor %}
+                                                </div>
+                                                <!-- chat-list -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- chat-list -->
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
+                    <!-- chatlist -->
+                    <!-- chatbox -->
+                    <div class="chatbox showbox">
+                        <div class="modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="msg-head">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="d-flex align-items-center">
+                                                <span class="chat-icon"><img class="img-fluid"
+                                                        src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg"
+                                                        alt="image title"></span>
+                                                <div class="flex-shrink-0">
+                                                    <img style="background: #fafafa; box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5); margin: auto; padding: 10px; border-radius: 50%; height: 50px; margin: auto;"
+                                                        width="50" height="50" src="{% static 'images/heart.png' %}" alt="LEVIOOSA">
+                                                </div>
+                                                <div style="margin-left:  0.5em" class="flex-grow-1 ">
+                                                    <h3>Autism Bot</h3>
+                                                    <p>Chuyên viên tư vấn</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="msg-body">
+                                        <div style="display: flex;    align-items: center;"><div ><img alt="icon" loading="lazy" width="130" height="130" decoding="async" data-nimg="1" sizes="(max-width: 768px) 232px, 232px" src="/static/images/chatlo.png" style="color: transparent; object-fit: cover;"></div><div class="css-175oi2r m-auto mb-2 mt-2 flex-1 flex-col justify-center px-4"><div class="css-146c3p1 r-dnmrzs r-1udh08x r-1udbk01 r-3s2u2q r-1iln25a mx-auto self-start bg-gradient-to-r from-[#49BCE2] to-[#FFC10E] bg-clip-text text-center font-sans text-28 font-bold text-transparent lg:mx-0 lg:flex lg:text-[48px]">Trợ lý AI Autism</div><div class="css-146c3p1 mx-auto text-clip text-16 font-semibold text-[rgba(133,138,139,1)] min-[410px]:text-20 lg:mx-0 lg:text-28">Xin chào!
+Trợ lý AI Autism sẵn sàng hỗ trợ bạn.
+Hôm nay tôi có thể giúp gì cho bạn?</div><div >Bạn có thể thử:</div><button onclick="handleBoxans(0)" ><div  style="border:none !important">
+    <div class="textmess">Bệnh viện nào khám và điều trị tự kỷ tốt nhất tại VN</div>
+</div></button><button onclick="handleBoxans(1)"   type="button" style="transition-duration: 0s;">
+<div style="border:none">
+    <div class="textmess">Phương pháp luyện tập tại nhà cho trẻ tự kỷ
+    </div></div></button>
+    <button onclick="handleBoxans(2)" ><div style="border:none">
+        <div class="textmess">Tôi muốn tìm bác sĩ chữa bệnh tự kỷ giỏi</div></div></button><div class="css-146c3p1 mt-2 text-justify text-14 font-normal text-[#AC9D9D] web:mb-9 native:mb-7 lg:text-16">- Trợ lý AI cung cấp thông tin y tế, sức khỏe nhằm hỗ trợ người dùng tìm hiểu thêm về các vấn đề sức khỏe thể chất và tinh thần. Tuy nhiên, thông tin này chỉ mang tính tham khảo, không nên tự ý áp dụng mà cần có sự tư vấn của bác sĩ chuyên khoa. Autism không chịu trách nhiệm cho bất kỳ vấn đề nào phát sinh do việc sử dụng thông tin này.
+<br>- Cuộc trò chuyện của bạn được sử dụng để cải tiến Trợ lý AI. Chúng tôi tôn trọng và bảo vệ quyền riêng tư của bạn, vì vậy nếu có thông tin bạn không muốn chia sẻ, vui lòng không đề cập trong cuộc trò chuyện.</div></div></div>
+                                        <ul id="chatLog" style="  overflow-y: auto;">
+                                            <div class="chat-message ">
+                                                
+                                            </div>
+                                        </ul>
+                                        <div class="typing-indicator" id="typingIndicator">
+                                           <img src="/static/images/chatlo.png" width="40" height="40" alt=""> <span></span><span></span><span></span>
+                                        </div>
+                                     </div>
+                                </div>
+
+                                <div class="send-box">
+                                    <div>
+                                        <input id="userInput" type="text" class="form-control" aria-label="message…"
+                                            placeholder="Aa..." value="">
+
+                                        <button style="background-color: hotpink;" id="sendBtn" type="button"><i class="fa fa-paper-plane"
+                                                aria-hidden="true"></i> Gửi tin nhắn</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- chatbox -->
                 </div>
             </div>
-            <!-- chatbox -->
-
         </div>
     </div>
-</div>
+</section>
 </div>
 
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <script>
-    var currentdate = new Date();
-    const messages = document.getElementsByClassName('modal-body')[1];
-
-    function addZero(i) {
-        if (i < 10) {
-            i = "0" + i;
-        }
-        return i;
-    }
-
-    // Function to add a user message to the chat log
-    function addUserMessage(message) {
-        const chatLog = document.getElementById('chatLog');
-        const userMessage = document.createElement('div');
-        userMessage.classList.add('chat-message', 'user');
-        userMessage.innerHTML = `<p class="repaly">${message}</p>`;
-        userMessage.innerHTML += `<span style="float:right"class="time">${addZero(currentdate.getHours()) + ":" + addZero(currentdate.getMinutes())}</span>`;
-        chatLog.appendChild(userMessage);
-        chatLog.scrollTop = chatLog.scrollHeight;
-    }
-
-    // Function to add a bot message to the chat log
-    function addBotMessage(message, gpt) {
-        const chatLog = document.getElementById('chatLog');
-        const botMessage = document.createElement('div');
-        botMessage.classList.add('chat-message', 'bot');
-        if (gpt) {
-            botMessage.innerHTML = `${message}`;
+    var typingIndicator = document.getElementById('typingIndicator')
+      function toggleMenu() {
+        var menu = document.getElementById("menu");
+        if (menu.classList.contains("displaynone")) {
+          menu.classList.remove("displaynone");
         } else {
-            botMessage.innerHTML = `<p class="sender">${message}</p>`;
+          menu.classList.add("displaynone");
         }
-        botMessage.innerHTML += '<span class="time">' + addZero(currentdate.getHours()) + ":" + addZero(currentdate.getMinutes()) + '</span>'
-        chatLog.appendChild(botMessage);
-        chatLog.scrollTop = chatLog.scrollHeight;
-    }
-
-    const commonReplies = [
-        { input: 'Vui', reply: 'Vậy thì hãy cứ tiếp tục duy trì nhé' },
-        { input: 'Buồn', reply: 'Vậy bạn có muốn nghe nhạc, xem phim hay là chơi game với mình?' },
-        { input: 'Nhạc', reply: 'Bạn muốn nghe thể loại nhạc gì?' },
-        { input: 'Xem Phim', reply: 'Tôi sẽ cho bạn một số gợi ý nhé:<br><a href="https://youtu.be/CC6jYXBznV4?si=7A8pJoFeSOILbOZF">Phim khủng long - chủ đề gia đình</a><a href="https://www.youtube.com/watch?v=fNlBvIEn9tk&pp=ygUWcGhpbSBob-G6oXQgaMOsbmggZMOgaQ%3D%3D">Phim Doraemon thời tiền sử - chủ đề gia đình</a>' },
-        { input: 'chơi game', reply: 'Tôi chỉ biết chơi Liên Quân mà thôi, nếu bạn muốn thì bạn có thể chơi cùng hihi =)))) (Trả lời Có tôi muốn chơi game/Không tôi không cần)' },
-        { input: 'muốn chơi game', reply: 'Bạn hãy tải Liên Quân trên điện thoại & máy tính và kết bạn với tôi, tên tài khoản(VTViệt2k):  <br><a href="https://apps.apple.com/vn/app/garena-li%C3%AAn-qu%C3%A2n-mobile/id1150288115">Dành cho Iphone</a><a href="https://play.google.com/store/apps/details?id=com.garena.game.kgvn&pcampaignid=web_share">Dành cho điện thoại khác</a><a href="https://www.thegioididong.com/hoi-dap/cach-cai-dat-lien-quan-mobile-cho-laptop-may-tinh-1013592">Dành cho máy tính</a><a href="https://www.thegioididong.com/game-app/cach-ket-ban-xoa-ban-trong-lien-quan-don-gian-nhanh-chong-1539232#:~:text=B%C6%B0%E1%BB%9Bc%201%3A%20B%E1%BA%A1n%20v%C3%A0o%20trang,ch%E1%BA%A1m%20v%C3%A0o%20m%E1%BB%A5c%20B%E1%BA%A1n%20b%C3%A8.&text=B%C6%B0%E1%BB%9Bc%202%3A%20B%E1%BA%A1n%20v%C3%A0o%20m%E1%BB%A5c,b%E1%BA%A1n%20b%C3%A8%20v%C3%A0%20b%E1%BA%A5m%20th%C3%AAm.&text=B%C6%B0%E1%BB%9Bc%203%3A%20B%E1%BA%A1n%20g%E1%BB%ADi%20l%E1%BB%9Di,v%C3%A0%20b%E1%BA%A5m%20ok%20l%C3%A0%20xong.">Cách kết bạn trong Liên Quân</a> Kết bạn xong với tôi rồi thì nhớ trả lời là tôi kết bạn rồi, cảm ơn rất nhiều!!' },
-        { input: 'kết bạn rồi', reply: 'Giờ tụi mình trò chuyện trong khung chat nhé!!' },
-        { input: 'Rock', reply: 'Click vào sẽ ra những bài hát nhạc Rock hay nhất mọi thời đại <a href="https://www.youtube.com/watch?v=pdxcAZ7FvpQ&pp=ygUqbmjhuqFjIHJvY2sgaGF5IG5o4bqldCBt4buNaSB0aOG7nWkgxJHhuqFp">ở đây</a> ' },
-        { input: 'Pop', reply: 'Click vào đây và bạn sẽ có thể nghe những bài nhạc thể loại nhạc Pop mà bạn yêu thích?<br><a href="https://www.youtube.com/watch?v=z1fadkdxAX0&pp=ygUabmjhuqFjIHBvcCBtaWNoYWVsIGphY2tzb24%3D">Tuyển tập những bài hát hay của Michael Jackson(Vua nhạc Pop)</a><a href="https://youtu.be/6oEm9ahwHRY?si=2KmPWX1aEQ7UOZ4h">Hoặc là tuyển tập những bài hát hay của thập niên gần đây</a><a href="https://www.youtube.com/watch?v=GpmOn4RyzZI">Hoặc bài hit nhất ở VN (Cắt đôi nỗi sầu)</a>' },
-        { input: 'Rap', reply: '<br>Nếu bạn thấy mình có tâm trạng buồn và muốn nghe nhạc rap thì click vào <a href="https://youtu.be/h7cOOfpdEfk?si=NkVf3qG0xPMyXeFI">đây</a>' },
-        { input: 'EDM', reply: 'Bạn có thể nghe bài nhạc này, nó được xem là top 100 bài hay nhất những năm gần đây đấy. Nó tên là <a href="https://youtu.be/PT2_F-1esPk?si=k23lzMjkazKiqn9D">Closer </a>' },
-        { input: 'Lofi', reply: 'Những bài nhạc thể loại lofi ở VN <a href="https://www.youtube.com/watch?v=SYxjFa766T8&pp=ygUETG9maQ%3D%3D">Ở đây</a><a href="https://www.youtube.com/watch?v=g6LhK0wTemE">Hoặc là bài Lofi này không lời, dễ ngủ!!</a>' },
-        { input: 'Ballad', reply: 'Những tuyển tập Ballad song:<br> <a href="https://www.youtube.com/watch?v=bi_HANcCcuw&pp=ygUGQmFsbGFk">Liên khúc Ballad 2023</a><a href="https://www.youtube.com/watch?v=JsQJWD_Kok4&pp=ygUMVVMgVUsgQmFsbGFk">US & UK Ballad 2023</a>' },
-    ];
-
-    // Function to find a matching reply
-    function findReply(message) {
-        message = message.toLowerCase();
-
-        for (let i = 0; i < commonReplies.length; i++) {
-            const commonInput = commonReplies[i].input.toLowerCase();
-
-            if (message.includes(commonInput)) {
-                if (message.includes("kết bạn rồi")) {
-                    window.location.reload();
+      }
+        var currentdate = new Date();
+        const messages = document.getElementsByClassName('modal-body')[1];
+    
+        function addZero(i) {
+            if (i < 10) {i = "0" + i}
+            return i;
+        }
+        var start = (function () {
+            function scrollTop() {
+                return messages.scrollTop || messages.scrollTop
+            }
+    
+            var top = scrollTop();
+            var interval;
+            messages.onscroll = function () {
+                var newtop = scrollTop();
+                if (newtop < top) {
+                    clearInterval(interval);
                 }
-                return commonReplies[i].reply;
+                top = newtop;
+            };
+            return function () {
+                interval = setInterval(function () {
+                    messages.scrollBy(0, 200);
+                }, 0);
+            }
+        }());
+    
+    
+        // Function to find a matching reply
+    
+    
+        // Function to add a user message to the chat log
+        function addUserMessage(message) {
+            const chatLog = document.getElementById('chatLog');
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('chat-message', 'user');
+            userMessage.innerHTML = `<p class="repaly">${message}</p>`;
+            userMessage.innerHTML += `<span style="float:right"class="time">${addZero(currentdate.getHours()) + ":" + addZero(currentdate.getMinutes())}</span>`;
+            chatLog.appendChild(userMessage);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+    
+        // Function to add a bot message to the chat log
+        function addBotMessage(message, gpt) {
+            const chatLog = document.getElementById('chatLog');
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('chat-message', 'bot');
+            if (gpt) {
+                botMessage.innerHTML = `${message}`;
+            } else {
+                botMessage.innerHTML = `<p class="sender">${message}</p>`;
+            }
+            botMessage.innerHTML += '<span class="time">'+ addZero(currentdate.getHours()) + ":" + addZero(currentdate.getMinutes()) +'</span>'
+            chatLog.appendChild(botMessage);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+        
+       const commonReplies = [
+            { input: 'Bệnh viện nào khám và điều trị tự kỷ tốt nhất tại VN', reply: true },
+            { input: 'Phương pháp luyện tập tại nhà cho trẻ tự kỷ', reply: true },
+            { input: 'Tôi muốn tìm bác sĩ chữa bệnh tự kỷ giỏi', reply: true },
+               // Add more common replies as needed
+        ];
+    
+        // Function to find a matching reply
+        function findReply(message) {
+            message = message.toLowerCase();
+    
+            for (let i = 0; i < commonReplies.length; i++) {
+                const commonInput = commonReplies[i].input.toLowerCase();
+    
+                if (message.includes(commonInput)) {
+                    if (message.includes("kết bạn rồi")) {
+                        window.location.reload();
+                    }
+                    return commonReplies[i].reply;
+                }
+            }
+    
+            return false;
+        }
+        // Function to handle user input
+        function handleUserInput() {
+            const userInput = document.getElementById('userInput');
+            const message = userInput.value.trim();
+    
+            if (message !== '') {
+                var reply = findReply(message)
+                addUserMessage(message);
+                userInput.value = '';
+                typingIndicator.style.display = "flex"
+                messages.scrollTop = messages.scrollHeight;
+                if (reply ==  false) { 
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("GET", window.location.protocol + '//' + window.location.host + "/chatgpt/?prompt=" + message, true);
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            var res = JSON.parse(xhr.responseText);
+                            console.log(res);
+                            typingIndicator.style.display = "none"
+                            addBotMessage(res.message, false);
+                            messages.scrollTop = messages.scrollHeight;
+                        }
+                    }
+                    xhr.send();
+                } else {
+                    setTimeout(() => {
+                        addBotMessage(reply, false);
+                        messages.scrollTop = messages.scrollHeight;
+                    }, 500); // Simulate bot typing delay
+                }     
+                // setTimeout(() => {
+                //     addBotMessage(reply);
+                // }, 500); // Simulate bot typing delay
+    
+                userInput.focus();
             }
         }
-
-        return false;
-    }
-
-    // Function to handle user input
-    function handleUserInput() {
-        const userInput = document.getElementById('userInput');
-        const message = userInput.value.trim();
-
-        if (message !== '') {
-            var reply = findReply(message)
-            addUserMessage(message);
-            userInput.value = '';
-            const chatLog = document.getElementById('chatLog');
-            chatLog.scrollTop = chatLog.scrollHeight;
-            if (reply == false) {
+        function handleBoxans(index) {
+            const message = document.getElementsByClassName('textmess')[index].innerText
+            if (message !== '') {
+                addUserMessage(message);
+                typingIndicator.style.display = "flex"
+                messages.scrollTop = messages.scrollHeight;
+                var reply = findReply(message)
                 var xhr = new XMLHttpRequest();
                 xhr.open("GET", window.location.protocol + '//' + window.location.host + "/chatgpt/?prompt=" + message, true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4 && xhr.status == 200) {
                         var res = JSON.parse(xhr.responseText);
+                        console.log(res);
+                        if (reply) {
+                            res.message += '<a href="#"style="text-decoration:none;display:block;transition-duration: 0s;border-radius: 38px;color:white;border: 0.5px solid hotpink;box-shadow: 0 4px 4px 0px rgba(0, 0, 0, .25) !important;background: hotpink;padding: 10px 20px;margin-bottom: 10px;"> Liên hệ bác sĩ để được tư vấn chi tiết hơn </a>'
+                        }
+                        typingIndicator.style.display = "none"
                         addBotMessage(res.message, false);
-                        const messages = document.getElementsByClassName('modal-body')[1];
                         messages.scrollTop = messages.scrollHeight;
                     }
                 }
-                xhr.send();
-            } else {
-                setTimeout(() => {
-                    addBotMessage(reply, false);
-                    const messages = document.getElementsByClassName('modal-body')[1];
-                    messages.scrollTop = messages.scrollHeight;
-                }, 500); // Simulate bot typing delay
+                xhr.send(); 
+                // setTimeout(() => {
+                //     addBotMessage(reply);
+                // }, 500); // Simulate bot typing delay
+    
+                userInput.focus();
             }
-            userInput.focus();
         }
-    }
+    
+        // Event listener for send button click
+        document.getElementById('sendBtn').addEventListener('click', handleUserInput);
+    
+        // Event listener for enter key press
+        document.addEventListener('keypress', (event) => {
+            if (event.keyCode === 13 || event.which === 13) {
+                handleUserInput();
+            }
+        });
+    
+    
+    </script>
 
-    // Event listener for send button click
-    document.getElementById('sendBtn').addEventListener('click', handleUserInput);
-
-    // Event listener for enter key press
-    document.addEventListener('keypress', (event) => {
-        if (event.keyCode === 13 || event.which === 13) {
-            handleUserInput();
-        }
-    });
-</script>
-
-<!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
 <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
     var sendBtn = document.getElementById("send-btn");

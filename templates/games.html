@@ -1,12 +1,9 @@
 {% load static %}
-
 <!DOCTYPE html><html lang="vi"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <title>Autism - đồng hành cùng trẻ tự kỷ</title>
-
-  
   <link rel="icon" href="/static/images/heart.png">
   <style>
     html,
@@ -286,7 +283,8 @@
       /* Hidden by default */
       position: fixed;
       /* Fixed/sticky position */
-      bottom: 89px;      /* Place the button at the bottom of the page */
+      bottom: 96px;
+      /* Place the button at the bottom of the page */
       right: 30px;
       /* Place the button 30px from the right */
       z-index: 99;
@@ -352,7 +350,6 @@
       border-collapse: collapse;
       text-align: left;
       margin: auto;
-      width: 90%;
       padding: 10px;
     }
   
@@ -411,16 +408,15 @@
 
   </a>
 
-  
-  <ul class="">
-    <li><a class="nav-link" href="/games">Trò chơi</a></li>
+    <ul class="">
+      <li><a class="nav-link" href="/game">Trò chơi</a></li>
 
-    <li><a class="nav-link" href="/login">Đăng nhập </a></li>
-    
-    <li><a class="nav-link" href="/signup">Đăng ký</a></li>
-    <li><a class="nav-link" href="/">Trang chủ</a></li>
+      <li><a class="nav-link" href="/login">Đăng nhập </a></li>
+      
+      <li><a class="nav-link" href="/signup">Đăng ký</a></li>
+      <li><a class="nav-link" href="/">Trang chủ</a></li>
 
-</ul>
+  </ul>
   <button id="resmenu" class=""  onclick="toggleMenu()"   style="    border-color: #EAE7DC;
   background: #EAE7DC;
   position: fixed;
@@ -479,215 +475,11 @@
           padding: 14px 16px;
           display: inline-block;
         }
-      select{
-        font-size: 1rem;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: border-color 0.3s;
-      }
-      input {
-        
-        font-size: 1rem;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: border-color 0.3s;
-      }
       
         #menu ol li a:hover {
           background-color: #0074d9;
           color: white;
         }
-        
-        
-        section.container {
-  border-radius: 10px;
-  max-width: 800px;
-  margin-bottom: 20px;
-
-  margin:  auto;
-  font-family: 'Varela Round', sans-serif;
-}
-
-.section-heading {
-  font-size: 2.5rem;
-  color: #0074d9;
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-}
-
-.section-paragraph {
-  font-size: 1.2rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.form-section {
-  background-color: #f9f9f9;
-  margin-bottom: 15px;
-  padding: 40px 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 40px;
-}
-
-.form-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-wrapper h2 {
-  font-size: 2rem;
-  color: #0074d9;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.form-wrapper p {
-  font-size: 1rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.form p {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.form label {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 5px;
-}
-
-.form input[type="text"],
-.form input[type="password"],
-.form input[type="email"] {
-  font-size: 1rem;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: border-color 0.3s;
-}
-
-.form input[type="text"]:focus,
-.form input[type="password"]:focus,
-.form input[type="email"]:focus {
-  border-color: #0074d9;
-}
-
-.remember-forgot {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  color: #0074d9;
-  margin-bottom: 20px;
-}
-
-.remember-forgot a {
-  color: #0074d9;
-  text-decoration: none;
-}
-
-.remember-forgot a:hover {
-  text-decoration: underline;
-}
-.form-section label {
-  display: flex;
-}
-.login-btn {
-  width: 100%;
-  background-color: #2ecc40;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-}
-
-.login-btn:hover {
-  background-color: #28a745;
-}
-
-.or-divider {
-  text-align: center;
-  margin: 20px 0;
-  color: #999;
-  font-size: 0.9rem;
-}
- /* Checkbox styling */
- #show_password {
-    margin-right: 10px;
-  }
-
-  #show_password + label {
-    display: inline-block;
-    cursor: pointer;
-  }
-.google-signin {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  border: 3px solid #ddd;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.google-signin svg {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.google-signin:hover {
-  background-color: #f1f1f1;
-}
-/* Styles for errorlist as toast notification */
-ul.errorlist {
-  list-style: none;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #f44336; /* Red background for errors */
-  color: white; /* White text for better readability */
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  position: relative;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-/* Animation for fade in only and stay displayed */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    top: -10px;
-  }
-  100% {
-    opacity: 1;
-    top: 0;
-  }
-}
-
-ul.errorlist li {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  float: none;
-}
-
       </style>
       
       <div id="menu" class="displaynone">
@@ -700,51 +492,99 @@ ul.errorlist li {
         </ol>
       </div>
       </div>
-      <div style="position: relative;width: 100%;/* height: 499px">
-
-        <!-- Content -->
-        <div class="headline">
-          <h2>Autism - đồng hành cùng trẻ tự kỷ</h2>
-        </div>
-      
-     
-      </div>
-      <section class="container" style="position: relative;">
-  <style>
-    .form-section p {
-        margin: 0px !important;
-        text-align: left !important;
-    }
-  </style>
-      
-        <div class="form-section">
-          <div class="form-wrapper">
-          <h2>Đây là bài kiểm tra M-CHAT</h2>
-            <p>● Bộ công cụ sàng lọc rối loạn phổ tự kỷ dành cho trẻ dưới 36 tháng tuổi</p>
-            <p>● Chúng tôi cam kết các thông tin của quý anh chị và trẻ được bảo mật</p>
-            <p>● Chỉ phục vụ duy nhất mục đích sàng lọc, đánh giá phát triển của trẻ mà không sử dụng cho bất cứ mục đích nào khác.</p>
-  <br>
-      <form method="POST" onsubmit="return authdate()" autocomplete="off" enctype="multipart/form-data" class="form" id="form-1">
-                    {% csrf_token %}
-                    <div id="error-container"></div>
-
-              {{form.as_p}}
         
-  
-                    <br>
-                        <button type="submit"class="login-btn">Tiếp tục</button>
-           
-            </form>
-            <br>
-  
-     
-  
-  
-  
-          </div>
-        </div>
-      </section>
-      <footer>
+    <div style="position: relative;width: 100%;/* height: 499px">
+
+      <!-- Content -->
+      <div class="headline">
+        <h2>Autism - đồng hành cùng trẻ tự kỷ</h2>
+      </div>
+    
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-hover table-nowrap">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Trò chơi</th>
+                    <th scope="col">Mô tả ngắn</th>
+                    <!-- <th scope="col">Nội dung</th> -->
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>
+                        <img style="background: #fafafa;
+                        box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5);
+                        margin: auto;   
+                        border-radius: 50%;
+                        height: 50px;
+                        object-fit: cover;
+                        margin: auto;" width="50" height="50" alt="..." src="/static/images/abc.png">
+                    </td>
+
+                    <td>Trò chơi giúp phát triển kỹ năng đọc, viết bảng chữ cái cho trẻ em một cách thú vị.</td>
+                    <!-- 
+                    <td>
+                        Chủ đề
+                    </td> -->
+                    <td class="text-end">
+                        <a href="/logingame" class="btn btn-sm btn-neutral">Bắt đầu chơi</a>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img style="background: #fafafa;
+                        box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5);
+                        margin: auto;   
+                        border-radius: 50%;
+                        height: 50px;
+                        object-fit: cover;
+                        margin: auto;" width="50" height="50" alt="..." src="/static/images/memory.png">
+                    </td>
+
+                    <td>Trò chơi giúp ghi nhớ các thành viên trong gia đình cho trẻ em một cách thú vị.</td>
+                    <!-- 
+                    <td>
+                        Chủ đề
+                    </td> -->
+                    <td class="text-end">
+                        <a href="/logingame" class="btn btn-sm btn-neutral">Bắt đầu chơi</a>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img style="background: #fafafa;
+                        box-shadow: 4px 6px 36px -6px rgba(1, 1, 1, 0.5);
+                        margin: auto;   
+                        border-radius: 50%;
+                        height: 50px;
+                        object-fit: cover;
+                        margin: auto;" width="50" height="50" alt="..." src="https://th.bing.com/th/id/OIP.scBRXrdfuJEAytVVq-ov8QAAAA?w=320&h=302&rs=1&pid=ImgDetMain">
+                    </td>
+
+                    <td>Trò chơi giúp ghi nhớ các tên tiếng anh của động vật</td>
+                    <!-- 
+                    <td>
+                        Chủ đề
+                    </td> -->
+                    <td class="text-end">
+                        <a href="/logingame" class="btn btn-sm btn-neutral">Bắt đầu chơi</a>
+                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+      <br>
+      <footer style="position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;">
         <div style="background-color: #2c3e50; color: white; text-align: center; padding: 20px;">
           <p>Bản quyền © 2024. Autism - đồng hành cùng trẻ tự kỷ.</p>
           <p>Designed by: <a href="https://3dviet.vercel.app/" target="_blank" style="color: #FF4136; text-decoration: none;">VietVu</a></p>
@@ -752,74 +592,33 @@ ul.errorlist li {
       </footer>
       <style>
         
-        #bot {
-          
-        position: fixed;
-        bottom: 20px;
-        right: 23px;
-        z-index: 99;
-        width: 66px;
-        height: 66px;
-        }
-          </style>
-          <a href="" onclick="topFunction()" id="bot" title="Go to top"><img style="width: 100%; height: 100%;" src="/static/images/chatlo.png" alt=""></a>
-    
-      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
-  </body></html>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-  <script>
-    
-    var label = document.getElementsByTagName('label')
-    label[0].innerText = "Số điện thoại"
-    label[1].innerText = "Họ tên trẻ"
-    label[2].innerText = "Người đăng ký là"
-    label[3].innerText = "Giới tính trẻ"
-    label[4].innerText = "Ngày sinh của trẻ"
-    function authdate() {
-      // Lấy ngày sinh từ người dùng
-      var input = document.getElementsByTagName('input')
-      let birthDate = moment(input[3].value); // Thay thế bằng ngày sinh của người dùng
-
-      // Tính toán sự khác biệt giữa ngày sinh và ngày hiện tại
-      let ageInMonths = moment().diff(birthDate, "months");
-
-      // Kiểm tra tuổi của người dùng có dưới 36 tháng hay không
-      if (ageInMonths <= 36) {
-        return true;
-      } else {
-        swal("Vui lòng nhập ngày sinh từ 36 tháng tuổi trở xuống");
-        return false;
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      var errorContainer = document.getElementById("error-container");
-      var errorLists = document.querySelectorAll("ul.errorlist");
+    #bot {
       
-      errorLists.forEach(function(errorList) {
-        errorContainer.appendChild(errorList);
-      });
-    });
-
-    function togglePassword() {
-      var passwordField = document.getElementById("id_password");
-      if (passwordField.type === "password") {
-        passwordField.type = "text";
-      } else {
-        passwordField.type = "password";
-      }
+    position: fixed;
+    bottom: 20px;
+    right: 23px;
+    z-index: 99;
+    width: 66px;
+    height: 66px;
     }
-    let mybutton = document.getElementById("myBtn");
+      </style>
+      <a href="/chat" id="bot" title="Go to top"><img style="width: 100%; height: 100%;" src="/static/images/chatlo.png" alt=""></a>
+
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
   
+  <script>
+      (function ($) { var tabs = $(".tabs li a"); tabs.click(function () { var panels = this.hash.replace('/', ''); tabs.removeClass("active"); $(this).addClass("active"); $("#panels").find('p').hide(); $(panels).fadeIn(200); }); })(jQuery); 
+  // Get the button:
+  let mybutton = document.getElementById("myBtn");
+  let chatbtn = document.getElementById("bot");
+
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
   var header = document.getElementById('header')
   function scrollFunction() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    if (document.body.scrollTop > 920 || document.documentElement.scrollTop > 920) {
       mybutton.style.display = "block";
       header.style.display = "none"
     } else {
@@ -842,3 +641,6 @@ ul.errorlist li {
     }
   }
   </script>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+  
+  </body></html>
