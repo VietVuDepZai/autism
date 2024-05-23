@@ -340,14 +340,13 @@ def patientupdate(request, pk):
     user = User.objects.get(id=pk)
 
     doctor = models.Patient.objects.get(user=user)
-    form = forms.patientForm(instance=doctor)   
+    form = forms.patientUpForm(instance=doctor)   
     dict={'form': form,'user':user,'numpatient':models.Patient.objects.all().count(),
-        'patient':models.Patient.objects.all(),
         'doctor':doctor
         # 'event':models.Event.objects.all().count(),
         }
     if request.method == 'POST':
-        form = forms.patientForm(request.POST, instance=user)
+        form = forms.patientUpForm(request.POST, instance=user)
         if form.is_valid():
             doctor = form.save()
             doctor.user=user

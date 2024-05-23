@@ -386,6 +386,10 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
         }
+        .resultCol {
+  text-align: center;
+}
+
     @media screen and (max-width: 1040px) {
       nav ul {
         display: none;
@@ -410,6 +414,9 @@
       margin-top: 1249px !important;
 
      }
+     .resultCol {
+      text-align: left !important;
+    }
      .w-50 {
       width: 100% !important;
      }
@@ -677,9 +684,6 @@
   font-weight: bold;
 }
 
-.resultCol {
-  text-align: center;
-}
 
 .resultAnalysisBar {
   height: 20px;
@@ -743,16 +747,16 @@
       <span class="textBold">M-Chat</span>
     </div>
     <div class="resultAnalysisCol1 resultCol" style="
-    flex: 0.97;
+    flex: 0.7;
 ">
-      <span class="textBold" id="hu">{{result.marks}}</span>
+      <span class="textBold" id="hu">1</span>
     </div>
-    <div class="resultAnalysisCol2" style="width: 100%;/* overflow: hidden; */">
-      <div class="resultAnalysisBar barBlue" style="width: 47.7%;position: absolute;"></div>
-      <div class="resultAnalysisBar barYellow" style="width:14.5173913%;position: absolute;"></div>
-      <div class="resultAnalysisBar barGreen" style="width: 4.14782609%;position: absolute;"></div>
-      <div class="resultAnalysisCircle" id="point" style="position: absolute;margin-left:calc({{result.marks}}*2.07391304% - 7.5px)"></div>
-      <div class="maxPoint" style="margin-left: calc(100% + 23.5px);">23</div>
+    <div class="resultAnalysisCol2" style="display: flex;margin: -10px -20px;width: 100%;/* overflow: hidden; */align-items: center;background: red;">
+      <div class="resultAnalysisBar barBlue" style="/* width: 100%; */position: absolute;"></div>
+      <div class="resultAnalysisBar barYellow" style="position: absolute;width: calc(7*100%/45.3);"></div>
+      <div class="resultAnalysisBar barGreen" style="width: calc(2*100%/45.3);position: absolute;"></div>
+      <div class="resultAnalysisCircle" id="point" style="position: absolute;/* margin-top: 1.5px; */margin-left:calc(0*2.07391304% - 7.5px);"></div>
+      <div class="maxPoint" style="margin-left: calc(100% + 7.5px);">23</div>
     </div>
   </div>
 </div>

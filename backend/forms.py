@@ -61,7 +61,6 @@ class coordinateForm(forms.ModelForm):
     # class Media:
     #     js = ('/media/tinymce/jscripts/tiny_mce/tiny_mce.js',
     #             '',)
-from django.contrib.admin.widgets import AdminDateWidget
 
 class TesstGayss(forms.ModelForm):
     class Meta:
@@ -82,3 +81,7 @@ class patientForm(forms.ModelForm):
     class Meta:
         model=models.Patient
         fields=['mobile','profile_pic','desc']
+class patientUpForm(forms.ModelForm):
+    class Meta:
+        model=models.Patient
+        fields=['mobile','profile_pic','desc','note']
