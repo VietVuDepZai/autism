@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'backend',
     'allauth',
     'allauth.account',
-
+    'ckeditor',
+    'ckeditor_uploader',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'widget_tweaks',
@@ -81,6 +82,17 @@ MIDDLEWARE = [
 ]
 WSGI_REQUEST_TIMEOUT = 7000
 ROOT_URLCONF = 'autism.urls'
+
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+    },
+}
 
 TEMPLATES = [
     {

@@ -76,7 +76,7 @@ def start_exam_view(request,fakeuser,mobi):
         result.marks=total_marks
         result.tester = fakeuser[0]
         result.save()
-        return redirect('/fine')
+        return redirect(f'/fine/{result.id}')
 
     return render(request,'start_exam.html',{'questions':questions})
 def games(request):
@@ -97,9 +97,9 @@ def marks(request):
     questions=models.Question.objects.all()
     result=models.Result.objects.all().last()
     return render(request,'score.html',{'questions':questions,'result':result})
-def fine(request):
+def fine(request,tester):
     questions=models.Question.objects.all()
-    result=models.Result.objects.all().last()
+    result=models.Result.objects.get(id=tester)
     return render(request,'fine.html',{'questions':questions,'result':result})
 def question(request):
     data = list(models.Question.objects.values())

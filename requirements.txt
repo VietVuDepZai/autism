@@ -9,3 +9,4 @@ gunicorn
 psycopg2-binary==2.9.9
 Pillow
 django-filter
+django-ckeditor==6.4.2

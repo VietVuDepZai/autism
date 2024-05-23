@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from ckeditor_uploader.fields import RichTextUploadingField
+
 # Create your models here.
 class Question(models.Model):
     marks=models.PositiveIntegerField()
@@ -45,6 +47,7 @@ class Patient(models.Model):
     status= models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     desc = models.TextField(max_length=500,default=None,blank=True)
+    note =  RichTextUploadingField(null=True, blank=True)
     class Meta:
         ordering = ['-created_on']
     @property
