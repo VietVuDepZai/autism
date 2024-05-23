@@ -79,7 +79,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 
 ]
-WSGI_REQUEST_TIMEOUT = 7000
+WSGI_REQUEST_TIMEOUT = 17000
 ROOT_URLCONF = 'autism.urls'
 
 TEMPLATES = [
