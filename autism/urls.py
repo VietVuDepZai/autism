@@ -30,7 +30,7 @@ urlpatterns = [
         path('chat/',views.chat,name="chat"),
         path('games/',views.games,name="games"),
         path('logingame/',views.logingame,name="logingame"),
-
+path('patientupdate/<pk>',views.patientupdate),
         path('login/',views.login,name="login"),
         path('signup',views.signup,name="signup"),
     path("accounts/", include("allauth.urls")), #most important
