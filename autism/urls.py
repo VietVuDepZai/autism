@@ -63,6 +63,7 @@ path('animals/',views.letterwriting),
                   path('patient-calendar/', views.PatientCalendarView.as_view(), name='patient-calendar'),
                   path('paunaccept-calendar/', views.PaUnAccept.as_view(), name='paunaccept-calendar'),
                                     path('unaccept-calendar/', views.UnCalendarView.as_view(), name='unaccept-calendar'),
+        path('ckeditor/', include('ckeditor_uploader.urls')),
 
 
     path('paevent/new/', views.paevent, name='paevent_new'),
