@@ -34,7 +34,6 @@ def chatgpt(request):
     model = genai.GenerativeModel("gemini-pro")
     chat = model.start_chat()
     response = chat.send_message(text)
-    user = request.user
     # Extract necessary data from response
     mess = text_to_html_paragraphs(response.text)
     return JsonResponse({"message":  mess})
