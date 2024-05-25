@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-ic_5cb#=2jh13-gfemt3!xk292$8l8#4z+1jn=4315lybz@gyy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.147', 'localhost', '127.0.0.1', '.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -118,11 +118,14 @@ WSGI_APPLICATION = 'autism.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbneufzc', 
+        'USER': 'dbneufzc', 
+        'PASSWORD': 'CYSrzrNFfe2ZJR5NXlDNf3iQ7qOteEkM',
+        'HOST': 'floppy.db.elephantsql.com', 
+        'PORT': '5432'
     }
 }
-
 
 
 # Password validation
