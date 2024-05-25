@@ -118,14 +118,11 @@ WSGI_APPLICATION = 'autism.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbneufzc', 
-        'USER': 'dbneufzc', 
-        'PASSWORD': 'CYSrzrNFfe2ZJR5NXlDNf3iQ7qOteEkM',
-        'HOST': 'floppy.db.elephantsql.com', 
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
